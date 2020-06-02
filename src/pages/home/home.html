@@ -3,13 +3,13 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Connuct Care</ion-title>
+    <ion-title>NurseWorks</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-card *ngIf="!currentUser">
-    <img src="assets/splash.jpg" />
+    <img src="assets/nurseworks.png" />
     <ion-card-content>
       <ion-card-title class="center">
         Please Login or Register
@@ -43,7 +43,7 @@
 
   <div class="home-page">
     <ion-card *ngIf="currentUser">
-      <img src="assets/splash.jpg" />
+      <img src="assets/nurseworks.png" />
       <div class="card-title">Welcome</div>
       <div class="card-subtitle">{{currentUser.first_name}} {{currentUser.last_name}}</div>
     </ion-card>

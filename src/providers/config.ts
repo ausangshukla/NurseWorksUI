@@ -18,13 +18,13 @@ export class Config {
   };
 
   private staging = {
-    API_URL: "http://dev.connuct.co.uk",
+    API_URL: "http://dev.nurseworks.co.in",
     ENV: "prod",
     GA_ID: 'UA-103042137-1'
   };
 
   private prod = {
-    API_URL: "https://production.connuct.co.uk",
+    API_URL: "https://production.nurseworks.co.in",
     ENV: "prod",
     GA_ID: 'UA-103042137-1'
   };
