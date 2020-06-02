@@ -1,0 +1,81 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Register as a Partner </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <ion-searchbar name="searchBox" [(ngModel)]="searchTerm" [showCancelButton]="shouldShowCancel"
+    (ionInput)="onSearch($event)" (ionCancel)="onCancel($event)" [debounce]=1000>
+  </ion-searchbar>
+
+
+  <ion-list>
+<!-- 
+    <ion-item-divider *ngIf="hospitals">
+      <ion-label>
+        Existing Partner
+      </ion-label>
+    </ion-item-divider> -->
+
+    <button ion-item *ngFor="let hospital of hospitals" (click)=exsitingHospital(hospital)>
+      <p>
+        {{hospital.name}}
+      </p>
+
+      <p>
+        {{hospital.address}}
+      </p>
+
+      <p>
+        {{hospital.phone}}
+      </p>
+
+      <p>
+        {{hospital.postcode}}
+      </p>
+    </button>
+
+    <!-- <ion-item-divider *ngIf="cqc_records">
+      <ion-label>
+        CQC Details
+      </ion-label>
+    </ion-item-divider> -->
+
+    <button ion-item *ngFor="let cqc of cqc_records" (click)=newHospital(cqc)>
+      <p>
+        {{cqc.name}}
+      </p>
+
+      <p>
+        {{cqc.address}}
+      </p>
+
+      <p>
+        {{cqc.phone}}
+      </p>
+
+      <p>
+        {{cqc.postcode}}
+      </p>
+    </button>
+
+    <button *ngIf="searchTerm" ion-button full color="primary" (click)="newHospital(null)">
+      Register New Partner.
+    </button>
+
+  </ion-list>
+
+  <ion-card>
+    <ion-card-content>
+      Search for your care home, if you find it you can click and claim it. If not you can create a new entry for it.
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

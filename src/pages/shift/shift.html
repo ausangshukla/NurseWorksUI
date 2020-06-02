@@ -1,0 +1,98 @@
+<!--
+  Generated template for the Shiftss page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Shifts</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card *ngIf="verification_pending">
+    <ion-card-title class="center error-text">
+      Verification Pending
+    </ion-card-title>
+
+    <ion-card-content>
+      <p>
+        Please upload your documents for verification. Post verification you will be assigned shifts at various Care Homes.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="!verification_pending && shifts && shifts.length == 0">
+    <ion-card-title class="center">
+      No Shifts Available
+    </ion-card-title>
+
+    <ion-card-content>
+      <p>
+        Sorry there are no shifts available at this time.
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <ion-list>
+    <button ion-item id="shift-{{shift.id}}-item" *ngFor="let shift of shifts" (click)=getShiftDetails(shift)>
+
+      <ion-thumbnail item-left *ngIf="shift.can_manage != true">
+        <img [src]="shift.user.image" class="shift-image">
+      </ion-thumbnail> 
+      
+      
+      <p text-wrap>
+        Care Home: {{shift.hospital.name}}
+      </p>
+
+      <p>
+        Start: {{shift.staffing_request.start_date | utc_date |  date: 'dd/MM/yyyy HH:mm'}}
+      </p>
+
+      <p>
+        End: {{shift.staffing_request.end_date | utc_date | date: 'dd/MM/yyyy HH:mm'}}
+      </p>
+      
+      <div *ngIf="shift.can_manage != true">
+      <p>
+        {{shift.user.role}}: {{shift.user.first_name}}, {{shift.user.last_name}}
+      </p>
+
+      <rating [(ngModel)]="shift.user.rating" readOnly="true"></rating>
+      <p>
+        Phone: {{shift.user.phone}}
+      </p>
+      <p>
+        Email: {{shift.user.email}}
+      </p>
+      </div>
+      <p>
+        <ion-badge
+          *ngIf="shift.response_status" 
+          item-right [color]="shift.response_status == 'Accepted' ? 'secondary' : 'danger'">
+          Status: {{shift.response_status}}
+        </ion-badge>
+      </p>
+      <p> 
+        <ion-badge
+          *ngIf="shift.payment_status && shift.user_id == current_user.id" 
+          item-right [color]="shift.payment_status == 'Paid' ? 'secondary' : 'danger'">
+          Payment: {{shift.payment_status}}
+        </ion-badge> 
+
+        <ion-badge
+          *ngIf="shift.hospital_payment_status && shift.user_id != current_user.id" 
+          item-right [color]="shift.hospital_payment_status == 'Paid' ? 'secondary' : 'danger'">
+          Payment: {{shift.hospital_payment_status}}
+        </ion-badge> 
+      </p>
+    </button>
+  </ion-list>
+
+</ion-content>

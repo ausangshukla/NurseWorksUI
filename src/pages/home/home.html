@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar id="homeNavBar" color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Connuct Care</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="!currentUser">
+    <img src="assets/splash.jpg" />
+    <ion-card-content>
+      <ion-card-title class="center">
+        Please Login or Register
+      </ion-card-title>
+      <p>
+        The most popular way to hire temporary Care Givers & Nurses across the UK
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="primary" icon-left (click)="login()">
+          <ion-icon name='key'></ion-icon>
+          Login
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button clear small color="secondary" icon-left (click)="register()">
+          <ion-icon name='create'></ion-icon>
+          Register
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="danger" icon-left (click)="contact()">
+          <ion-icon name='call'></ion-icon>
+          Contact
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <div class="home-page">
+    <ion-card *ngIf="currentUser">
+      <img src="assets/splash.jpg" />
+      <div class="card-title">Welcome</div>
+      <div class="card-subtitle">{{currentUser.first_name}} {{currentUser.last_name}}</div>
+    </ion-card>
+
+    <ion-card *ngIf="currentUser">
+
+
+      <ion-card-content>
+
+        <ion-list>
+
+          <admin-menus [initData]="initData" *ngIf="currentUser.role=='Admin'"></admin-menus>
+          <temp-menus [initData]="initData" *ngIf="currentUser.role=='Care Giver' || currentUser.role=='Nurse'"></temp-menus>
+        </ion-list>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>

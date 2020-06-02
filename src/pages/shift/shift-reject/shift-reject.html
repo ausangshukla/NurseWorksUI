@@ -1,0 +1,60 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+      <ion-title>Shift</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+  
+    <p *ngIf="submitAttempt" class="error-text">Please fill out all details accurately.</p>
+  
+    <ion-list wrap-text no-lines>
+  
+      <form [formGroup]="slideOneForm">
+  
+  
+        <ion-item *ngIf="cancel_or_reject == 'Reject'">
+          <ion-label floating>Reason</ion-label>
+          <ion-select #reason  name="reason" id="reason" [(ngModel)]="shift.reason" [class.invalid]="!slideOneForm.controls.reason.valid && (slideOneForm.controls.reason.dirty || submitAttempt)"
+            formControlName="reason">
+            <ion-option value="Commute too far" checked="true">Commute too far</ion-option>
+            <ion-option value="Commitments">Commitments</ion-option>
+            <ion-option value="Double booked">Double booked</ion-option>
+            <ion-option value="Sick">Sick</ion-option>
+            <ion-option value="Away">Away</ion-option>
+            <ion-option value="Other">Other</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item *ngIf="cancel_or_reject == 'Cancel'">
+            <ion-label floating>Reason</ion-label>
+            <ion-select #reason name="reason" id="reason" [(ngModel)]="shift.reason" [class.invalid]="!slideOneForm.controls.reason.valid && (slideOneForm.controls.reason.dirty || submitAttempt)"
+                formControlName="reason">
+                <ion-option value="Emergency" checked="true">Emergency</ion-option>
+                <ion-option value="Appointment">Appointment</ion-option>
+                <ion-option value="Sick">Sick</ion-option>
+                <ion-option value="Other">Other</ion-option>
+            </ion-select>
+        </ion-item>
+  
+        
+        <ion-item *ngIf="shift.reason=='Other'">
+          <ion-label floating>Other Reason</ion-label>
+          <ion-textarea formControlName="other_reason" [(ngModel)]="shift.other_reason"
+            [class.invalid]="!slideOneForm.controls.other_reason.valid && (slideOneForm.controls.other_reason.dirty || submitAttempt)"></ion-textarea>
+        </ion-item>
+  
+        
+      </form>
+  
+    </ion-list>
+  
+    <ion-row>
+      <ion-col>
+        <button ion-button full color="primary" (click)="save(shift)">{{cancel_or_reject}} Shift</button>
+      </ion-col>
+    </ion-row>
+  </ion-content>

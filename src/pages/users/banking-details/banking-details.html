@@ -1,0 +1,46 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Bank Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <form [formGroup]="slideOneForm">
+
+      <ion-item>
+        <ion-label floating>Bank Account Number</ion-label>
+        <ion-input name="bank_account" formControlName="bank_account" type="bank_account" [(ngModel)]="user.bank_account" [class.invalid]="!slideOneForm.controls.bank_account.valid && (slideOneForm.controls.bank_account.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.bank_account.valid  && (slideOneForm.controls.bank_account.dirty || submitAttempt)">
+        <p class="error-text">Please enter 8 digit bank account.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Sort Code</ion-label>
+        <ion-input name="sort_code" formControlName="sort_code" type="sort_code" [(ngModel)]="user.sort_code" [class.invalid]="!slideOneForm.controls.sort_code.valid && (slideOneForm.controls.sort_code.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.sort_code.valid  && (slideOneForm.controls.sort_code.dirty || submitAttempt)">
+        <p class="error-text">Please enter 6 digit sort code.</p>
+      </ion-item>
+
+    </form>
+
+  </ion-list>
+
+  <button ion-button full color="primary" (click)="save()" [disabled]="slideOneForm.invalid">Save</button>
+
+</ion-content>

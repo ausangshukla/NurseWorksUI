@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Referrals Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          First Name
+        </ion-col>
+        <ion-col>
+          {{referral.first_name}} 
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Last Name
+        </ion-col>
+        <ion-col>
+          {{referral.last_name}} 
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Email
+        </ion-col>
+        <ion-col>
+          {{referral.email}} 
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+  </ion-list>
+
+  <ion-row *ngIf="referral.user_id == current_user.id">
+
+    <ion-col>
+      <button ion-button full color="secondary" (click)="editReferral(referral)">Edit</button>
+    </ion-col>
+    <ion-col>
+      <button ion-button full color="danger" (click)="confirmDelete(referral)">Delete</button>
+    </ion-col>
+
+  </ion-row>
+
+
+</ion-content>

@@ -1,0 +1,68 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Rating</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+
+
+  <ion-list no-lines>
+
+    <ion-card>
+      <ion-card-title class="center">
+        Refer your friends
+      </ion-card-title>
+
+      <ion-card-content>
+        <p>
+          Please provide details of the person you are referring below. 
+          You will be given a referral reward once the person joins our network. 
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+
+
+    <form [formGroup]="slideOneForm">
+
+      <ion-item>
+        <ion-label floating>First Name</ion-label>
+        <ion-input name="first_name" formControlName="first_name" type="text" [(ngModel)]="referral.first_name" [class.invalid]="!slideOneForm.controls.first_name.valid && (slideOneForm.controls.first_name.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.first_name.valid  && (slideOneForm.controls.first_name.dirty || submitAttempt)">
+        <p class="error-text">Please enter a valid name.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Last Name</ion-label>
+        <ion-input name="last_name" formControlName="last_name" type="text" [(ngModel)]="referral.last_name" [class.invalid]="!slideOneForm.controls.last_name.valid && (slideOneForm.controls.email.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.last_name.valid  && (slideOneForm.controls.last_name.dirty || submitAttempt)">
+        <p class="error-text">Please enter a valid name.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input name="email" formControlName="email" type="email" [(ngModel)]="referral.email" [class.invalid]="!slideOneForm.controls.email.valid && (slideOneForm.controls.email.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.email.valid  && (slideOneForm.controls.email.dirty || submitAttempt)">
+        <p class="error-text">Please enter a valid email.</p>
+      </ion-item>
+
+
+    </form>
+
+  </ion-list>
+
+  <button ion-button full color="primary" (click)="save()">Save</button>
+
+</ion-content>

@@ -1,0 +1,57 @@
+<!--
+  Generated template for the Hospitalss page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Partners</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-searchbar [(ngModel)]="searchTerm" [showCancelButton]="shouldShowCancel" (ionInput)="onSearch($event)" (ionCancel)="onCancel($event)"
+    animated=true debounce=500>
+  </ion-searchbar>
+
+  <ion-fab bottom right *ngIf="current_user.role=='Admin' && !current_user.hospital_id">
+    <button id="new_hospital_button" ion-fab (click)="newHospital()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+  <ion-list>
+    <button ion-item *ngFor="let hospital of hospitals" (click)=getHospitalDetails(hospital)>
+      <ion-thumbnail item-left>
+        <img [src]="hospital.image_url">
+      </ion-thumbnail> 
+      <p>
+        {{hospital.name}}
+      </p>
+       
+      <p>
+        {{hospital.address}}
+      </p>
+       
+      <p>
+        {{hospital.town}}
+      </p>
+       
+      <p>
+        {{hospital.postcode}}
+      </p>
+      
+      
+    </button>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+
+</ion-content>

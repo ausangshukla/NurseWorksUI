@@ -1,0 +1,52 @@
+
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>References</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-card-content *ngIf="references && references.length == 0">
+      <p>
+        Sorry there are no References at this time. 
+      </p>
+      <p>
+        Please add the references we can reach out to via email, for a reference check.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab id="new_reference_btn" bottom right>
+    <button ion-fab (click)="newReference()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+
+  <ion-list>
+    <button ion-item *ngFor="let reference of references" (click)=getReferenceDetails(reference)>
+       
+      <p>
+        First Name: {{reference.first_name}}
+      </p>
+       
+      <p>
+        Last Name: {{reference.last_name}}
+      </p>
+       
+      <p>
+        Email: {{reference.email}}
+      </p>
+      
+      <p>
+        Reference Type: {{reference.ref_type}}
+      </p>
+      
+    </button>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,115 @@
+<!--
+  Generated template for the PaymentsDetails page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Payments Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item *ngIf="payment.staffing_request">
+      <ion-row>
+        <ion-col>
+          Staffing Request:
+        </ion-col>
+        <ion-col text-wrap>
+          <ion-row>From: {{payment.staffing_request.start_date | utc_date | date: 'dd/MM/yyyy H:mm'}}
+          </ion-row>
+          <ion-row>To: {{payment.staffing_request.end_date | utc_date | date: 'dd/MM/yyyy H:mm'}}
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item *ngIf="payment.shift">
+      <ion-row>
+        <ion-col>
+          Actual Time Worked:
+        </ion-col>
+        <ion-col text-wrap>
+          <ion-row>From: {{payment.shift.start_date | utc_date | date: 'dd/MM/yyyy H:mm'}}
+          </ion-row>
+          <ion-row>To: {{payment.shift.end_date | utc_date | date: 'dd/MM/yyyy H:mm'}}
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item *ngIf="payment.user && payment.user_id != current_user.id">
+      <ion-row>
+        <ion-col>
+          {{payment.user.role}}:
+        </ion-col>
+        <ion-col>
+          {{payment.user.first_name}} {{payment.user.last_name}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item *ngIf="payment.hospital">
+      <ion-row>
+        <ion-col>
+          Hospital:
+        </ion-col>
+        <ion-col>
+          {{payment.hospital.name}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Billing:
+        </ion-col>
+        <ion-col>
+          {{payment.billing | currency : 'GBP' : true}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Vat:
+        </ion-col>
+        <ion-col>
+          {{payment.vat | currency : 'GBP' : true}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Amount:
+        </ion-col>
+        <ion-col>
+          {{payment.amount | currency : 'GBP' : true}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+  </ion-list>
+
+  <ion-row *ngIf="payment.can_manage == true">
+
+    <ion-col>
+      <button ion-button full color="secondary" (click)="editPayment(payment)">Edit</button>
+    </ion-col>
+
+  </ion-row>
+
+
+</ion-content>

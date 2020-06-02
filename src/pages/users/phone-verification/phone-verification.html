@@ -1,0 +1,52 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+        <ion-title>Phone Verification</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding id="verification_page">
+
+    <ion-list text-wrap>
+
+        <form [formGroup]="slideOneForm" *ngIf="verification_code_sent">
+            <ion-item>
+                <ion-label floating>Verification Code</ion-label>
+                <ion-input name="verification_code" formControlName="verification_code" type="number" [(ngModel)]="verification_code" [class.invalid]="!slideOneForm.controls.verification_code.valid && 
+                (slideOneForm.controls.verification_code.dirty)"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="!slideOneForm.controls.verification_code.valid && (slideOneForm.controls.verification_code.dirty)">
+                <p class="error-text">Must be 5 digits.</p>
+            </ion-item>
+
+            <p class="field-hint">
+                Enter the verification code sent to your phone via sms.
+            </p>
+        </form>
+    </ion-list>
+
+
+    <ion-row>
+
+        <ion-col *ngIf="!verification_code_sent">
+            <button name="send_btn" ion-button full color="primary" (click)="confirmSendVerification()">Send Verification Code</button>
+        </ion-col>
+        <ion-col *ngIf="verification_code_sent" col-6>
+            <button name="resend_btn" ion-button full color="primary" (click)="confirmSendVerification()">Resend Code</button>
+        </ion-col>
+        <ion-col *ngIf="verification_code_sent" col-6>
+            <button name="verify_btn" ion-button full color="success" (click)="verifiy_code()" >Verify Code</button>
+        </ion-col>
+
+    </ion-row>
+
+    
+    
+
+    <p class="center error-text" *ngIf="error_msg">{{error_msg}}</p>
+
+    <p class="center">Your registered phone number is {{current_user.phone}}</p>
+
+</ion-content>

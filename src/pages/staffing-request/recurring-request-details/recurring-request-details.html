@@ -1,0 +1,122 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+      <ion-title>Block Booking Details</ion-title>
+      <ion-buttons end>
+  
+      </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+  
+  
+    <ion-list>
+  
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            Care Home:
+          </ion-col>
+          <ion-col text-wrap>
+            {{recurringRequest.hospital?.name}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+  
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            Required:
+          </ion-col>
+          <ion-col text-wrap>
+            {{recurringRequest.role}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+  
+  
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            Entered By:
+          </ion-col>
+          <ion-col text-wrap>
+            {{recurringRequest.user?.first_name}} {{recurringRequest.user?.last_name}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+  
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            Created On:
+          </ion-col>
+          <ion-col>
+            {{recurringRequest.created_at | utc_date | date: 'dd/MM/yyyy H:mm'}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+  
+      
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            Start Time:
+          </ion-col>
+          <ion-col>
+            {{recurringRequest.start_date | utc_date | date: 'HH:mm'}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+  
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            End Time:
+          </ion-col>
+          <ion-col>
+            {{recurringRequest.end_date | utc_date | date: 'HH:mm'}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item>
+        <ion-row>
+            <ion-col>
+            Dates:
+            </ion-col>
+            <ion-col>
+                    <p *ngFor="let date of recurringRequest.dates">
+                        {{date | date: "dd/MM/yyyy"}}
+                    </p>
+            </ion-col>
+        </ion-row>
+      </ion-item>
+  
+  
+      <ion-item *ngIf="recurringRequest.notes">
+        <ion-row>
+          <ion-col>
+            Notes:
+          </ion-col>
+          <ion-col text-wrap>
+            {{recurringRequest.notes}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+  
+    </ion-list>
+  
+    <div *ngIf="recurringRequest.can_manage == true">
+      <ion-row>
+        <ion-col *ngIf="recurringRequest.accepted_shift">
+          <button ion-button full color="primary" (click)="viewShift(recurringRequest.accepted_shift)">View Shift</button>
+        </ion-col>
+      </ion-row>
+    </div>
+  
+  
+  </ion-content>

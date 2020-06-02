@@ -1,0 +1,54 @@
+<!--
+  Generated template for the PaymentsForm pemail.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pemails and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Payments</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+
+  <ion-list no-lines>
+
+    <form [formGroup]="slideOneForm">
+
+
+
+      <ion-item>
+        <ion-label floating>Amount</ion-label>
+        <ion-input [readonly]="true" formControlName="amount" type="text" [(ngModel)]="payment.amount" [class.invalid]="!slideOneForm.controls.amount.valid && (slideOneForm.controls.amount.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.amount.valid  && (slideOneForm.controls.amount.dirty || submitAttempt)">
+        <p>Please enter a valid Amount.</p>
+      </ion-item>
+
+
+
+      <ion-item>
+        <ion-label floating>Notes</ion-label>
+        <ion-input formControlName="notes" type="text" [(ngModel)]="payment.notes" [class.invalid]="!slideOneForm.controls.notes.valid && (slideOneForm.controls.notes.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.notes.valid  && (slideOneForm.controls.notes.dirty || submitAttempt)">
+        <p>Please enter a valid Notes.</p>
+      </ion-item>
+
+
+    </form>
+
+  </ion-list>
+
+  <button ion-button full color="primary" (click)="save()">Save</button>
+
+
+</ion-content>

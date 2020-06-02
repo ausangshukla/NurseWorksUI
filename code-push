@@ -1,0 +1,1 @@
+appcenter codepush release-cordova -a thimmaiah/CareConnect-android  -m --description "Release 1.3.9" -d "Production"

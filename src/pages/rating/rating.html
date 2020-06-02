@@ -1,0 +1,68 @@
+<!--
+  Generated template for the Ratingss page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Ratings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card *ngIf="ratings && ratings.length == 0">
+    <ion-card-title class="center">
+      No Ratings Available
+    </ion-card-title>
+
+    <ion-card-content>
+      <p>
+        Sorry there are no Ratings at this time. Please check back later.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <button ion-item *ngFor="let rating of ratings" (click)=getRatingDetails(rating)>
+        
+        <ion-thumbnail item-left>
+          <img [src]="rating.rated_entity.image_url">
+        </ion-thumbnail> 
+
+        <div *ngIf="rating.rated_entity_type =='User'">
+          <p>
+            Rated By: {{rating.hospital.name}}
+          </p>
+
+          <p>
+            {{rating.rated_entity.role}}: {{rating.rated_entity.first_name}} {{rating.rated_entity.last_name}}
+          </p>
+        </div>
+        
+        <div *ngIf="rating.rated_entity_type =='Hospital'">
+          <p>
+            Care Home: {{rating.rated_entity.name}} 
+          </p>
+          <p>
+          </p>
+        </div>
+        
+
+        <rating [(ngModel)]="rating.stars" readOnly="false"></rating>
+        
+      
+    </button>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

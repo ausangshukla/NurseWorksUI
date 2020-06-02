@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Payment Records</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card *ngIf="payments && payments.length == 0">
+    <ion-card-title class="center">
+      No Payments Found
+    </ion-card-title>
+
+    <ion-card-content>
+      <p>
+        Sorry there are no Payments at this time. Please check back later.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <button ion-item *ngFor="let payment of payments" (click)=getPaymentDetails(payment)>
+       
+      <p>
+        For:
+        {{payment.shift.start_date | utc_date | date: 'dd/MM/yyyy H:mm'}} - 
+        {{payment.shift.end_date | utc_date | date: 'dd/MM/yyyy H:mm'}}
+      </p>
+       
+      <p>
+        {{payment.user.role}} : {{payment.user.first_name}} {{payment.user.last_name}}
+      </p>
+       
+      <p>
+        Hospital: {{payment.hospital.name}}
+      </p>
+              
+      <p>
+        Amount: {{payment.amount | currency : "GBP" : true}}
+      </p>
+       
+      
+    </button>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="100px">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

@@ -1,0 +1,254 @@
+<!--
+  Generated template for the StaffingRequestsDetails page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Request Details</ion-title>
+    <ion-buttons end>
+
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-fab bottom right>
+    <button ion-fab (click)="presentActionSheet(staffingRequest)"><ion-icon name="apps"></ion-icon></button>
+  </ion-fab>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Care Home:
+        </ion-col>
+        <ion-col text-wrap>
+          {{staffingRequest.hospital?.name}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Required:
+        </ion-col>
+        <ion-col text-wrap>
+          {{staffingRequest.role}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+    <ion-item *ngIf="staffingRequest.hospital_base">
+      <ion-row>
+        <ion-col>
+          Estimated Price:
+        </ion-col>
+        <ion-col text-wrap>
+          {{staffingRequest.hospital_base | currency : "GBP": true }}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item *ngIf="staffingRequest.hospital_base">
+      <ion-row>
+        <ion-col>
+          VAT:
+        </ion-col>
+        <ion-col text-wrap>
+          {{staffingRequest.vat | currency : "GBP": true }}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item *ngIf="staffingRequest.hospital_base">
+      <ion-row>
+        <ion-col>
+          Total:
+        </ion-col>
+        <ion-col text-wrap>
+          {{staffingRequest.hospital_total_amount | currency : "GBP": true }}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Entered By:
+        </ion-col>
+        <ion-col text-wrap>
+          {{staffingRequest.user?.first_name}} {{staffingRequest.user?.last_name}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Created On:
+        </ion-col>
+        <ion-col>
+          {{staffingRequest.created_at | utc_date | date: 'dd/MM/yyyy H:mm'}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Start Date:
+        </ion-col>
+        <ion-col>
+          {{staffingRequest.start_date | utc_date | date: 'dd/MM/yyyy HH:mm'}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          End Date:
+        </ion-col>
+        <ion-col>
+          {{staffingRequest.end_date | utc_date | date: 'dd/MM/yyyy HH:mm'}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+    <ion-item *ngIf="staffingRequest.po_for_invoice">
+      <ion-row>
+        <ion-col>
+          PO for Invoice:
+        </ion-col>
+        <ion-col>
+          {{staffingRequest.po_for_invoice}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <div *ngIf="staffingRequest.can_manage == true">
+
+
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            Start Code:
+          </ion-col>
+          <ion-col *ngIf="show_start_code">
+            {{staffingRequest.start_code}}
+          </ion-col>
+          <ion-col *ngIf="!show_start_code">
+            <a (click)="show_start_code = true">Show Start Code</a>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            End Code:
+          </ion-col>
+          <ion-col *ngIf="show_end_code">
+            {{staffingRequest.end_code}}
+          </ion-col>
+          <ion-col *ngIf="!show_end_code">
+            <a (click)="show_end_code = true">Show End Code</a>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+    </div>
+
+    <ion-item *ngIf="staffingRequest.notes">
+      <ion-row>
+        <ion-col>
+          Notes:
+        </ion-col>
+        <ion-col text-wrap>
+          {{staffingRequest.notes}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Request Status:
+        </ion-col>
+        <ion-col>
+          {{staffingRequest.request_status}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Payment Status:
+        </ion-col>
+        <ion-col>
+          {{staffingRequest.payment_status}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <div *ngIf="current_user.id == staffingRequest.user_id">
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            Start Code:
+          </ion-col>
+          <ion-col>
+            {{staffingRequest.start_code}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            End Code:
+          </ion-col>
+          <ion-col>
+            {{staffingRequest.end_code}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            Break Time for Carers:
+          </ion-col>
+          <ion-col>
+            {{staffingRequest.carer_break_mins}} mins
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+    </div>
+
+  </ion-list>
+
+  <div *ngIf="staffingRequest.can_manage == true">
+    <ion-row>
+      <ion-col *ngIf="staffingRequest.accepted_shift">
+        <button ion-button full color="primary" (click)="viewShift(staffingRequest.accepted_shift)">View Shift</button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+</ion-content>

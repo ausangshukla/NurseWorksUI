@@ -1,0 +1,194 @@
+<!--
+  Generated template for the UserForm pemail.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pemails and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>User</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+
+  <ion-list no-lines>
+
+    <form [formGroup]="slideOneForm">
+
+      <ion-item id="title">
+        <ion-label floating>Title</ion-label>
+        <ion-select name="title" [(ngModel)]="user.title" [class.invalid]="!slideOneForm.controls.title.valid && (slideOneForm.controls.title.dirty || submitAttempt)"
+          formControlName="title">
+          <ion-option value="Mr" checked="true">Mr</ion-option>
+          <ion-option value="Mrs">Mrs</ion-option>
+          <ion-option value="Miss">Miss</ion-option>
+          <ion-option value="Ms">Ms</ion-option>
+          <ion-option value="Other">Other</ion-option>
+        </ion-select>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label floating>First Name</ion-label>
+        <ion-input name="first_name" formControlName="first_name" type="text" [(ngModel)]="user.first_name" [class.invalid]="!slideOneForm.controls.first_name.valid && (slideOneForm.controls.first_name.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.first_name.valid  && (slideOneForm.controls.first_name.dirty || submitAttempt)">
+        <p class="error-text">Please enter a valid name.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Last Name</ion-label>
+        <ion-input name="last_name" formControlName="last_name" type="text" [(ngModel)]="user.last_name" [class.invalid]="!slideOneForm.controls.last_name.valid && (slideOneForm.controls.email.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.last_name.valid  && (slideOneForm.controls.last_name.dirty || submitAttempt)">
+        <p class="error-text">Please enter a valid name.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input name="email" formControlName="email" type="email" [(ngModel)]="user.email" [class.invalid]="!slideOneForm.controls.email.valid && (slideOneForm.controls.email.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.email.valid  && (slideOneForm.controls.email.dirty || submitAttempt)">
+        <p class="error-text">Please enter a valid email.</p>
+      </ion-item>
+
+      <ion-item *ngIf="!user.id">
+        <ion-label floating>Password</ion-label>
+        <ion-input name="password" formControlName="password" type="password" [(ngModel)]="user.password" [class.invalid]="!slideOneForm.controls.password.valid && (slideOneForm.controls.password.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!slideOneForm.controls.password.valid && (slideOneForm.controls.password.dirty || submitAttempt)">
+        <p text-wrap class="text-wrap error-text">Length should be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character.</p>
+      </ion-item>
+
+
+      <ion-item *ngIf="!user.id">
+        <ion-label floating>Confirm Password</ion-label>
+        <ion-input name="confirm_password" formControlName="confirm_password" type="password" [(ngModel)]="confirm_password" [class.invalid]="!slideOneForm.controls.confirm_password.valid && (slideOneForm.controls.confirm_password.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.confirm_password.valid && (slideOneForm.controls.confirm_password.dirty || submitAttempt)">
+        <p class="error-text">Passwords dont match.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Phone</ion-label>
+        <ion-input name="phone" formControlName="phone" type="number" [(ngModel)]="user.phone" [class.invalid]="!slideOneForm.controls.phone.valid && (slideOneForm.controls.email.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.phone.valid  && (slideOneForm.controls.phone.dirty || submitAttempt)">
+        <p class="error-text">Enter a valid 11 digit phone number starting with 0.</p>
+      </ion-item>
+
+
+
+      <div *ngIf="user.role == 'Care Giver' || user.role == 'Nurse' ">
+
+        <ion-item>
+          <ion-label floating>Postal Code</ion-label>
+          <ion-input id= "postcode" name="postcode" [(ngModel)]="user.postcode" [class.invalid]="!slideOneForm.controls.postcode.valid && (slideOneForm.controls.postcode.dirty || submitAttempt)"
+            formControlName="postcode" type="text"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="slideOneForm.controls.postcode.pending">
+          <p>Checking postcode...</p>
+        </ion-item>
+        <ion-item *ngIf="!slideOneForm.controls.postcode.valid && !slideOneForm.controls.postcode.pending && (slideOneForm.controls.postcode.dirty || submitAttempt)">
+          <p class="error-text">Invalid postcode, please enter a valid one.</p>
+        </ion-item>
+
+
+
+        <ion-item id="pref_commute_distance">
+          <ion-label floating>Commute Distance</ion-label>
+          
+          <ion-select name="pref_commute_distance" [(ngModel)]="user.pref_commute_distance" 
+            [class.invalid]="!slideOneForm.controls.pref_commute_distance.valid && (slideOneForm.controls.pref_commute_distance.dirty || submitAttempt)"
+            formControlName="pref_commute_distance">
+            <ion-option value="10" checked="true">10 Miles</ion-option>
+            <ion-option value="15">15 Miles</ion-option>
+            <ion-option value="20">20 Miles</ion-option>
+            <ion-option value="25">25 Miles</ion-option>
+            <ion-option value="100">30 Miles and above</ion-option>
+          </ion-select>
+  
+        </ion-item>
+
+        <ion-item *ngIf="!slideOneForm.controls.pref_commute_distance.valid  && (slideOneForm.controls.pref_commute_distance.dirty || submitAttempt)">
+          <p class="error-text">Enter a valid distance in miles.</p>
+        </ion-item>
+
+        <p text-wrap class="">Work Preferences.</p>
+
+        <ion-item>
+          <ion-checkbox id="work_weekdays" [(ngModel)]="user.work_weekdays" formControlName="work_weekdays" type="text"></ion-checkbox>
+          <ion-label text-warp>Work Weekdays</ion-label>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-checkbox id="work_weeknights" [(ngModel)]="user.work_weeknights" formControlName="work_weeknights" type="text"></ion-checkbox>
+          <ion-label text-warp>Work Weeknights</ion-label>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-checkbox id="work_weekends" [(ngModel)]="user.work_weekends" formControlName="work_weekends" type="text"></ion-checkbox>
+          <ion-label text-warp>Work Weekends</ion-label>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-checkbox id="work_weekend_nights" [(ngModel)]="user.work_weekend_nights" formControlName="work_weekend_nights" type="text"></ion-checkbox>
+          <ion-label text-warp>Work Weekend Nights</ion-label>
+        </ion-item>
+
+        
+        <ion-item>
+          <ion-checkbox id="pause_shifts" [(ngModel)]="user.pause_shifts" formControlName="pause_shifts" type="text"></ion-checkbox>
+          <ion-label text-warp>Pause Shifts</ion-label>
+        </ion-item>
+        <p *ngIf="!user.pause_shifts" text-wrap class="field-hint">Temporarily pause shifts. You can turn shifts off by checking above.</p>
+        <p *ngIf="user.pause_shifts" text-wrap class="field-hint">Restart shifts. You can turn shifts back by unchecking above.</p>
+      
+        <ion-item>
+          <ion-label floating>Medical Conditions</ion-label>
+          <ion-textarea formControlName="medical_info" [(ngModel)]="user.medical_info"
+            [class.invalid]="!slideOneForm.controls.medical_info.valid && (slideOneForm.controls.medical_info.dirty || submitAttempt)"></ion-textarea>
+        </ion-item>
+  
+        <p class="field-hint">
+          Medical conditions or history that can be used in an emergency ex Asthma, Diabetes, Allergies etc
+        </p>
+  
+      </div>
+
+      
+
+      <div text-wrap>
+        <ion-item>
+          <ion-checkbox id="accept_terms" [(ngModel)]="user.accept_terms" 
+          formControlName="accept_terms" type="text" 
+          (ionChange)="onTermsChecked($event)"></ion-checkbox>
+          <ion-label text-warp>I have read and agree to the Terms & Conditions</ion-label>
+        </ion-item>
+        <button ion-button full clear color="primary" (click)="show_terms()">Terms & Conditions</button>
+        <ion-item *ngIf="!slideOneForm.controls.accept_terms.valid  && (slideOneForm.controls.accept_terms.dirty || submitAttempt)">
+          <p class="error-text">Please accept the T&C.</p>
+        </ion-item>
+      </div>
+
+    </form>
+
+  </ion-list>
+
+  <button ion-button full color="primary" (click)="save()" [disabled]="slideOneForm.invalid">Save</button>
+
+</ion-content>

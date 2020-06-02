@@ -1,0 +1,23 @@
+<!--
+  Generated template for the UserDetails page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-tabs preloadTabs="false" has-header=false  
+    (click)="tabClick($event)" color="primary" tabsPlacement="bottom" [selectedIndex]="tabIndex">
+    <ion-tab tabIcon="person" [rootParams]="user" [root]="tab1Root" tabTitle="Profile" disabled="true"></ion-tab>
+    <ion-tab tabIcon="cash" [rootParams]="{insideSettingsTab:true}" [root]="tab2Root" tabTitle="Bank Details"></ion-tab>
+    <ion-tab tabIcon="home" [rootParams]="user.hospital" [root]="tab3Root" tabTitle="Partner Details" *ngIf="user.role == 'Admin'"></ion-tab>
+    <ion-tab tabIcon="barcode" [rootParams]="user.hospital" [root]="tab4Root" tabTitle="QR Code" *ngIf="user.role == 'Admin'"></ion-tab>
+  </ion-tabs>
+
+</ion-content>

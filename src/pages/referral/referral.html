@@ -1,0 +1,49 @@
+
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Referrals</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-card-title class="center">
+      Your Referrals
+    </ion-card-title>
+
+    <ion-card-content>
+      <p *ngIf="referrals && referrals.length == 0">
+        Sorry there are no Referrals at this time. 
+      </p>
+      <p>
+        You will be given a referral reward once the person joins our network. 
+      </p>
+      <button ion-button full (click)="newReferral()">Refer A Friend Now</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <button ion-item *ngFor="let referral of referrals" (click)=getReferralDetails(referral)>
+       
+      <p>
+        First Name: {{referral.first_name}}
+      </p>
+       
+      <p>
+        Last Name: {{referral.last_name}}
+      </p>
+       
+      <p>
+        Email: {{referral.email}}
+      </p>
+      
+      
+    </button>
+  </ion-list>
+
+</ion-content>

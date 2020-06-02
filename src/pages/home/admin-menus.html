@@ -1,0 +1,92 @@
+          <div *ngIf="currentUser && currentUser.role == 'Admin'">
+
+            <div *ngIf="currentUser.hospital_id == null || currentUser.hospital.verified != true">
+              
+              <button ion-item *ngIf="currentUser.hospital_id == null" (click)="register_hospital()">
+                <ion-icon name="home" item-left color="primary"></ion-icon>
+                Register Care Home 
+                <p text-wrap>
+                  Register your care home now.
+                </p>
+              </button>
+
+
+              <button ion-item (click)="phone_verification()" >
+                <ion-icon [name]="currentUser.phone_verified != true ? 'call' : 'checkbox'" item-left item-left 
+                [color]="currentUser.phone_verified != true ? 'primary' : 'secondary'"></ion-icon>
+                Verify Mobile Number
+                <p text-wrap>
+                  Verify your mobile number now.
+                </p>
+              </button>
+
+              <button ion-item (click)="add_hospital_banking_details()">
+                <ion-icon [name]="currentUser.hospital_id != null && currentUser.hospital.bank_account == null ? 'cash' : 'checkbox'" item-left item-left 
+                [color]="currentUser.hospital_id != null && currentUser.hospital.bank_account == null ? 'primary' : 'secondary'"></ion-icon>
+                Banking Information
+                <p text-wrap>
+                  Add your banking details.
+                </p>
+              </button>
+
+            </div>
+
+            <div *ngIf="currentUser.hospital_id != null && currentUser.hospital.verified == true">
+              <button ion-item (click)="new_staffing_request()">
+                <ion-icon name="add-circle" item-left color="primary"></ion-icon>
+                New Staffing Requests
+                <p text-wrap>
+                  Create a request for temp staff.
+                </p>
+              </button>
+
+              
+              <button ion-item (click)="show_staffing_requests()">
+                <ion-icon name="filing" item-left color="primary"></ion-icon>
+                View Staffing Requests
+                <p text-wrap>
+                  Staffing Request you have placed.
+                </p>
+              </button>
+
+              <button ion-item (click)="new_recurring_request()">
+                <ion-icon name="apps" item-left color="primary"></ion-icon>
+                New Block Booking
+                <p text-wrap>
+                  Create multiple requests easily.
+                </p>
+              </button>
+
+              <button ion-item (click)="view_recurring_request()">
+                <ion-icon name="albums" item-left color="primary"></ion-icon>
+                View Block Bookings
+                <p text-wrap>
+                  View block bookings by you.
+                </p>
+              </button>
+
+              <button ion-item (click)="show_shifts('Accepted')">
+                <ion-icon name="person" item-left item-left color="primary"></ion-icon>
+                Confirmed Shifts
+                <p text-wrap>
+                  Shifts for your Care Home.
+                </p>
+              </button>
+
+             
+            </div>
+
+
+            <div text-wrap *ngIf="currentUser.phone_verified == true && currentUser.hospital_id != null &&  currentUser.hospital.bank_account != null && currentUser.hospital.verified != true">
+              <ion-item-divider color="light"></ion-item-divider>
+              <button ion-item (click)="contact()">
+                <ion-icon name="warning" item-left item-left color="danger"></ion-icon>
+                Pending Verification
+                <p text-wrap>
+                  Verification is pending from our side. Please be patient.
+                </p>
+              </button>
+            </div>
+
+            
+          </div>

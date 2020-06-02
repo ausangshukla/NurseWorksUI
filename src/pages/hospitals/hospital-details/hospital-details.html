@@ -1,0 +1,166 @@
+<!--
+  Generated template for the HospitalsDetails page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Partner Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Name:
+        </ion-col>
+        <ion-col text-wrap>
+          {{hospital.name}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Phone:
+        </ion-col>
+        <ion-col>
+          <a icon-right href="tel:{{hospital.phone}}">
+            {{hospital.phone}}
+            <ion-icon right name='call'></ion-icon>
+          </a> 
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Address:
+        </ion-col>
+        <ion-col text-wrap>
+          {{hospital.address}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Postcode:
+        </ion-col>
+        <ion-col>
+          {{hospital.postcode}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col text-wrap>
+          Break Time for Carers:
+        </ion-col>
+        <ion-col>
+          {{hospital.carer_break_mins}} mins
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col text-wrap>
+          Paid / Unpaid Breaks:
+        </ion-col>
+        <ion-col>
+          {{hospital.paid_unpaid_breaks}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col text-wrap>
+          Parking avaliable:
+        </ion-col>
+        <ion-col>
+          {{hospital.parking_available ? "Yes" : "No"}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-row>
+        <ion-col text-wrap>
+          Meals provided on shift:
+        </ion-col>
+        <ion-col>
+          {{hospital.meals_provided_on_shift ? "Yes" : "No"}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    
+    <ion-item>
+      <ion-row>
+        <ion-col text-wrap>
+          Meals subsidised:
+        </ion-col>
+        <ion-col>
+          {{hospital.meals_subsidised ? "Yes" : "No"}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col text-wrap>  
+          PO required for invoice:
+        </ion-col>
+        <ion-col>
+          {{hospital.po_req_for_invoice ? "Yes" : "No"}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Status:
+        </ion-col>
+        <ion-col>
+          <ion-badge *ngIf="hospital.verified != true" item-right color="danger">
+            Not Verified
+          </ion-badge>
+          <ion-badge *ngIf="hospital.verified == true" item-right color="secondary">
+            Verified
+          </ion-badge>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    
+  </ion-list>
+
+  <ion-row>
+    <ion-col *ngIf="hospital.id === current_user.hospital_id">
+      <button ion-button full color="secondary" (click)="editHospital(hospital)">Edit</button>
+    </ion-col>
+
+    <ion-col *ngIf="hospital.id !== current_user.hospital_id">
+      <button ion-button full color="secondary" (click)="confirmClaim(hospital)">Claim</button>
+    </ion-col>
+
+  </ion-row>
+
+
+</ion-content>

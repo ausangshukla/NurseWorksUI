@@ -1,0 +1,96 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Staffing Requests</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card *ngIf="hospital_registration_pending">
+    <ion-card-title class="center error-text">
+      Care Home Registration Pending
+    </ion-card-title>
+
+    <ion-card-content>
+      <p>
+        Please register your care home and then get it verified. Post verification you will be able to enter requests for temporary
+        staffing here.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card *ngIf="hospital_verification_pending">
+    <ion-card-title class="center error-text">
+      Care Home Verification Pending
+    </ion-card-title>
+
+    <ion-card-content>
+      <p>
+        Please call us to get your care home verified. Post verification you will be able to enter requests for temporary staffing
+        here.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card *ngIf="!hospital_registration_pending && !hospital_verification_pending && staffingRequests && staffingRequests.length == 0">
+    <ion-card-title class="center">
+      No Requests Found
+    </ion-card-title>
+
+    <ion-card-content>
+      <p class="center">
+        Sorry there are no Requests at this time.
+      </p>
+      <button ion-button full (click)="newRequest()">Create New Request</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab id="new_staffing_request_btn" bottom right *ngIf="current_user.role!='Care Giver' && current_user.role!='Nurse' && current_user.hospital && current_user.hospital.verified ">
+    <button ion-fab (click)="newRequest()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+
+  <ion-list>
+    <button ion-item id="StaffingRequest-{{staffingRequest.id}}-item" *ngFor="let staffingRequest of staffingRequests" (click)=getStaffingRequestDetails(staffingRequest)>
+       
+      <p text-wrap>
+        Care Home: {{staffingRequest.hospital.name}}
+      </p>
+
+      <p>
+        Start: {{staffingRequest.start_date | utc_date | date: 'dd/MM/yyyy HH:mm'}}
+      </p>
+       
+      <p>
+        End: {{staffingRequest.end_date | utc_date | date: 'dd/MM/yyyy HH:mm'}}
+      </p>
+      <p>
+        <ion-badge>Estimated Amount: {{staffingRequest.hospital_total_amount | currency : "GBP": true}}</ion-badge> 
+      </p>
+      <p>
+        <ion-badge color="secondary" *ngIf="staffingRequest.request_status == 'Open'">
+          Status: Open
+        </ion-badge>
+      </p>
+      <p>
+        <ion-badge color="secondary" *ngIf="staffingRequest.accepted_shift != null">
+          Status: Accepted By {{staffingRequest.role}} 
+        </ion-badge>    
+      </p>
+
+      <p>
+        <ion-badge color="danger" *ngIf="staffingRequest.request_status == 'Closed'">
+          Status: Closed
+        </ion-badge>
+      </p>
+      
+
+    </button>
+  </ion-list>
+
+</ion-content>

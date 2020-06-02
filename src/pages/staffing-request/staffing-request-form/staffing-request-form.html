@@ -1,0 +1,158 @@
+<!--
+  Generated template for the StaffingRequestsForm pemail.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pemails and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Request</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <p *ngIf="submitAttempt" class="error-text center">Please fill out all details accurately.</p>
+
+  <ion-list wrap-text no-lines>
+
+    <form [formGroup]="slideOneForm">
+
+        <ion-item>
+          <ion-label floating>Start Date</ion-label>
+          <ion-datetime (change)="startDateChanged(date)" formControlName="start_date" displayFormat="DD/MM/YYYY  HH:mm" [min]="minStartDate" [max]="maxStartDate" [(ngModel)]="staffingRequest.start_date"
+            [class.invalid]="!slideOneForm.controls.start_date.valid && (slideOneForm.controls.start_date.dirty || submitAttempt)"></ion-datetime>
+        </ion-item>
+  
+        <ion-item *ngIf="!slideOneForm.controls.start_date.valid  && (slideOneForm.controls.start_date.dirty || submitAttempt)">
+          <p class="error-text">Please enter a valid Start Date.</p>
+        </ion-item>
+        <p class="field-hint">
+          Select the start date & time for the temp staff.
+        </p>
+  
+  
+  
+        <ion-item>
+          <ion-label floating>End Date</ion-label>
+          <ion-datetime formControlName="end_date" displayFormat="DD/MM/YYYY  HH:mm" [min]="minEndDate" [max]="maxEndDate" [(ngModel)]="staffingRequest.end_date"
+            [class.invalid]="!slideOneForm.controls.end_date.valid && (slideOneForm.controls.end_date.dirty || submitAttempt)"></ion-datetime>
+        </ion-item>
+  
+        <ion-item *ngIf="!slideOneForm.controls.end_date.valid  && (slideOneForm.controls.end_date.dirty || submitAttempt)">
+          <p class="error-text">Should be at least 4 hours after Start.</p>
+        </ion-item>
+        <p class="field-hint">
+          Select the end date & time for the temp staff.
+        </p>
+  
+  
+    
+      <ion-item id="hospital_id" *ngIf="current_user.sister_hospitals">
+        <ion-label floating>Care Home</ion-label>
+        <ion-select text-wrap name="hospital_id" [(ngModel)]="staffingRequest.hospital_id" [class.invalid]="!slideOneForm.controls.hospital_id.valid && (slideOneForm.controls.hospital_id.dirty || submitAttempt)"
+          formControlName="hospital_id" class="item-select-custom">
+          <ion-option  text-wrap *ngFor="let hospital of current_user.sister_hospitals" value="{{hospital.id}}">
+              {{hospital.name}}
+          </ion-option>
+        </ion-select>
+      </ion-item>
+      <p class="field-hint" *ngIf="current_user.sister_hospitals">
+        Select the care home you are booking for
+      </p>
+
+      <ion-item id="role">
+        <ion-label floating>Staff Type</ion-label>
+        <ion-select name="role" [(ngModel)]="staffingRequest.role" (ionChange)="getCarers()"
+                    [class.invalid]="!slideOneForm.controls.role.valid && (slideOneForm.controls.role.dirty || submitAttempt)"
+          formControlName="role">
+          <ion-option value="Care Giver" checked="true">Care Giver</ion-option>
+          <ion-option value="Nurse">Nurse</ion-option>
+        </ion-select>
+      </ion-item>
+      <p class="field-hint">
+        Select the type of temp staff you need.
+      </p>
+
+      <ion-item id="preferred_carer_id">
+        <ion-label floating>Staff (Optional)</ion-label>
+        <ion-select name="preferred_carer_id" [(ngModel)]="staffingRequest.preferred_carer_id" 
+                    [class.invalid]="!slideOneForm.controls.preferred_carer_id.valid && (slideOneForm.controls.preferred_carer_id.dirty || submitAttempt)"
+                    formControlName="preferred_carer_id">
+          <ion-option *ngFor="let carer of carers" [value] = "carer.id">{{carer.first_name}} {{carer.last_name}}</ion-option> 
+        </ion-select>
+      </ion-item>
+      <p class="field-hint">
+        Leave this blank to get a carer selected by us specially for you or select the temp staff you prefer.
+      </p>
+
+      <ion-item *ngIf="hospital.po_req_for_invoice">
+        <ion-label floating>PO for Invoice</ion-label>
+        <ion-input name="po_for_invoice" formControlName="po_for_invoice" type="text" [(ngModel)]="staffingRequest.po_for_invoice" [class.invalid]="!slideOneForm.controls.po_for_invoice.valid && (slideOneForm.controls.po_for_invoice.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.po_for_invoice.valid  && (slideOneForm.controls.po_for_invoice.dirty || submitAttempt)">
+        <p class="error-text" text-wrap>Please enter a valid Purchase Order to be used for invoicing.</p>
+      </ion-item>
+
+      <p class="field-hint" *ngIf="hospital.po_req_for_invoice">
+        Purchase Order to be used for invoicing
+      </p>
+
+
+      <ion-item>
+        <ion-label floating>Notes</ion-label>
+        <ion-textarea formControlName="notes" [(ngModel)]="staffingRequest.notes"
+          [class.invalid]="!slideOneForm.controls.notes.valid && (slideOneForm.controls.notes.dirty || submitAttempt)"></ion-textarea>
+      </ion-item>
+
+      <p class="field-hint">
+        Additional notes for the carer
+      </p>
+  
+  
+      <div *ngIf="hospital.qr_code == null">
+
+        <ion-item>
+          <ion-label floating>Start Code</ion-label>
+          <ion-input name="start_code" formControlName="start_code" type="number" [(ngModel)]="staffingRequest.start_code" [class.invalid]="!slideOneForm.controls.start_code.valid && (slideOneForm.controls.start_code.dirty || submitAttempt)"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="!slideOneForm.controls.start_code.valid  && (slideOneForm.controls.start_code.dirty || submitAttempt)">
+          <p>Please enter a valid Start Code.</p>
+        </ion-item>
+
+        <p class="field-hint">
+          Select the start code your temp needs to enter upon arrival.
+        </p>
+
+
+
+        <ion-item>
+          <ion-label floating>End Code</ion-label>
+          <ion-input name="end_code" formControlName="end_code" type="number" [(ngModel)]="staffingRequest.end_code" [class.invalid]="!slideOneForm.controls.end_code.valid && (slideOneForm.controls.end_code.dirty || submitAttempt)"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="!slideOneForm.controls.end_code.valid  && (slideOneForm.controls.end_code.dirty || submitAttempt)">
+          <p>Please enter a valid End Code.</p>
+        </ion-item>
+
+        <p class="field-hint">
+          Select the end code your temp needs to enter upon completion of the shift.
+        </p>
+
+      </div>
+
+    </form>
+
+  </ion-list>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button full color="primary" (click)="confirmSave()">Save</button>
+    </ion-col>
+  </ion-row>
+</ion-content>

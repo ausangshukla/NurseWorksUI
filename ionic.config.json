@@ -1,0 +1,8 @@
+{
+  "name": "Care Connect",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "id": "7a3013ca"
+}

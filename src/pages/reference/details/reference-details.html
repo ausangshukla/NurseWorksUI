@@ -1,0 +1,85 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>References Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          First Name
+        </ion-col>
+        <ion-col  text-wrap>
+          {{reference.first_name}} 
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Last Name
+        </ion-col>
+        <ion-col  text-wrap>
+          {{reference.last_name}} 
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Email
+        </ion-col>
+        <ion-col text-wrap style="word-wrap: break-word; word-break: break-all;">
+          {{reference.email}} 
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Address
+        </ion-col>
+        <ion-col text-wrap>
+          {{reference.address}} 
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Reference Type
+        </ion-col>
+        <ion-col  text-wrap>
+          {{reference.ref_type}} 
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+  </ion-list>
+
+  <ion-row *ngIf="reference.user_id == current_user.id">
+
+    <ion-col>
+      <button ion-button full color="secondary" (click)="editReference(reference)">Edit</button>
+    </ion-col>
+    <ion-col>
+      <button ion-button full color="danger" (click)="confirmDelete(reference)">Delete</button>
+    </ion-col>
+
+  </ion-row>
+
+
+</ion-content>

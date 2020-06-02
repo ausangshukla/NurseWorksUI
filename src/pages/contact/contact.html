@@ -1,0 +1,50 @@
+
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Contacts</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-card-content *ngIf="contacts && contacts.length == 0">
+      <p>
+        Sorry there are no Contacts at this time. 
+      </p>
+      <button ion-button full (click)="newContact()">Add Contact Info</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab id="new_contact_btn" bottom right>
+    <button ion-fab (click)="newContact()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+
+  <ion-list>
+    <button ion-item *ngFor="let contact of contacts" (click)=getContactDetails(contact)>
+       
+      <p>
+        First Name: {{contact.name}}
+      </p>
+       
+      <p>
+        Last Name: {{contact.phone}}
+      </p>
+       
+      <p>
+        Email: {{contact.email}}
+      </p>
+      
+      <p>
+        Relationship: {{contact.relationship}}
+      </p>
+      
+    </button>
+  </ion-list>
+
+</ion-content>

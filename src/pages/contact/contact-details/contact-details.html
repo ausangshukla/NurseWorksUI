@@ -1,0 +1,87 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Contacts Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Name
+        </ion-col>
+        <ion-col text-wrap>
+          {{contact.name}} 
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Phone
+        </ion-col>
+        <ion-col text-wrap>
+          {{contact.phone}} 
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Email
+        </ion-col>
+        <ion-col text-wrap style="word-wrap: break-word; word-break: break-all;">
+          {{contact.email}} 
+        </ion-col>
+      </ion-row>
+    </ion-item>
+     
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Relationship
+        </ion-col>
+        <ion-col text-wrap>
+          {{contact.relationship}} 
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Type
+        </ion-col>
+        <ion-col>
+          {{contact.contact_type}} 
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+
+  </ion-list>
+
+  <ion-row *ngIf="contact.user_id == current_user.id">
+
+    <ion-col>
+      <button ion-button full color="secondary" (click)="editContact(contact)">Edit</button>
+    </ion-col>
+    <ion-col>
+      <button ion-button full color="danger" (click)="confirmDelete(contact)">Delete</button>
+    </ion-col>
+
+  </ion-row>
+
+
+</ion-content>

@@ -1,0 +1,136 @@
+<!--
+  Generated template for the UserDetails page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>User Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <div>
+
+    <ion-item>
+      {{user.title}} {{user.first_name}} {{user.last_name}}
+      <p *ngIf="user.role == 'Care Giver' || user.role == 'Nurse'">
+        <rating [(ngModel)]="user.rating" readOnly="true"></rating>
+      </p>
+      <p>
+        Phone: {{user.phone}}
+      </p>
+      <p>
+        Email: {{user.email}}
+      </p>
+      <p>
+        Role: {{user.role}}
+      </p>
+
+    </ion-item>
+
+    <div *ngIf="user.role == 'Care Giver' || user.role == 'Nurse'">
+
+      <ion-item>
+        <p>
+          Preferred Commute: {{user.pref_commute_distance}} miles
+        </p>
+
+        <p>
+          Bank Account: {{user.bank_account}}
+        </p>
+        <p>
+          Sort Code: {{user.sort_code}}
+        </p>
+
+      </ion-item>
+
+    
+      <ion-item>
+        <p>
+          Work on Weekdays: {{user.work_weekdays ? "Yes" : "No"}}
+        </p>
+        <p>
+          Work on Weeknights: {{user.work_weeknights ? "Yes" : "No"}}
+        </p>
+        <p>
+          Work on Weekends: {{user.work_weekends ? "Yes" : "No"}}
+        </p>
+        <p>
+          Work on Weekend Nights: {{user.work_weekend_nights ? "Yes" : "No"}}
+        </p>
+
+        <ion-badge [color]="user.pause_shifts ? 'danger' : 'secondary'">
+              {{user.pause_shifts ? "Shifts Paused" : "Available for Shifts"}}
+        </ion-badge>
+
+        <ion-badge *ngIf="user.verified != true" item-right color="danger">
+          Not
+          Verified
+        </ion-badge>
+
+      </ion-item>
+
+
+      <ion-row>
+
+        <ion-col>
+          <button ion-button full color="secondary" (click)="editUser(user)">Edit Details</button>
+        </ion-col>
+
+        <ion-col>
+          <button ion-button full color="danger" (click)="confirmDeleteRequested(user)">Delete Profile</button>
+        </ion-col>
+
+      </ion-row>
+
+    </div>
+    <ion-card>
+
+
+      <ion-card-content *ngIf="user.role == 'Care Giver' || user.role == 'Nurse'">
+
+        <ion-list>
+
+          <button ion-item *ngFor="let doc of user.user_docs" (click)="viewDoc(doc)">
+
+            <ion-icon name="document" item-right [color]="doc.verified == true ? 'secondary' : 'danger'"></ion-icon>
+            <p>{{doc.doc_type}}</p>
+            <p>Uploaded: {{doc.created_at | date : 'dd/MM/yyyy' }}</p>
+
+            <ion-badge [color]='getDocColorAndText(doc)[0]'>
+              {{getDocColorAndText(doc)[1]}}
+            </ion-badge>
+
+          </button>
+
+
+          <button ion-item *ngFor="let doc of pendingDocs(user)" (click)="uploadNow(doc)">
+            <ion-icon name="cloud-upload" item-right color="primary"></ion-icon>
+            <p>{{doc.doc_type}}</p>
+            <ion-badge>
+              Upload Now
+            </ion-badge>
+          </button>
+
+          <button ion-item (click)="uploadNow(null)">
+            <ion-icon name="cloud-upload" item-right color="primary"></ion-icon>
+            <p>Additional Document</p>
+            <ion-badge>
+              Upload Now
+            </ion-badge>
+          </button>
+
+        </ion-list>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>

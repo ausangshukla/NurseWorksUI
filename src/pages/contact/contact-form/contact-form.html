@@ -1,0 +1,82 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Contact</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+
+
+  <ion-list no-lines>
+
+    <ion-card>
+      <ion-card-title class="center">
+        Emergency Contact
+      </ion-card-title>
+
+      <ion-card-content>
+        <p>
+          Please provide details of the person who can be reached in case of an emergency. 
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+
+
+    <form [formGroup]="slideOneForm">
+
+      <ion-item>
+        <ion-label floating>Name</ion-label>
+        <ion-input name="name" formControlName="name" type="text" [(ngModel)]="contact.name" [class.invalid]="!slideOneForm.controls.name.valid && (slideOneForm.controls.name.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.name.valid  && (slideOneForm.controls.name.dirty || submitAttempt)">
+        <p class="error-text">Please enter a valid name.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Phone</ion-label>
+        <ion-input name="phone" formControlName="phone" type="text" [(ngModel)]="contact.phone" [class.invalid]="!slideOneForm.controls.phone.valid && (slideOneForm.controls.email.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.phone.valid  && (slideOneForm.controls.phone.dirty || submitAttempt)">
+        <p class="error-text">Please enter a valid phone number.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input name="email" formControlName="email" type="email" [(ngModel)]="contact.email" [class.invalid]="!slideOneForm.controls.email.valid && (slideOneForm.controls.email.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.email.valid  && (slideOneForm.controls.email.dirty || submitAttempt)">
+        <p class="error-text">Please enter a valid email.</p>
+      </ion-item>
+
+      <ion-item id="relationship">
+        <ion-label floating>Relationship</ion-label>
+        
+        <ion-select name="relationship" [(ngModel)]="contact.relationship" [class.invalid]="!slideOneForm.controls.relationship.valid && (slideOneForm.controls.relationship.dirty || submitAttempt)"
+          formControlName="relationship">
+          <ion-option value="Spouse/Partner">Spouse/Partner</ion-option>
+          <ion-option value="Parent">Parent</ion-option>
+          <ion-option value="Friend">Friend</ion-option>
+        </ion-select>
+
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.relationship.valid  && (slideOneForm.controls.relationship.dirty || submitAttempt)">
+        <p class="error-text">Enter a valid relationship.</p>
+      </ion-item>
+
+    </form>
+
+  </ion-list>
+
+  <button ion-button full color="primary" (click)="save()">Save</button>
+
+</ion-content>

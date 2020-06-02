@@ -1,0 +1,1284 @@
+Running app-scripts build: --iscordovaserve --externalIpRequired --nobrowser
+
+[08:47:01]  build dev started ... 
+[08:47:01]  clean started ... 
+[08:47:01]  clean finished in 2 ms 
+[08:47:01]  copy started ... 
+[08:47:01]  transpile started ... 
+[08:47:04]  transpile finished in 2.71 s 
+[08:47:04]  preprocess started ... 
+[08:47:04]  deeplinks started ... 
+[08:47:04]  deeplinks finished in 223 ms 
+[08:47:04]  preprocess finished in 224 ms 
+[08:47:04]  webpack started ... 
+[08:47:04]  copy finished in 3.15 s 
+[08:47:18]  webpack finished in 14.21 s 
+[08:47:18]  sass started ... 
+[08:47:19]  sass finished in 981 ms 
+[08:47:19]  postprocess started ... 
+[08:47:19]  postprocess finished in 5 ms 
+[08:47:19]  lint started ... 
+[08:47:19]  build dev finished in 18.18 s 
+[2K[G> cordova build ios --device
+[2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G⠴ Running command [2K[G⠦ Running command [2K[G⠧ Running command [2K[G⠇ Running command [2K[G⠏ Running command [2K[G⠋ Running command [2K[G⠙ Running command [2K[G⠹ Running command [2K[G⠸ Running command [2K[G⠼ Running command [2K[G[2K[G✖ Running command - failed!
+[2K[G
+[2K[G[ERROR] Cordova encountered an error.
+        You may get more insight by running the Cordova command above directly.
+        
+[2K[G[ERROR] An error occurred while running cordova build ios --device (exit code
+        1):
+        
+        (truncated) ...
+        ode/DerivedData/Care_Connuct-bawquinvyquwfeaheewwcdadrhzs/Build/Intermediates/ArchiveIntermediates/Care
+        Connuct/IntermediateBuildFilesPath/Care
+        Connuct.build/Debug-iphoneos/Care
+        Connuct.build/Objects-normal/arm64/zip-700E73BE1C09048B.o
+        /Users/NehaiMac/Library/Developer/Xcode/DerivedData/Care_Connuct-bawquinvyquwfeaheewwcdadrhzs/Build/Intermediates/ArchiveIntermediates/Care
+        Connuct/IntermediateBuildFilesPath/Care
+        Connuct.build/Debug-iphoneos/Care
+        Connuct.build/Objects-normal/arm64/zip-DFC8E0FDEC100563.o
+        duplicate symbol _zipClose in:
+        /Users/NehaiMac/Library/Developer/Xcode/DerivedData/Care_Connuct-bawquinvyquwfeaheewwcdadrhzs/Build/Intermediates/ArchiveIntermediates/Care
+        Connuct/IntermediateBuildFilesPath/Care
+        Connuct.build/Debug-iphoneos/Care
+        Connuct.build/Objects-normal/arm64/zip-700E73BE1C09048B.o
+        /Users/NehaiMac/Library/Developer/Xcode/DerivedData/Care_Connuct-bawquinvyquwfeaheewwcdadrhzs/Build/Intermediates/ArchiveIntermediates/Care
+        Connuct/IntermediateBuildFilesPath/Care
+        Connuct.build/Debug-iphoneos/Care
+        Connuct.build/Objects-normal/arm64/zip-DFC8E0FDEC100563.o
+        duplicate symbol _zipOpen4 in:
+        /Users/NehaiMac/Library/Developer/Xcode/DerivedData/Care_Connuct-bawquinvyquwfeaheewwcdadrhzs/Build/Intermediates/ArchiveIntermediates/Care
+        Connuct/IntermediateBuildFilesPath/Care
+        Connuct.build/Debug-iphoneos/Care
+        Connuct.build/Objects-normal/arm64/zip-700E73BE1C09048B.o
+        /Users/NehaiMac/Library/Developer/Xcode/DerivedData/Care_Connuct-bawquinvyquwfeaheewwcdadrhzs/Build/Intermediates/ArchiveIntermediates/Care
+        Connuct/IntermediateBuildFilesPath/Care
+        Connuct.build/Debug-iphoneos/Care
+        Connuct.build/Objects-normal/arm64/zip-DFC8E0FDEC100563.o
+        duplicate symbol _zipCloseFileInZipRaw64 in:
+        /Users/NehaiMac/Library/Developer/Xcode/DerivedData/Care_Connuct-bawquinvyquwfeaheewwcdadrhzs/Build/Intermediates/ArchiveIntermediates/Care
+        Connuct/IntermediateBuildFilesPath/Care
+        Connuct.build/Debug-iphoneos/Care
+        Connuct.build/Objects-normal/arm64/zip-700E73BE1C09048B.o
+        /Users/NehaiMac/Library/Developer/Xcode/DerivedData/Care_Connuct-bawquinvyquwfeaheewwcdadrhzs/Build/Intermediates/ArchiveIntermediates/Care
+        Connuct/IntermediateBuildFilesPath/Care
+        Connuct.build/Debug-iphoneos/Care
+        Connuct.build/Objects-normal/arm64/zip-DFC8E0FDEC100563.o
+        duplicate symbol _zipOpenNewFileInZip4_64 in:
+        /Users/NehaiMac/Library/Developer/Xcode/DerivedData/Care_Connuct-bawquinvyquwfeaheewwcdadrhzs/Build/Intermediates/ArchiveIntermediates/Care
+        Connuct/IntermediateBuildFilesPath/Care
+        Connuct.build/Debug-iphoneos/Care
+        Connuct.build/Objects-normal/arm64/zip-700E73BE1C09048B.o
+        /Users/NehaiMac/Library/Developer/Xcode/DerivedData/Care_Connuct-bawquinvyquwfeaheewwcdadrhzs/Build/Intermediates/ArchiveIntermediates/Care
+        Connuct/IntermediateBuildFilesPath/Care
+        Connuct.build/Debug-iphoneos/Care
+        Connuct.build/Objects-normal/arm64/zip-DFC8E0FDEC100563.o
+        duplicate symbol _zipOpenNewFileInZip3 in:
+        /Users/NehaiMac/Library/Developer/Xcode/DerivedData/Care_Connuct-bawquinvyquwfeaheewwcdadrhzs/Build/Intermediates/ArchiveIntermediates/Care
+        Connuct/IntermediateBuildFilesPath/Care
+        Connuct.build/Debug-iphoneos/Care
+        Connuct.build/Objects-normal/arm64/zip-700E73BE1C09048B.o
+        /Users/NehaiMac/Library/Developer/Xcode/DerivedData/Care_Connuct-bawquinvyquwfeaheewwcdadrhzs/Build/Intermediates/ArchiveIntermediates/Care
+        Connuct/IntermediateBuildFilesPath/Care
+        Connuct.build/Debug-iphoneos/Care
+        Connuct.build/Objects-normal/arm64/zip-DFC8E0FDEC100563.o
+        duplicate symbol _zipOpen3 in:
+        /Users/NehaiMac/Library/Developer/Xcode/DerivedData/Care_Connuct-bawquinvyquwfeaheewwcdadrhzs/Build/Intermediates/ArchiveIntermediates/Care
+        Connuct/IntermediateBuildFilesPath/Care
+        Connuct.build/Debug-iphoneos/Care
+        Connuct.build/Objects-normal/arm64/zip-700E73BE1C09048B.o
+        /Users/NehaiMac/Library/Developer/Xcode/DerivedData/Care_Connuct-bawquinvyquwfeaheewwcdadrhzs/Build/Intermediates/ArchiveIntermediates/Care
+        Connuct/IntermediateBuildFilesPath/Care
+        Connuct.build/Debug-iphoneos/Care
+        Connuct.build/Objects-normal/arm64/zip-DFC8E0FDEC100563.o
+        ld: 68 duplicate symbols for architecture arm64
+        clang: error: linker command failed with exit code 1 (use -v to see
+        invocation)
+        
+        ** ARCHIVE FAILED **
+        
+        
+        The following build commands failed:
+        Ld
+        /Users/NehaiMac/Library/Developer/Xcode/DerivedData/Care_Connuct-bawquinvyquwfeaheewwcdadrhzs/Build/Intermediates/ArchiveIntermediates/Care\
+        Connuct/IntermediateBuildFilesPath/Care\
+        Connuct.build/Debug-iphoneos/Care\
+        Connuct.build/Objects-normal/arm64/Care\ Connuct normal arm64
+        (1 failure)
+        Error: Error code 65 for command: xcodebuild with args:
+        -xcconfig,/Users/NehaiMac/work/UberNurseUI/platforms/ios/cordova/build-debug.xcconfig,-workspace,Care
+        Connuct.xcworkspace,-scheme,Care
+        Connuct,-configuration,Debug,-destination,generic/platform=iOS,-archivePath,Care
+        Connuct.xcarchive,archive,CONFIGURATION_BUILD_DIR=/Users/NehaiMac/work/UberNurseUI/platforms/ios/build/device,SHARED_PRECOMPS_DIR=/Users/NehaiMac/work/UberNurseUI/platforms/ios/build/sharedpch
+        
+
+            All imports are unused. 
+
+[2m       L2:  [22mimport { AlertController, ToastController, ModalController, Toast } from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Http } from '@angular/http';
+[2m       L4:  [22mimport 'rxjs/add/operator/map';
+
+            'test' is declared but never used. 
+
+[2m      L18:  [22m  private [41mt[49m[41me[49m[41ms[49m[41mt[49m = {
+[2m      L19:  [22m    API_URL: "http://localhost:3000",
+
+            'prod' is declared but never used. 
+
+[2m      L23:  [22m  private [41mp[49m[41mr[49m[41mo[49m[41md[49m = {
+[2m      L24:  [22m    API_URL: "http://dev.connuct.co.uk",
+
+            'remoteEndpoint' is declared but never used. 
+
+[2m      L10:  [22mprivate base_url = "users";
+[2m      L11:  [22mprivate [41mr[49m[41me[49m[41mm[49m[41mo[49m[41mt[49m[41me[49m[41mE[49m[41mn[49m[41md[49m[41mp[49m[41mo[49m[41mi[49m[41mn[49m[41mt[49m;
+[2m      L12:  [22musers = [];
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { Injectable } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Http } from '@angular/http';
+[2m       L3:  [22mimport 'rxjs/add/operator/map';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport 'rxjs/add/operator/map';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Injectable } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { Angular2TokenService } from 'angular2-token';
+
+            'NavParams' is declared but never used. 
+
+[2m       L1:  [22mimport { Injectable } from '@angular/core';
+[2m       L2:  [22mimport { IonicPage, [41mN[49m[41ma[49m[41mv[49m[41mP[49m[41ma[49m[41mr[49m[41ma[49m[41mm[49m[41ms[49m, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { Angular2TokenService } from 'angular2-token';
+
+            All imports are unused. 
+
+[2m       L2:  [22mimport { IonicPage, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+[2m       L4:  [22mimport { Storage } from '@ionic/storage';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport { Angular2TokenService } from 'angular2-token';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Storage } from '@ionic/storage';
+[2m       L5:  [22mimport { Config } from './config';
+
+            All imports are unused. 
+
+[2m       L1:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { FormControl } from '@angular/forms';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams } from 'ionic-angular';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { Injectable } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Http } from '@angular/http';
+[2m       L3:  [22mimport 'rxjs/add/operator/map';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport 'rxjs/add/operator/map';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+
+            All imports are unused. 
+
+[2m       L1:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { FormControl } from '@angular/forms';
+[2m       L2:  [22mimport { PostCodeApi } from '../../providers/postcode-api';
+
+            All imports are unused. 
+
+[2m       L1:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { FormControl } from '@angular/forms';
+
+            Duplicate variable: 'i' 
+
+[2m     L107:  [22m} else {
+[2m     L108:  [22m  for (var [41mi[49m = 0; i < arrayLength; i++) {
+[2m     L109:  [22m    this.slideOneForm.controls[careGiverFields[i]].enable();
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, AlertController, ToastController, LoadingController } from 'io
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'AlertController' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, [41mA[49m[41ml[49m[41me[49m[41mr[49m[41mt[49m[41mC[49m[41mo[49m[41mn[49m[41mt[49m[41mr[49m[41mo[49m[41ml[49m[41ml[49m[41me[49m[41mr[49m, ToastController, LoadingController } from 'io
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'ToastController' is declared but never used. 
+
+[2m       L1:  [22mmport { IonicPage, NavController, NavParams, AlertController, [41mT[49m[41mo[49m[41ma[49m[41ms[49m[41mt[49m[41mC[49m[41mo[49m[41mn[49m[41mt[49m[41mr[49m[41mo[49m[41ml[49m[41ml[49m[41me[49m[41mr[49m, LoadingController } from 'ion
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
+[2m       L2:  [22mimport { [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, ViewChild, ElementRef, Renderer } from '@angular/core';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
+[2m       L2:  [22mimport { FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, ViewChild, ElementRef, Renderer } from '@angular/core';
+
+            'ElementRef' is declared but never used. 
+
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, ViewChild, [41mE[49m[41ml[49m[41me[49m[41mm[49m[41me[49m[41mn[49m[41mt[49m[41mR[49m[41me[49m[41mf[49m, Renderer } from '@angular/core';
+[2m       L4:  [22mimport { Keyboard } from '@ionic-native/keyboard';
+
+            'Renderer' is declared but never used. 
+
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, ViewChild, ElementRef, [41mR[49m[41me[49m[41mn[49m[41md[49m[41me[49m[41mr[49m[41me[49m[41mr[49m } from '@angular/core';
+[2m       L4:  [22mimport { Keyboard } from '@ionic-native/keyboard';
+
+            All imports are unused. 
+
+[2m       L6:  [22mimport { ResponseUtility } from '../../providers/response-utility';
+[2m       L7:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+[2m       L8:  [22mimport { UserValidator } from './user-validator'
+
+            All imports are unused. 
+
+[2m       L7:  [22mimport { Angular2TokenService } from 'angular2-token';
+[2m       L8:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { UserValidator } from './user-validator'
+[2m       L9:  [22mimport { TermsPage } from '../static/terms';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L2:  [22mimport { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup, Validators } from '@angular/forms';
+[2m       L4:  [22mimport { TokenService } from '../../providers/token-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L2:  [22mimport { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m, Validators } from '@angular/forms';
+[2m       L4:  [22mimport { TokenService } from '../../providers/token-service';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { TokenService } from '../../providers/token-service';
+[2m       L5:  [22mimport { Angular2TokenService } from 'angular2-token';
+
+            All imports are unused. 
+
+[2m       L4:  [22mimport { TokenService } from '../../providers/token-service';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+[2m       L6:  [22mimport { ResponseUtility } from '../../providers/response-utility';
+
+            'Http' is declared but never used. 
+
+[2m       L7:  [22mimport { Config } from '../../providers/config';
+[2m       L8:  [22mimport { [41mH[49m[41mt[49m[41mt[49m[41mp[49m, RequestOptions, Headers } from '@angular/http';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams } from 'ionic-angular';
+[2m       L3:  [22mimport { UserForm } from './user-form';
+
+            Property 'config' is declared but never used. 
+
+[2m      L38:  [22mprivate tokenService: Angular2TokenService,
+[2m      L39:  [22mprivate [41mc[49m[41mo[49m[41mn[49m[41mf[49m[41mi[49m[41mg[49m: Config,
+[2m      L40:  [22mprivate loginProvider: LoginProvider,
+
+            Property 'storage' is declared but never used. 
+
+[2m      L41:  [22m    private userApi: UserApi,
+[2m      L42:  [22m    private [41ms[49m[41mt[49m[41mo[49m[41mr[49m[41ma[49m[41mg[49m[41me[49m: Storage) {
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L2:  [22mimport { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup, Validators } from '@angular/forms';
+[2m       L4:  [22mimport { TokenService } from '../../providers/token-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L2:  [22mimport { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m, Validators } from '@angular/forms';
+[2m       L4:  [22mimport { TokenService } from '../../providers/token-service';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { TokenService } from '../../providers/token-service';
+[2m       L5:  [22mimport { Angular2TokenService } from 'angular2-token';
+
+            All imports are unused. 
+
+[2m       L4:  [22mimport { TokenService } from '../../providers/token-service';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+[2m       L6:  [22mimport { ResponseUtility } from '../../providers/response-utility';
+
+            All imports are unused. 
+
+[2m       L9:  [22mimport { UserApi } from '../../providers/user-api';
+[2m      L10:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { UserForm } from '../users/user-form';
+[2m      L11:  [22mimport { PasswordReset } from './password-reset';
+
+            All imports are unused. 
+
+[2m      L11:  [22mimport { PasswordReset } from './password-reset';
+[2m      L12:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Storage } from '@ionic/storage';
+[2m      L13:  [22mimport { RegisterPage } from '../users/register';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { Injectable } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Http } from '@angular/http';
+[2m       L3:  [22mimport 'rxjs/add/operator/map';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport 'rxjs/add/operator/map';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, AlertController, ToastController, LoadingController } from 'io
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'AlertController' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, [41mA[49m[41ml[49m[41me[49m[41mr[49m[41mt[49m[41mC[49m[41mo[49m[41mn[49m[41mt[49m[41mr[49m[41mo[49m[41ml[49m[41ml[49m[41me[49m[41mr[49m, ToastController, LoadingController } from 'io
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'ToastController' is declared but never used. 
+
+[2m       L1:  [22mmport { IonicPage, NavController, NavParams, AlertController, [41mT[49m[41mo[49m[41ma[49m[41ms[49m[41mt[49m[41mC[49m[41mo[49m[41mn[49m[41mt[49m[41mr[49m[41mo[49m[41ml[49m[41ml[49m[41me[49m[41mr[49m, LoadingController } from 'ion
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
+[2m       L2:  [22mimport { [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, ViewChild } from '@angular/core';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
+[2m       L2:  [22mimport { FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, ViewChild } from '@angular/core';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { PaymentForm } from '../payment/payment-form';
+
+            All imports are unused. 
+
+[2m       L5:  [22mimport { ResponseUtility } from '../../providers/response-utility';
+[2m       L6:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams } from 'ionic-angular';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { Injectable } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Component } from '@angular/core';
+[2m       L3:  [22mimport { Angular2TokenService } from 'angular2-token';
+
+            All imports are unused. 
+
+[2m       L2:  [22mimport { Component } from '@angular/core';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+[2m       L4:  [22mimport { ResponseUtility } from './response-utility';
+
+            All imports are unused. 
+
+[2m       L2:  [22mimport { NavController } from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+[2m       L4:  [22mimport { Login } from '../login/login';
+
+            'remoteEndpoint' is declared but never used. 
+
+[2m       L8:  [22mprivate base_url = "user_docs";
+[2m       L9:  [22mprivate [41mr[49m[41me[49m[41mm[49m[41mo[49m[41mt[49m[41me[49m[41mE[49m[41mn[49m[41md[49m[41mp[49m[41mo[49m[41mi[49m[41mn[49m[41mt[49m;
+[2m      L10:  [22muser_docs = [];
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { Injectable } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+
+            Property 'diagnostic' is declared but never used. 
+
+[2m      L34:  [22mpublic loadingCtrl: LoadingController,
+[2m      L35:  [22mprivate [41md[49m[41mi[49m[41ma[49m[41mg[49m[41mn[49m[41mo[49m[41ms[49m[41mt[49m[41mi[49m[41mc[49m: Diagnostic,
+[2m      L36:  [22mprivate camera: Camera,
+
+            Property 'filePath' is declared but never used. 
+
+[2m      L36:  [22mprivate camera: Camera,
+[2m      L37:  [22mprivate [41mf[49m[41mi[49m[41ml[49m[41me[49m[41mP[49m[41ma[49m[41mt[49m[41mh[49m: FilePath,
+[2m      L38:  [22mprivate file: File,
+
+            Property 'tokenService' is declared but never used. 
+
+[2m      L41:  [22mprivate userDocApi: UserDocApi,
+[2m      L42:  [22mprivate [41mt[49m[41mo[49m[41mk[49m[41me[49m[41mn[49m[41mS[49m[41me[49m[41mr[49m[41mv[49m[41mi[49m[41mc[49m[41me[49m: Angular2TokenService,
+[2m      L43:  [22mpublic events: Events) {
+
+            'createFileName' is declared but never used. 
+
+[2m     L116:  [22m// Create a new name for the image
+[2m     L117:  [22mprivate [41mc[49m[41mr[49m[41me[49m[41ma[49m[41mt[49m[41me[49m[41mF[49m[41mi[49m[41ml[49m[41me[49m[41mN[49m[41ma[49m[41mm[49m[41me[49m() {
+[2m     L118:  [22m  var d = new Date(),
+
+            'copyFileToLocalDir' is declared but never used. 
+
+[2m     L125:  [22m// Copy the image to a local folder
+[2m     L126:  [22mprivate [41mc[49m[41mo[49m[41mp[49m[41my[49m[41mF[49m[41mi[49m[41ml[49m[41me[49m[41mT[49m[41mo[49m[41mL[49m[41mo[49m[41mc[49m[41ma[49m[41ml[49m[41mD[49m[41mi[49m[41mr[49m(namePath, currentName, newFileName) {
+[2m     L127:  [22m  this.file.copyFile(namePath, currentName, cordova.file.dataDirectory, newFileName).then(success => {
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, Platform, NavController, NavParams, ActionSheetController, ToastController, LoadingContr
+[2m       L3:  [22mimport { Camera, CameraOptions } from '@ionic-native/camera';
+
+            All imports are unused. 
+
+[2m      L10:  [22mimport { Config } from '../../providers/config';
+[2m      L11:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+[2m      L12:  [22mimport { Events } from 'ionic-angular';
+
+            Property 'config' is declared but never used. 
+
+[2m      L19:  [22mpublic navParams: NavParams,
+[2m      L20:  [22mprivate [41mc[49m[41mo[49m[41mn[49m[41mf[49m[41mi[49m[41mg[49m: Config,
+[2m      L21:  [22mprivate tokenService: Angular2TokenService,
+
+            Property 'tokenService' is declared but never used. 
+
+[2m      L20:  [22mprivate config: Config,
+[2m      L21:  [22mprivate [41mt[49m[41mo[49m[41mk[49m[41me[49m[41mn[49m[41mS[49m[41me[49m[41mr[49m[41mv[49m[41mi[49m[41mc[49m[41me[49m: Angular2TokenService,
+[2m      L22:  [22mprivate userDocApi: UserDocApi,
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { Config } from '../../providers/config';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport { Config } from '../../providers/config';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+[2m       L5:  [22mimport { UserDocApi } from '../../providers/user-doc-api';
+
+            All imports are unused. 
+
+[2m       L1:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Injectable} from '@angular/core';
+[2m       L2:  [22mimport { NavController } from 'ionic-angular';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, AlertController, ToastController, LoadingController } from 'io
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'AlertController' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, [41mA[49m[41ml[49m[41me[49m[41mr[49m[41mt[49m[41mC[49m[41mo[49m[41mn[49m[41mt[49m[41mr[49m[41mo[49m[41ml[49m[41ml[49m[41me[49m[41mr[49m, ToastController, LoadingController } from 'io
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'ToastController' is declared but never used. 
+
+[2m       L1:  [22mmport { IonicPage, NavController, NavParams, AlertController, [41mT[49m[41mo[49m[41ma[49m[41ms[49m[41mt[49m[41mC[49m[41mo[49m[41mn[49m[41mt[49m[41mr[49m[41mo[49m[41ml[49m[41ml[49m[41me[49m[41mr[49m, LoadingController } from 'ion
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
+[2m       L2:  [22mimport { [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, ViewChild } from '@angular/core';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
+[2m       L2:  [22mimport { FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, ViewChild } from '@angular/core';
+
+            'ViewChild' is declared but never used. 
+
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, [41mV[49m[41mi[49m[41me[49m[41mw[49m[41mC[49m[41mh[49m[41mi[49m[41ml[49m[41md[49m } from '@angular/core';
+[2m       L4:  [22mimport { UserApi } from '../../providers/user-api';
+
+            All imports are unused. 
+
+[2m       L5:  [22mimport { ResponseUtility } from '../../providers/response-utility';
+[2m       L6:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+[2m       L7:  [22mimport { Events } from 'ionic-angular';
+
+            All imports are unused. 
+
+[2m       L9:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { UserForm } from './user-form';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { Injectable } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Http } from '@angular/http';
+[2m       L3:  [22mimport 'rxjs/add/operator/map';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport 'rxjs/add/operator/map';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, AlertController, ToastController, LoadingController } from 'io
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'AlertController' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, [41mA[49m[41ml[49m[41me[49m[41mr[49m[41mt[49m[41mC[49m[41mo[49m[41mn[49m[41mt[49m[41mr[49m[41mo[49m[41ml[49m[41ml[49m[41me[49m[41mr[49m, ToastController, LoadingController } from 'io
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'ToastController' is declared but never used. 
+
+[2m       L1:  [22mmport { IonicPage, NavController, NavParams, AlertController, [41mT[49m[41mo[49m[41ma[49m[41ms[49m[41mt[49m[41mC[49m[41mo[49m[41mn[49m[41mt[49m[41mr[49m[41mo[49m[41ml[49m[41ml[49m[41me[49m[41mr[49m, LoadingController } from 'ion
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
+[2m       L2:  [22mimport { [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, ViewChild } from '@angular/core';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
+[2m       L2:  [22mimport { FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, ViewChild } from '@angular/core';
+
+            'ViewChild' is declared but never used. 
+
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, [41mV[49m[41mi[49m[41me[49m[41mw[49m[41mC[49m[41mh[49m[41mi[49m[41ml[49m[41md[49m } from '@angular/core';
+[2m       L4:  [22mimport { CareHomeApi } from '../../providers/care-home-api';
+
+            All imports are unused. 
+
+[2m       L5:  [22mimport { ResponseUtility } from '../../providers/response-utility';
+[2m       L6:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+[2m       L7:  [22mimport { Events } from 'ionic-angular';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L1:  [22mimport { NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L2:  [22mimport { [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, ViewChild } from '@angular/core';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L1:  [22mimport { NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L2:  [22mimport { FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, ViewChild } from '@angular/core';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, AlertController, ToastController, LoadingController } from 'io
+[2m       L3:  [22mimport { UserForm } from '../users/user-form';
+
+            All imports are unused. 
+
+[2m       L4:  [22mimport { DocLinks } from './doc-links';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { UserPic } from '../user-pic/user-pic';
+[2m       L6:  [22mimport { UserApi } from '../../providers/user-api';
+
+            All imports are unused. 
+
+[2m       L7:  [22mimport { ResponseUtility } from '../../providers/response-utility';
+[2m       L8:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { UserDoc } from '../user-doc/user-doc';
+[2m       L9:  [22mimport { BankingDetailsPage } from './banking-details';
+
+            '_' is declared but never used. 
+
+[2m      L13:  [22mimport * as [41m_[49m from 'lodash';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
+[2m       L3:  [22mimport { CareHomeForm } from '../care-homes/care-home-form';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { Injectable } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Http } from '@angular/http';
+[2m       L3:  [22mimport 'rxjs/add/operator/map';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport 'rxjs/add/operator/map';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+
+            'ViewChild' is declared but never used. 
+
+[2m       L1:  [22mimport { Component, [41mV[49m[41mi[49m[41me[49m[41mw[49m[41mC[49m[41mh[49m[41mi[49m[41ml[49m[41md[49m } from '@angular/core';
+[2m       L2:  [22mimport { Searchbar, IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+
+            'Searchbar' is declared but never used. 
+
+[2m       L1:  [22mimport { Component, ViewChild } from '@angular/core';
+[2m       L2:  [22mimport { [41mS[49m[41me[49m[41ma[49m[41mr[49m[41mc[49m[41mh[49m[41mb[49m[41ma[49m[41mr[49m, IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { CareHomeApi } from '../../providers/care-home-api';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component, ViewChild } from '@angular/core';
+[2m       L2:  [22mimport { Searchbar, [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { CareHomeApi } from '../../providers/care-home-api';
+
+            Property 'tokenService' is declared but never used. 
+
+[2m      L33:  [22mpublic care_homeApi: CareHomeApi,
+[2m      L34:  [22mprivate [41mt[49m[41mo[49m[41mk[49m[41me[49m[41mn[49m[41mS[49m[41me[49m[41mr[49m[41mv[49m[41mi[49m[41mc[49m[41me[49m: Angular2TokenService,
+[2m      L35:  [22mpublic respUtility: ResponseUtility) {
+
+            'care_home' is declared but never used. 
+
+[2m     L105:  [22mnewCareHome() {
+[2m     L106:  [22m  let [41mc[49m[41ma[49m[41mr[49m[41me[49m[41m_[49m[41mh[49m[41mo[49m[41mm[49m[41me[49m = {};
+[2m     L107:  [22m  this.navCtrl.push(CareHomeSearch);
+
+            All imports are unused. 
+
+[2m       L5:  [22mimport { CareHomeDetails } from '../care-homes/care-home-details';
+[2m       L6:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { CareHomeForm } from '../care-homes/care-home-form';
+[2m       L7:  [22mimport { CareHomeSearch } from '../care-homes/care-home-search';
+
+            All imports are unused. 
+
+[2m       L7:  [22mimport { CareHomeSearch } from '../care-homes/care-home-search';
+[2m       L8:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { Injectable } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Http } from '@angular/tokenService';
+[2m       L3:  [22mimport 'rxjs/add/operator/map';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport 'rxjs/add/operator/map';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, AlertController, ToastController, LoadingController } from 'io
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'AlertController' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, [41mA[49m[41ml[49m[41me[49m[41mr[49m[41mt[49m[41mC[49m[41mo[49m[41mn[49m[41mt[49m[41mr[49m[41mo[49m[41ml[49m[41ml[49m[41me[49m[41mr[49m, ToastController, LoadingController } from 'io
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'ToastController' is declared but never used. 
+
+[2m       L1:  [22mmport { IonicPage, NavController, NavParams, AlertController, [41mT[49m[41mo[49m[41ma[49m[41ms[49m[41mt[49m[41mC[49m[41mo[49m[41mn[49m[41mt[49m[41mr[49m[41mo[49m[41ml[49m[41ml[49m[41me[49m[41mr[49m, LoadingController } from 'ion
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { FormBuilder, FormGroup, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, ViewChild } from '@angular/core';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { RatingForm } from '../rating/rating-form';
+
+            All imports are unused. 
+
+[2m       L5:  [22mimport { ResponseUtility } from '../../providers/response-utility';
+[2m       L6:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, AlertController, ToastController, LoadingController } from 'io
+[2m       L3:  [22mimport { UserForm } from './user-form';
+
+            All imports are unused. 
+
+[2m       L2:  [22mimport { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { UserForm } from './user-form';
+[2m       L4:  [22mimport { UserDetails } from './user-details';
+
+            '_' is declared but never used. 
+
+[2m      L11:  [22mimport * as [41m_[49m from 'lodash';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { Injectable } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Http } from '@angular/http';
+[2m       L3:  [22mimport 'rxjs/add/operator/map';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport 'rxjs/add/operator/map';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, AlertController, ToastController, LoadingController } from 'io
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'AlertController' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, [41mA[49m[41ml[49m[41me[49m[41mr[49m[41mt[49m[41mC[49m[41mo[49m[41mn[49m[41mt[49m[41mr[49m[41mo[49m[41ml[49m[41ml[49m[41me[49m[41mr[49m, ToastController, LoadingController } from 'io
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'ToastController' is declared but never used. 
+
+[2m       L1:  [22mmport { IonicPage, NavController, NavParams, AlertController, [41mT[49m[41mo[49m[41ma[49m[41ms[49m[41mt[49m[41mC[49m[41mo[49m[41mn[49m[41mt[49m[41mr[49m[41mo[49m[41ml[49m[41ml[49m[41me[49m[41mr[49m, LoadingController } from 'ion
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
+[2m       L2:  [22mimport { [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { SimpleChanges, Component, ViewChild } from '@angular/core';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
+[2m       L2:  [22mimport { FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { SimpleChanges, Component, ViewChild } from '@angular/core';
+
+            'SimpleChanges' is declared but never used. 
+
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { [41mS[49m[41mi[49m[41mm[49m[41mp[49m[41ml[49m[41me[49m[41mC[49m[41mh[49m[41ma[49m[41mn[49m[41mg[49m[41me[49m[41ms[49m, Component, ViewChild } from '@angular/core';
+[2m       L4:  [22mimport { StaffingRequestApi } from '../../providers/staffing-request-api';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { Injectable } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Http } from '@angular/http';
+[2m       L3:  [22mimport 'rxjs/add/operator/map';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport 'rxjs/add/operator/map';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, AlertController, ToastController, LoadingController } from 'io
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'AlertController' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, [41mA[49m[41ml[49m[41me[49m[41mr[49m[41mt[49m[41mC[49m[41mo[49m[41mn[49m[41mt[49m[41mr[49m[41mo[49m[41ml[49m[41ml[49m[41me[49m[41mr[49m, ToastController, LoadingController } from 'io
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'ToastController' is declared but never used. 
+
+[2m       L1:  [22mmport { IonicPage, NavController, NavParams, AlertController, [41mT[49m[41mo[49m[41ma[49m[41ms[49m[41mt[49m[41mC[49m[41mo[49m[41mn[49m[41mt[49m[41mr[49m[41mo[49m[41ml[49m[41ml[49m[41me[49m[41mr[49m, LoadingController } from 'ion
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
+[2m       L2:  [22mimport { [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, ViewChild } from '@angular/core';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
+[2m       L2:  [22mimport { FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, ViewChild } from '@angular/core';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { ShiftForm } from '../shift/shift-form';
+
+            Property 'tokenService' is declared but never used. 
+
+[2m      L22:  [22mpublic navParams: NavParams,
+[2m      L23:  [22mprivate [41mt[49m[41mo[49m[41mk[49m[41me[49m[41mn[49m[41mS[49m[41me[49m[41mr[49m[41mv[49m[41mi[49m[41mc[49m[41me[49m: Angular2TokenService,
+[2m      L24:  [22mpublic loadingController: LoadingController,
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { ShiftApi } from '../../providers/shift-api';
+
+            All imports are unused. 
+
+[2m       L5:  [22mimport { ShiftDetails } from '../shift/shift-details'
+[2m       L6:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { StaffingRequestForm } from '../staffing-request/staffing-request-form';
+
+            All imports are unused. 
+
+[2m       L7:  [22mimport { ShiftForm } from '../shift/shift-form';
+[2m       L8:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+[2m       L9:  [22mimport { ActionSheetController, Platform } from 'ionic-angular';
+
+            Property 'tokenService' is declared but never used. 
+
+[2m      L31:  [22mpublic navParams: NavParams,
+[2m      L32:  [22mprivate [41mt[49m[41mo[49m[41mk[49m[41me[49m[41mn[49m[41mS[49m[41me[49m[41mr[49m[41mv[49m[41mi[49m[41mc[49m[41me[49m: Angular2TokenService,
+[2m      L33:  [22mpublic loadingController: LoadingController,
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { StaffingRequestApi } from '../../providers/staffing-request-api';
+
+            All imports are unused. 
+
+[2m       L6:  [22mimport { StaffingRequestForm } from '../staffing-request/staffing-request-form'
+[2m       L7:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+[2m       L8:  [22mimport * as moment from 'moment';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams } from 'ionic-angular';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams } from 'ionic-angular';
+
+            All imports are unused. 
+
+[2m       L5:  [22mimport { HomePage } from '../pages/home/home';
+[2m       L6:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Users } from '../pages/users/users';
+[2m       L7:  [22mimport { UserPic } from '../pages/user-pic/user-pic';
+
+            All imports are unused. 
+
+[2m       L6:  [22mimport { Users } from '../pages/users/users';
+[2m       L7:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { UserPic } from '../pages/user-pic/user-pic';
+[2m       L8:  [22mimport { CareHomes } from '../pages/care-homes/care-homes';
+
+            All imports are unused. 
+
+[2m       L7:  [22mimport { UserPic } from '../pages/user-pic/user-pic';
+[2m       L8:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { CareHomes } from '../pages/care-homes/care-homes';
+[2m       L9:  [22mimport { Payment } from '../pages/payment/payment'
+
+            All imports are unused. 
+
+[2m       L9:  [22mimport { Payment } from '../pages/payment/payment'
+[2m      L10:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Rating } from '../pages/rating/rating'
+[2m      L11:  [22mimport { Angular2TokenService } from 'angular2-token';
+
+            All imports are unused. 
+
+[2m      L10:  [22mimport { Rating } from '../pages/rating/rating'
+[2m      L11:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+[2m      L12:  [22mimport { Config } from '../providers/config';
+
+            All imports are unused. 
+
+[2m      L18:  [22mimport { UserTabs } from '../pages/users/user-tabs';
+[2m      L19:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { BankingDetailsPage } from '../pages/users/banking-details';
+[2m      L20:  [22mimport { UserForm } from '../pages/users/user-form';
+
+            All imports are unused. 
+
+[2m      L20:  [22mimport { UserForm } from '../pages/users/user-form';
+[2m      L21:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { RegisterPage } from '../pages/users/register';
+
+            All imports are unused. 
+
+[2m      L23:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { CareHomeSearch } from '../pages/care-homes/care-home-search';
+[2m      L24:  [22mimport { CareHomeDetails } from '../pages/care-homes/care-home-details';
+
+            All imports are unused. 
+
+[2m      L24:  [22mimport { CareHomeDetails } from '../pages/care-homes/care-home-details';
+[2m      L25:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { CareHomeBankingDetails } from '../pages/care-homes/care-home-banking-details';
+[2m      L26:  [22mimport { Login } from '../pages/login/login';
+
+            All imports are unused. 
+
+[2m      L26:  [22mimport { Login } from '../pages/login/login';
+[2m      L27:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { StaffingRequest } from '../pages/staffing-request/staffing-request';
+[2m      L28:  [22mimport { Shift } from '../pages/shift/shift';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { Component } from '@angular/core';
+[2m       L2:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L2:  [22mimport { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup, Validators } from '@angular/forms';
+[2m       L4:  [22mimport { UserForm } from './user-form';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L2:  [22mimport { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+[2m       L3:  [22mimport { FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m, Validators } from '@angular/forms';
+[2m       L4:  [22mimport { UserForm } from './user-form';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { UserForm } from './user-form';
+[2m       L5:  [22mimport { ResponseUtility } from '../../providers/response-utility';
+
+            All imports are unused. 
+
+[2m       L5:  [22mimport { ResponseUtility } from '../../providers/response-utility';
+[2m       L6:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+[2m       L7:  [22mimport { UserApi } from '../../providers/user-api';
+
+            All imports are unused. 
+
+[2m       L2:  [22mimport { NavController } from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+[2m       L4:  [22mimport { Login } from '../login/login';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport { Angular2TokenService } from 'angular2-token';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Login } from '../login/login';
+[2m       L5:  [22mimport { ResponseUtility } from '../../providers/response-utility';
+
+            All imports are unused. 
+
+[2m       L9:  [22mimport { UserDetails } from '../users/user-details';
+[2m      L10:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { UserForm } from '../users/user-form';
+[2m      L11:  [22mimport { RegisterPage } from '../users/register';
+
+            All imports are unused. 
+
+[2m      L10:  [22mimport { UserForm } from '../users/user-form';
+[2m      L11:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { RegisterPage } from '../users/register';
+[2m      L12:  [22mimport { CareHomeSearch } from '../care-homes/care-home-search';
+
+            All imports are unused. 
+
+[2m      L13:  [22mimport { CareHomeBankingDetails } from '../care-homes/care-home-banking-details';
+[2m      L14:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Payment } from '../payment/payment';
+[2m      L15:  [22mimport { Config } from '../../providers/config';
+
+            All imports are unused. 
+
+[2m      L17:  [22mimport { Events } from 'ionic-angular';
+[2m      L18:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { ContactPage } from '../static/contact';
+[2m      L19:  [22mimport { BankingDetailsPage } from '../users/banking-details';
+
+            All imports are unused. 
+
+[2m      L18:  [22mimport { ContactPage } from '../static/contact';
+[2m      L19:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { BankingDetailsPage } from '../users/banking-details';
+[2m      L20:  [22mimport { DocLinks } from '../users/doc-links';
+
+            All imports are unused. 
+
+[2m      L19:  [22mimport { BankingDetailsPage } from '../users/banking-details';
+[2m      L20:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { DocLinks } from '../users/doc-links';
+[2m      L21:  [22mimport { PhoneVerificationPage } from '../users/phone-verification';
+
+            Property 'config' is declared but never used. 
+
+[2m      L28:  [22mprivate tokenService: Angular2TokenService,
+[2m      L29:  [22mprivate [41mc[49m[41mo[49m[41mn[49m[41mf[49m[41mi[49m[41mg[49m: Config,
+[2m      L30:  [22mpublic events: Events,
+
+            Property 'loginProvider' is declared but never used. 
+
+[2m      L31:  [22m        public homeEvents: HomeEvents,
+[2m      L32:  [22m        private [41ml[49m[41mo[49m[41mg[49m[41mi[49m[41mn[49m[41mP[49m[41mr[49m[41mo[49m[41mv[49m[41mi[49m[41md[49m[41me[49m[41mr[49m: LoginProvider) {
+
+            All imports are unused. 
+
+[2m       L2:  [22mimport { NavController } from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Angular2TokenService } from 'angular2-token';
+[2m       L4:  [22mimport { ResponseUtility } from '../../providers/response-utility';
+
+            All imports are unused. 
+
+[2m       L6:  [22mimport { UserDetails } from '../users/user-details';
+[2m       L7:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { UserForm } from '../users/user-form';
+[2m       L8:  [22mimport { Config } from '../../providers/config';
+
+            All imports are unused. 
+
+[2m      L10:  [22mimport { Events } from 'ionic-angular';
+[2m      L11:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { ContactPage } from '../static/contact';
+[2m      L12:  [22mimport { BankingDetailsPage } from '../users/banking-details';
+
+            'PipeTransform' is declared but never used. 
+
+[2m       L1:  [22mimport { Pipe, [41mP[49m[41mi[49m[41mp[49m[41me[49m[41mT[49m[41mr[49m[41ma[49m[41mn[49m[41ms[49m[41mf[49m[41mo[49m[41mr[49m[41mm[49m } from '@angular/core';
+
+            'IonicErrorHandler' is declared but never used. 
+
+[2m       L3:  [22mimport { RouterModule } from '@angular/router';
+[2m       L4:  [22mimport { IonicApp, [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mE[49m[41mr[49m[41mr[49m[41mo[49m[41mr[49m[41mH[49m[41ma[49m[41mn[49m[41md[49m[41ml[49m[41me[49m[41mr[49m, IonicModule } from 'ionic-angular';
+[2m       L5:  [22mimport { Camera, CameraOptions } from '@ionic-native/camera';
+
+            'CameraOptions' is declared but never used. 
+
+[2m       L4:  [22mimport { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+[2m       L5:  [22mimport { Camera, [41mC[49m[41ma[49m[41mm[49m[41me[49m[41mr[49m[41ma[49m[41mO[49m[41mp[49m[41mt[49m[41mi[49m[41mo[49m[41mn[49m[41ms[49m } from '@ionic-native/camera';
+[2m       L6:  [22mimport { File } from '@ionic-native/file';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { NgModule } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { IonicPageModule } from 'ionic-angular';
+[2m       L3:  [22mimport { CareHomes } from './care-homes';
+
+            All imports are unused. 
+
+[2m       L2:  [22mimport { IonicPageModule } from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { CareHomes } from './care-homes';
+[2m       L4:  [22mimport { CareHomeDetails } from './care-home-details';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport { CareHomes } from './care-homes';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { CareHomeDetails } from './care-home-details';
+[2m       L5:  [22mimport { CareHomeForm } from './care-home-form';
+
+            All imports are unused. 
+
+[2m       L4:  [22mimport { CareHomeDetails } from './care-home-details';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { CareHomeForm } from './care-home-form';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { NgModule } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { IonicModule } from 'ionic-angular';
+[2m       L3:  [22mimport { Login } from './login';
+
+            All imports are unused. 
+
+[2m       L2:  [22mimport { IonicModule } from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Login } from './login';
+
+            'IonicPage' is declared but never used. 
+
+[2m       L1:  [22mimport { [41mI[49m[41mo[49m[41mn[49m[41mi[49m[41mc[49m[41mP[49m[41ma[49m[41mg[49m[41me[49m, NavController, NavParams, AlertController, ToastController, LoadingController } from 'io
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'AlertController' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, [41mA[49m[41ml[49m[41me[49m[41mr[49m[41mt[49m[41mC[49m[41mo[49m[41mn[49m[41mt[49m[41mr[49m[41mo[49m[41ml[49m[41ml[49m[41me[49m[41mr[49m, ToastController, LoadingController } from 'io
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'ToastController' is declared but never used. 
+
+[2m       L1:  [22mmport { IonicPage, NavController, NavParams, AlertController, [41mT[49m[41mo[49m[41ma[49m[41ms[49m[41mt[49m[41mC[49m[41mo[49m[41mn[49m[41mt[49m[41mr[49m[41mo[49m[41ml[49m[41ml[49m[41me[49m[41mr[49m, LoadingController } from 'ion
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
+[2m       L2:  [22mimport { [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, ViewChild } from '@angular/core';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L1:  [22mimport { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
+[2m       L2:  [22mimport { FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, ViewChild } from '@angular/core';
+
+            'ViewChild' is declared but never used. 
+
+[2m       L2:  [22mimport { FormBuilder, FormGroup, Validators } from '@angular/forms';
+[2m       L3:  [22mimport { Component, [41mV[49m[41mi[49m[41me[49m[41mw[49m[41mC[49m[41mh[49m[41mi[49m[41ml[49m[41md[49m } from '@angular/core';
+[2m       L4:  [22mimport { PaymentApi } from '../../providers/payment-api';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { NgModule } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { IonicPageModule } from 'ionic-angular';
+[2m       L3:  [22mimport { Payment } from './payment';
+
+            All imports are unused. 
+
+[2m       L2:  [22mimport { IonicPageModule } from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Payment } from './payment';
+[2m       L4:  [22mimport { PaymentDetails } from './payment-details';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport { Payment } from './payment';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { PaymentDetails } from './payment-details';
+[2m       L5:  [22mimport { PaymentForm } from './payment-form';
+
+            All imports are unused. 
+
+[2m       L4:  [22mimport { PaymentDetails } from './payment-details';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { PaymentForm } from './payment-form';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { NgModule } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { IonicPageModule } from 'ionic-angular';
+[2m       L3:  [22mimport { Rating } from './rating';
+
+            All imports are unused. 
+
+[2m       L2:  [22mimport { IonicPageModule } from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Rating } from './rating';
+[2m       L4:  [22mimport { RatingDetails } from './rating-details';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport { Rating } from './rating';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { RatingDetails } from './rating-details';
+[2m       L5:  [22mimport { RatingForm } from './rating-form';
+
+            All imports are unused. 
+
+[2m       L4:  [22mimport { RatingDetails } from './rating-details';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { RatingForm } from './rating-form';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { NgModule } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { IonicPageModule } from 'ionic-angular';
+[2m       L3:  [22mimport { Shift } from './shift';
+
+            All imports are unused. 
+
+[2m       L2:  [22mimport { IonicPageModule } from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Shift } from './shift';
+[2m       L4:  [22mimport { ShiftDetails } from './shift-details';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport { Shift } from './shift';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { ShiftDetails } from './shift-details';
+[2m       L5:  [22mimport { ShiftForm } from './shift-form';
+
+            All imports are unused. 
+
+[2m       L4:  [22mimport { ShiftDetails } from './shift-details';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { ShiftForm } from './shift-form';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { NgModule } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { IonicPageModule } from 'ionic-angular';
+[2m       L3:  [22mimport { StaffingRequest } from './staffing-request';
+
+            All imports are unused. 
+
+[2m       L2:  [22mimport { IonicPageModule } from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { StaffingRequest } from './staffing-request';
+[2m       L4:  [22mimport { StaffingRequestDetails } from './staffing-request-details';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport { StaffingRequest } from './staffing-request';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { StaffingRequestDetails } from './staffing-request-details';
+[2m       L5:  [22mimport { StaffingRequestForm } from './staffing-request-form';
+
+            All imports are unused. 
+
+[2m       L4:  [22mimport { StaffingRequestDetails } from './staffing-request-details';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { StaffingRequestForm } from './staffing-request-form';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { NgModule } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { IonicModule } from 'ionic-angular';
+[2m       L3:  [22mimport { AboutPage } from './about';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { NgModule } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { IonicModule } from 'ionic-angular';
+[2m       L3:  [22mimport { UserDoc } from './user-doc';
+
+            All imports are unused. 
+
+[2m       L2:  [22mimport { IonicModule } from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { UserDoc } from './user-doc';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { NgModule } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { IonicPageModule } from 'ionic-angular';
+[2m       L3:  [22mimport { UserPic } from './user-pic';
+
+            All imports are unused. 
+
+[2m       L2:  [22mimport { IonicPageModule } from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { UserPic } from './user-pic';
+
+            All imports are unused. 
+
+[2m       L1:  [22mimport { NgModule } from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { IonicPageModule } from 'ionic-angular';
+[2m       L3:  [22mimport { Users } from './users';
+
+            All imports are unused. 
+
+[2m       L2:  [22mimport { IonicPageModule } from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { Users } from './users';
+[2m       L4:  [22mimport { UserDetails } from './user-details';
+
+            All imports are unused. 
+
+[2m       L3:  [22mimport { Users } from './users';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { UserDetails } from './user-details';
+[2m       L5:  [22mimport { UserForm } from './user-form';
+
+            All imports are unused. 
+
+[2m       L4:  [22mimport { UserDetails } from './user-details';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { UserForm } from './user-form';
+

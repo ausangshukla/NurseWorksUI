@@ -1,0 +1,59 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Rating</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+
+
+  <ion-list no-lines>
+
+    <ion-card>
+      <ion-card-title class="center">
+        Rate Your Experience
+      </ion-card-title>
+
+      <ion-card-content>
+        <p *ngIf="rating.rated_entity_type == 'Hospital'">
+          Please provide a rating for the Care Home. Tap the stars below.
+        </p>
+        <p *ngIf="rating.rated_entity_type != 'Hospital'">
+          Please provide a rating for the Care Giver. Tap the stars below.
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+
+
+    <form [formGroup]="slideOneForm">
+
+      <ion-item class="center">
+        <rating id="stars" formControlName="stars" [(ngModel)]="rating.stars" readOnly="false"></rating>
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.stars.valid  && (slideOneForm.controls.stars.dirty || submitAttempt)">
+        <p>Please enter a valid Stars.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-textarea formControlName="comments" [(ngModel)]="rating.comments"
+          [class.invalid]="!slideOneForm.controls.comments.valid && (slideOneForm.controls.comments.dirty || submitAttempt)">
+        </ion-textarea>
+      </ion-item>
+
+      <p class="field-hint">
+        Additional comments
+      </p>
+    </form>
+
+  </ion-list>
+
+  <button ion-button full color="primary" (click)="save()">Save</button>
+
+</ion-content>

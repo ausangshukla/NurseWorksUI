@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Upload {{user_doc.doc_type}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item text-warp>
+    <ion-checkbox id="ack_valid_doc" [(ngModel)]="ack_valid_doc" type="text"></ion-checkbox>
+    <ion-label text-wrap>I acknowledge that the document Im providing is original, valid and real.</ion-label>
+  </ion-item>
+
+  <ion-item *ngIf="user_doc.doc_type == 'Other'">
+    <ion-label floating>Document Name</ion-label>
+    <ion-input [(ngModel)]="user_doc.alt_doc_type"></ion-input>
+  </ion-item>
+
+  <img src="{{lastImage}}" style="width: 100%" [hidden]="lastImage === null">
+
+  <button ion-button full icon-left (click)="noDBSFile()" *ngIf="lastImage === null && user_doc.doc_type == 'DBS'">
+    I do not have DBS.
+  </button>
+
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <button ion-button icon-left (click)="presentActionSheet()" *ngIf="lastImage === null">
+        <ion-icon name="camera"></ion-icon>Select Image
+      </button>
+      <button ion-button icon-left (click)="presentActionSheet()" *ngIf="lastImage !== null">
+        <ion-icon name="camera"></ion-icon>Change Image
+      </button>
+      <button ion-button icon-left (click)="uploadImage()" [disabled]="lastImage === null || !ack_valid_doc">
+        <ion-icon name="cloud-upload"></ion-icon>Upload
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

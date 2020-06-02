@@ -1,0 +1,90 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Shift</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div *ngIf="hospital.qr_code == null">
+    <ion-card *ngIf="shift.start_code == null">
+      <ion-card-title class="center error-text">
+        Enter Start Code
+      </ion-card-title>
+
+      <ion-card-content>
+        <p>
+          Please request your care home to provide you with the start code at the start of your shift and enter it below.
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="start_code_present && shift.end_code == null">
+      <ion-card-title class="center">
+        Enter End Code
+      </ion-card-title>
+
+      <ion-card-content>
+        <p>
+          Please request your care home to provide you with the end code at the end of your shift.
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+
+    <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+
+    <ion-list no-lines>
+
+      <form [formGroup]="slideOneForm">
+
+        <div *ngIf="!start_code_present">
+          <ion-item>
+            <ion-label floating>Enter Start Code</ion-label>
+            <ion-input name="start_code" formControlName="start_code" type="text" [(ngModel)]="shift.start_code" [class.invalid]="!slideOneForm.controls.start_code.valid && (slideOneForm.controls.start_code.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+
+          <ion-item *ngIf="!slideOneForm.controls.start_code.valid  && (slideOneForm.controls.start_code.dirty || submitAttempt)">
+            <p>Please enter a valid Start Code.</p>
+          </ion-item>
+        </div>
+
+
+        <div *ngIf="start_code_present">
+          <ion-item>
+            <ion-label floating>Enter End Code</ion-label>
+            <ion-input name="end_code" formControlName="end_code" type="text" [(ngModel)]="shift.end_code" [class.invalid]="!slideOneForm.controls.end_code.valid && (slideOneForm.controls.end_code.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+
+          <ion-item *ngIf="!slideOneForm.controls.end_code.valid  && (slideOneForm.controls.end_code.dirty || submitAttempt)">
+            <p>Please enter a valid End Code.</p>
+          </ion-item>
+        </div>
+
+      </form>
+
+      <button ion-button full color="primary" (click)="confirmSave()">Submit</button>
+
+    </ion-list>
+    
+  </div>
+
+  <div *ngIf="hospital.qr_code != null">
+    <ion-card style="margin-top: 10px;">
+      <ion-card-title class="center success-text">
+        Scan QR Code
+      </ion-card-title>
+
+      <ion-card-content>
+        <p>
+          Please scan the QR code visible at {{shift.hospital.name}} to start / end the shift.         
+        </p>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button full color="primary" (click)="scan()">Click To Scan QR Code</button>
+    <p class="center error-text">Ensure the QR code is comfortably inside the camera finder.</p>
+  </div>
+</ion-content>
