@@ -28,25 +28,35 @@
         Email: {{user.email}}
       </p>
       <p>
-        Role: {{user.role}}
+        Role: {{user.role}} {{user.key_qualifications}}
       </p>
+
 
     </ion-item>
 
-    <div *ngIf="user.role == 'Care Giver' || user.role == 'Nurse'">
+    <div *ngIf="user.locum == true && (user.role == 'Care Giver' || user.role == 'Nurse')">
 
       <ion-item>
         <p>
-          Preferred Commute: {{user.pref_commute_distance}} miles
+          Preferred Commute: {{user.pref_commute_distance}} kms
         </p>
-
+        <p>
+          Conveyence: {{user.conveyence}}
+        </p>
+        <p>
+          Preferred Shift Duration: {{user.pref_shift_duration}}
+        </p>
+        <p>
+          Preferred Shift Time: {{user.pref_shift_time}} 
+        </p>
+        <p>
+          Expected Shift Rate: {{user.exp_shift_rate}} 
+        </p>
+        
         <p>
           Bank Account: {{user.bank_account}}
         </p>
-        <p>
-          Sort Code: {{user.sort_code}}
-        </p>
-
+        
       </ion-item>
 
     
