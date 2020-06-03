@@ -93,71 +93,153 @@
       <div *ngIf="user.role == 'Care Giver' || user.role == 'Nurse' ">
 
         <ion-item>
-          <ion-label floating>Postal Code</ion-label>
-          <ion-input id= "postcode" name="postcode" [(ngModel)]="user.postcode" [class.invalid]="!slideOneForm.controls.postcode.valid && (slideOneForm.controls.postcode.dirty || submitAttempt)"
-            formControlName="postcode" type="text"></ion-input>
+          <ion-label floating>Age</ion-label>
+          <ion-input id= "age" name="age" [(ngModel)]="user.age" [class.invalid]="!slideOneForm.controls.age.valid && (slideOneForm.controls.age.dirty || submitAttempt)"
+            formControlName="age" type="text"></ion-input>
         </ion-item>
-        <ion-item *ngIf="slideOneForm.controls.postcode.pending">
-          <p>Checking postcode...</p>
-        </ion-item>
-        <ion-item *ngIf="!slideOneForm.controls.postcode.valid && !slideOneForm.controls.postcode.pending && (slideOneForm.controls.postcode.dirty || submitAttempt)">
-          <p class="error-text">Invalid postcode, please enter a valid one.</p>
+        <ion-item *ngIf="!slideOneForm.controls.age.valid && !slideOneForm.controls.age.pending && (slideOneForm.controls.age.dirty || submitAttempt)">
+          <p class="error-text">Invalid age, please enter a valid one.</p>
         </ion-item>
 
-
-
-        <ion-item id="pref_commute_distance">
-          <ion-label floating>Commute Distance</ion-label>
-          
-          <ion-select name="pref_commute_distance" [(ngModel)]="user.pref_commute_distance" 
-            [class.invalid]="!slideOneForm.controls.pref_commute_distance.valid && (slideOneForm.controls.pref_commute_distance.dirty || submitAttempt)"
-            formControlName="pref_commute_distance">
-            <ion-option value="10" checked="true">10 Miles</ion-option>
-            <ion-option value="15">15 Miles</ion-option>
-            <ion-option value="20">20 Miles</ion-option>
-            <ion-option value="25">25 Miles</ion-option>
-            <ion-option value="100">30 Miles and above</ion-option>
-          </ion-select>
-  
+        <ion-item id="locum">
+          <ion-label>Available for Locum</ion-label>
+          <ion-toggle id="locum" name="locum" formControlName="locum" 
+                      [(ngModel)]="user.locum" color="success" onchange="onLocumChanged()"></ion-toggle>
         </ion-item>
-
-        <ion-item *ngIf="!slideOneForm.controls.pref_commute_distance.valid  && (slideOneForm.controls.pref_commute_distance.dirty || submitAttempt)">
-          <p class="error-text">Enter a valid distance in miles.</p>
-        </ion-item>
-
-        <p text-wrap class="">Work Preferences.</p>
-
-        <ion-item>
-          <ion-checkbox id="work_weekdays" [(ngModel)]="user.work_weekdays" formControlName="work_weekdays" type="text"></ion-checkbox>
-          <ion-label text-warp>Work Weekdays</ion-label>
-        </ion-item>
-
-
-        <ion-item>
-          <ion-checkbox id="work_weeknights" [(ngModel)]="user.work_weeknights" formControlName="work_weeknights" type="text"></ion-checkbox>
-          <ion-label text-warp>Work Weeknights</ion-label>
-        </ion-item>
-
-
-        <ion-item>
-          <ion-checkbox id="work_weekends" [(ngModel)]="user.work_weekends" formControlName="work_weekends" type="text"></ion-checkbox>
-          <ion-label text-warp>Work Weekends</ion-label>
-        </ion-item>
-
-
-        <ion-item>
-          <ion-checkbox id="work_weekend_nights" [(ngModel)]="user.work_weekend_nights" formControlName="work_weekend_nights" type="text"></ion-checkbox>
-          <ion-label text-warp>Work Weekend Nights</ion-label>
-        </ion-item>
-
         
-        <ion-item>
-          <ion-checkbox id="pause_shifts" [(ngModel)]="user.pause_shifts" formControlName="pause_shifts" type="text"></ion-checkbox>
-          <ion-label text-warp>Pause Shifts</ion-label>
-        </ion-item>
-        <p *ngIf="!user.pause_shifts" text-wrap class="field-hint">Temporarily pause shifts. You can turn shifts off by checking above.</p>
-        <p *ngIf="user.pause_shifts" text-wrap class="field-hint">Restart shifts. You can turn shifts back by unchecking above.</p>
+        
+        <div *ngIf="user.locum">
+
+          <p class="field-hint">
+              Experience
+          </p>
+          <div class = "row">
+            <div class = "col"><ion-input id= "years_of_exp" name="years_of_exp" [(ngModel)]="user.years_of_exp" [class.invalid]="!slideOneForm.controls.years_of_exp.valid && (slideOneForm.controls.years_of_exp.dirty || submitAttempt)"
+              formControlName="years_of_exp" type="text"></ion-input>
+            </div>
+            <div class = "col"><ion-label>Years</ion-label></div>
+            <div class = "col"><ion-input id= "months_of_exp" name="months_of_exp" [(ngModel)]="user.months_of_exp" [class.invalid]="!slideOneForm.controls.months_of_exp.valid && (slideOneForm.controls.months_of_exp.dirty || submitAttempt)"
+              formControlName="months_of_exp" type="text"></ion-input>  
+            </div>
+            <div class = "col"><ion-label>Months</ion-label></div>
+          </div>        
+          
+          <ion-item id="pref_shift_duration">
+            <ion-label floating>Shift Duration</ion-label>
+            
+            <ion-select name="pref_shift_duration" [(ngModel)]="user.pref_shift_duration" 
+              [class.invalid]="!slideOneForm.controls.pref_shift_duration.valid && (slideOneForm.controls.pref_shift_duration.dirty || submitAttempt)"
+              formControlName="pref_shift_duration">
+              <ion-option value="8" checked="true">8 Hrs</ion-option>
+              <ion-option value="12">12 Hrs</ion-option>
+            </ion-select>
+    
+          </ion-item>
+
+          <ion-item id="pref_shift_time">
+            <ion-label floating>Shift Timings</ion-label>
+            
+            <ion-select name="pref_shift_time" [(ngModel)]="user.pref_shift_time" 
+              [class.invalid]="!slideOneForm.controls.pref_shift_time.valid && (slideOneForm.controls.pref_shift_time.dirty || submitAttempt)"
+              formControlName="pref_shift_time">
+              <ion-option value="730 AM – 330 PM" checked="true">730 AM – 330 PM</ion-option>
+              <ion-option value="3 PM – 930 PM">3 PM – 930 PM</ion-option>
+              <ion-option value="9 PM – 8 AM">9 PM – 8 AM</ion-option>
+            </ion-select>
+    
+          </ion-item>
+
+          
+
+          <ion-item id="exp_shift_rate">
+            <ion-label floating>Expected Rates</ion-label>
+            
+            <ion-select name="exp_shift_rate" [(ngModel)]="user.exp_shift_rate" 
+              [class.invalid]="!slideOneForm.controls.exp_shift_rate.valid && (slideOneForm.controls.exp_shift_rate.dirty || submitAttempt)"
+              formControlName="exp_shift_rate">
+              <ion-option value="500" checked="true">500</ion-option>
+              <ion-option value="1000">1000</ion-option>
+              <ion-option value="1500">1500</ion-option>
+              <ion-option value="2500">2500</ion-option>
+            </ion-select>
+    
+          </ion-item>
+    
+          <ion-item id="pref_commute_distance">
+            <ion-label floating>Commute Distance</ion-label>
+            
+            <ion-select name="pref_commute_distance" [(ngModel)]="user.pref_commute_distance" 
+              [class.invalid]="!slideOneForm.controls.pref_commute_distance.valid && (slideOneForm.controls.pref_commute_distance.dirty || submitAttempt)"
+              formControlName="pref_commute_distance">
+              <ion-option value="10" checked="true">10 Kms</ion-option>
+              <ion-option value="15">15 Kms</ion-option>
+              <ion-option value="20">20 Kms</ion-option>
+              <ion-option value="25">25 Kms</ion-option>
+              <ion-option value="100">30 Kms and above</ion-option>
+            </ion-select>
+    
+          </ion-item>
+
+          <ion-item *ngIf="!slideOneForm.controls.pref_commute_distance.valid  && (slideOneForm.controls.pref_commute_distance.dirty || submitAttempt)">
+            <p class="error-text">Enter a valid distance in Kms.</p>
+          </ion-item>
+
+
+          <ion-item id="conveyence">
+              <ion-label floating>Conveyence</ion-label>
+              
+              <ion-select name="conveyence" [(ngModel)]="user.conveyence" 
+                [class.invalid]="!slideOneForm.controls.conveyence.valid && (slideOneForm.controls.conveyence.dirty || submitAttempt)"
+                formControlName="conveyence">
+                <ion-option value="Public transport" checked="true">Public transport</ion-option>
+                <ion-option value="Auto">Auto</ion-option>
+                <ion-option value="Own 2 wheeler">Own 2 wheeler</ion-option>
+                <ion-option value="Someone drops me">Someone drops me</ion-option>
+                <ion-option value="I use Uber/Ola">I use Uber/Ola</ion-option>
+                <ion-option value="I own a car">I own a car</ion-option>
+              </ion-select>
       
+            </ion-item>
+
+          <ion-item-divider>
+            <ion-label>
+                Work Preferences.
+            </ion-label>
+          </ion-item-divider>
+
+          <ion-item>
+            <ion-checkbox id="work_weekdays" [(ngModel)]="user.work_weekdays" formControlName="work_weekdays" type="text"></ion-checkbox>
+            <ion-label text-warp>Work Weekdays</ion-label>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-checkbox id="work_weeknights" [(ngModel)]="user.work_weeknights" formControlName="work_weeknights" type="text"></ion-checkbox>
+            <ion-label text-warp>Work Weeknights</ion-label>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-checkbox id="work_weekends" [(ngModel)]="user.work_weekends" formControlName="work_weekends" type="text"></ion-checkbox>
+            <ion-label text-warp>Work Weekends</ion-label>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-checkbox id="work_weekend_nights" [(ngModel)]="user.work_weekend_nights" formControlName="work_weekend_nights" type="text"></ion-checkbox>
+            <ion-label text-warp>Work Weekend Nights</ion-label>
+          </ion-item>
+
+          
+          <ion-item>
+            <ion-checkbox id="pause_shifts" [(ngModel)]="user.pause_shifts" formControlName="pause_shifts" type="text"></ion-checkbox>
+            <ion-label text-warp>Pause Shifts</ion-label>
+          </ion-item>
+          <p *ngIf="!user.pause_shifts" text-wrap class="field-hint">Temporarily pause shifts. You can turn shifts off by checking above.</p>
+          <p *ngIf="user.pause_shifts" text-wrap class="field-hint">Restart shifts. You can turn shifts back by unchecking above.</p>
+          
+        </div>
+
         <ion-item>
           <ion-label floating>Medical Conditions</ion-label>
           <ion-textarea formControlName="medical_info" [(ngModel)]="user.medical_info"

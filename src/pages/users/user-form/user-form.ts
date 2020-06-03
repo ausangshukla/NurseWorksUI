@@ -26,6 +26,8 @@ export class UserForm {
 
   submitAttempt: boolean = false;
   confirm_password;
+  careGiverFields = ["pref_commute_distance", "conveyence", "age", "pref_shift_duration", "pref_shift_time", "exp_shift_rate" ];
+    
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -49,8 +51,12 @@ export class UserForm {
       password: ['', Validators.compose([Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,70}$'), Validators.minLength(8), Validators.required])],
       confirm_password: ['', Validators.compose([Validators.required])],
       title: [''],
+      age: [''],
+      years_of_exp: ['1'],
+      months_of_exp: ['0'],
       conveyence: [''],
-      pref_shift_duration: ['', Validators.compose([Validators.required])],
+      locum: [false],
+      pref_shift_duration: ['8', Validators.compose([Validators.required])],
       pref_shift_time: ['', Validators.compose([Validators.required])],
       exp_shift_rate: ['', Validators.compose([Validators.required])],
       accept_terms: [false, Validators.compose([CheckboxValidator.isChecked, Validators.required])],
@@ -77,6 +83,21 @@ export class UserForm {
 
   }
 
+  onLocumChanged($event) {
+    
+    var arrayLength = this.careGiverFields.length;
+
+
+    if (!$event.checked) {
+      for (var i = 0; i < arrayLength; i++) {
+        this.slideOneForm.controls[this.careGiverFields[i]].disable();
+      }
+    } else {
+      for (var i = 0; i < arrayLength; i++) {
+        this.slideOneForm.controls[this.careGiverFields[i]].enable();
+      }
+    }
+  }
   onTermsChecked($event) {
     if (!$event.checked) {
       this.slideOneForm.patchValue({ accept_terms: null });
@@ -104,17 +125,15 @@ export class UserForm {
   onRoleChange(role) {
     console.log(`Role changed to ${role}`);
 
-    var careGiverFields = ["pref_commute_distance", "postcode"];
-    var arrayLength = careGiverFields.length;
-
+    var arrayLength = this.careGiverFields.length;
 
     if (role == "Admin") {
       for (var i = 0; i < arrayLength; i++) {
-        this.slideOneForm.controls[careGiverFields[i]].disable();
+        this.slideOneForm.controls[this.careGiverFields[i]].disable();
       }
     } else {
       for (var i = 0; i < arrayLength; i++) {
-        this.slideOneForm.controls[careGiverFields[i]].enable();
+        this.slideOneForm.controls[this.careGiverFields[i]].enable();
       }
     }
 

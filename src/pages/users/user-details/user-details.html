@@ -25,6 +25,10 @@
         Experience: {{user.years_of_exp}} Years, {{user.months_of_exp}} Months 
       </p>
       <p>
+        Age: {{user.age}}
+      </p>
+      
+      <p>
         Phone: {{user.phone}}
       </p>
       <p>
@@ -88,20 +92,22 @@
 
       </ion-item>
 
-
-      <ion-row>
-
-        <ion-col>
-          <button ion-button full color="secondary" (click)="editUser(user)">Edit Details</button>
-        </ion-col>
-
-        <ion-col>
-          <button ion-button full color="danger" (click)="confirmDeleteRequested(user)">Delete Profile</button>
-        </ion-col>
-
-      </ion-row>
-
+      
     </div>
+
+
+    <ion-row>
+
+      <ion-col>
+        <button ion-button full color="secondary" (click)="editUser(user)">Edit Details</button>
+      </ion-col>
+
+      <ion-col>
+        <button ion-button full color="danger" (click)="confirmDeleteRequested(user)">Delete Profile</button>
+      </ion-col>
+
+    </ion-row>
+    
     <ion-card>
 
 
