@@ -35,7 +35,6 @@ export class UserTabs  {
     if(this.user.role == "Admin") {
       this.tab2Root = 'HospitalBankingDetails';
       this.tab3Root = 'HospitalDetails';
-      this.tab4Root = 'QrCode';
     } else {
       this.tab2Root = 'BankingDetailsPage';
     }
