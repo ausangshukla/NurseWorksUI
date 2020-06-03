@@ -37,20 +37,35 @@ export class HospitalDetails {
     this.respUtility.trackView("HospitalDetails");
   }
 
+  displayBedCount() {
+    let display = {"20": "< 20", "40": "20 - 40", "100": "40 - 100", "101": "> 100"}
+    return display[this.hospital["num_of_beds"]];     
+  }
+
+  displayNurseCount() {
+    let display = {"15": "< 15", "30": "15 - 30", "60": "30 - 60", "61": "> 60"}
+    return display[this.hospital["nurse_count"]];     
+  }
+
+  displayWorkEx() {
+    let display = {"3": "< 3", "7": "3 - 7", "8": "> 7"}
+    return display[this.hospital["typical_workex"]];     
+  }
+
   editHospital(hospital) {
     this.respUtility.trackEvent("Hospital", "Edit", "click");
     this.navCtrl.push('HospitalForm', hospital);
   }
 
   confirmClaim(hospital) {
-    this.respUtility.confirmAction(this.claimHospital.bind(this), hospital, "Our support staff will verify your claim and add you as an admin for this Partner. Proceed ?");      
+    this.respUtility.confirmAction(this.claimHospital.bind(this), hospital, "Our support staff will verify your claim and add you as an admin for this Hospital. Proceed ?");      
   }
 
   claimHospital(hospital) {
     this.respUtility.trackEvent("Hospital", "Claim", "click");
     this.hospitalApi.claim(hospital, this.current_user["id"]).subscribe(
       response => {
-        this.respUtility.showSuccess("Our support will verify and add you as an admin for this Partner.");
+        this.respUtility.showSuccess("Our support will verify and add you as an admin for this Hospital.");
         this.navCtrl.pop();
       },
       error => {

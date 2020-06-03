@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>Partner Details</ion-title>
+    <ion-title>Hospital Details</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -46,6 +46,62 @@
     <ion-item>
       <ion-row>
         <ion-col>
+          Number of Beds:
+        </ion-col>
+        <ion-col text-wrap>
+          {{displayBedCount()}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Nurse Count:
+        </ion-col>
+        <ion-col text-wrap>
+          {{displayNurseCount()}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Specializations:
+        </ion-col>
+        <ion-col text-wrap>
+          {{hospital.specializations}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col text-wrap>
+          Typical Nurse Work Ex:
+        </ion-col>
+        <ion-col text-wrap>
+          {{displayWorkEx()}} Years
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Owner Name:
+        </ion-col>
+        <ion-col text-wrap>
+          {{hospital.owner_name}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
           Address:
         </ion-col>
         <ion-col text-wrap>
@@ -58,10 +114,10 @@
     <ion-item>
       <ion-row>
         <ion-col>
-          Postcode:
+          City:
         </ion-col>
         <ion-col>
-          {{hospital.postcode}}
+          {{hospital.city}}
         </ion-col>
       </ion-row>
     </ion-item>

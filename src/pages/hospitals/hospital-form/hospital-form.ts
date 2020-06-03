@@ -35,13 +35,17 @@ export class HospitalForm {
 
     this.slideOneForm = formBuilder.group({
        
-      name: ['', Validators.compose([Validators.required])],       
+      name: ['', Validators.compose([Validators.required])],   
+      owner_name: ['', Validators.compose([Validators.required])],       
       address: ['', Validators.compose([Validators.required])], 
+      city: ['', Validators.compose([Validators.required])], 
       carer_break_mins: [0], 
+      num_of_beds: [20],
+      nurse_count: [15],  
+      typical_workex: [3],
+      specializations: [''],
       phone: ['', Validators.compose([Validators.minLength(10), Validators.maxLength(11), Validators.pattern('^\\d+$')])],            
-      postcode: ['', Validators.compose([Validators.minLength(7), Validators.required, new PostCodeValidator(this.postCodeApi).checkPostCode])],       
       image_url: [''],
-      vat_number: ['', Validators.compose([Validators.required])], 
       company_registration_number: ['', Validators.compose([Validators.required])], 
       dress_code: [''],
       parking_available: [false],
@@ -62,6 +66,7 @@ export class HospitalForm {
     this.respUtility.trackView("HospitalForm");
   }
 
+  
 
   save() {
     this.respUtility.trackEvent("Hospital", "Save", "click");

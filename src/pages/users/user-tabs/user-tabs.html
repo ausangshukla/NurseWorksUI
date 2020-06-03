@@ -16,7 +16,7 @@
     (click)="tabClick($event)" color="primary" tabsPlacement="bottom" [selectedIndex]="tabIndex">
     <ion-tab tabIcon="person" [rootParams]="user" [root]="tab1Root" tabTitle="Profile" disabled="true"></ion-tab>
     <ion-tab tabIcon="cash" [rootParams]="{insideSettingsTab:true}" [root]="tab2Root" tabTitle="Bank Details"></ion-tab>
-    <ion-tab tabIcon="home" [rootParams]="user.hospital" [root]="tab3Root" tabTitle="Partner Details" *ngIf="user.role == 'Admin'"></ion-tab>
+    <ion-tab tabIcon="home" [rootParams]="user.hospital" [root]="tab3Root" tabTitle="Hospital Details" *ngIf="user.role == 'Admin'"></ion-tab>
     <ion-tab tabIcon="barcode" [rootParams]="user.hospital" [root]="tab4Root" tabTitle="QR Code" *ngIf="user.role == 'Admin'"></ion-tab>
   </ion-tabs>
 

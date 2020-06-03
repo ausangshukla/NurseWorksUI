@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>Partner</ion-title>
+    <ion-title>Hospital</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -49,21 +49,78 @@
       </ion-item>
 
       <ion-item>
-        <ion-label floating>Postcode</ion-label>
-        <ion-input id="postcode" name="postcode" formControlName="postcode" type="text" [(ngModel)]="hospital.postcode" [class.invalid]="!slideOneForm.controls.postcode.valid && (slideOneForm.controls.postcode.dirty || submitAttempt)"></ion-input>
+        <ion-label floating>City</ion-label>
+        <ion-input id="city" name="city" formControlName="city" type="text" [(ngModel)]="hospital.city" [class.invalid]="!slideOneForm.controls.city.valid && (slideOneForm.controls.city.dirty || submitAttempt)"></ion-input>
       </ion-item>
 
-      <ion-item *ngIf="!slideOneForm.controls.postcode.valid  && (slideOneForm.controls.postcode.dirty || submitAttempt)">
-        <p class="error-text">Invalid postcode, please enter a valid one.</p>
+      <ion-item *ngIf="!slideOneForm.controls.city.valid  && (slideOneForm.controls.city.dirty || submitAttempt)">
+        <p class="error-text">Invalid city, please enter a valid one.</p>
+      </ion-item>
+
+      <ion-item id="specializations">
+        <ion-label floating>Specializations</ion-label>
+        
+        <ion-select name="specializations" multiple [(ngModel)]="hospital.specializations" [class.invalid]="!slideOneForm.controls.specializations.valid && (slideOneForm.controls.specializations.dirty || submitAttempt)"
+          formControlName="specializations">
+          <ion-option value="Multi specialty">Multi specialty</ion-option>
+          <ion-option value="Singe Specialty">Singe Specialty</ion-option>
+          <ion-option value="Obstetrics and Gynaecology">Obstetrics and Gynaecology</ion-option>
+          <ion-option value="General Surgery">General Surgery</ion-option>
+          <ion-option value="Pediatrics">Pediatrics</ion-option>
+          <ion-option value="Opthalmology">Opthalmology</ion-option>
+        </ion-select>
+
+      </ion-item>
+
+      <ion-item id="num_of_beds">
+        <ion-label floating>Number of Beds</ion-label>
+        
+        <ion-select name="num_of_beds" [(ngModel)]="hospital.num_of_beds" 
+          [class.invalid]="!slideOneForm.controls.num_of_beds.valid && (slideOneForm.controls.num_of_beds.dirty || submitAttempt)"
+          formControlName="num_of_beds">
+          <ion-option value="20"> < 20 </ion-option>
+          <ion-option value="40"> 20 - 40</ion-option>
+          <ion-option value="100"> 40 - 100</ion-option>
+          <ion-option value="101"> > 100 </ion-option>
+        </ion-select>
+
+      </ion-item>
+
+
+      <ion-item id="nurse_count">
+        <ion-label floating>Nurse Count</ion-label>
+        
+        <ion-select name="nurse_count" [(ngModel)]="hospital.nurse_count" 
+          [class.invalid]="!slideOneForm.controls.nurse_count.valid && (slideOneForm.controls.nurse_count.dirty || submitAttempt)"
+          formControlName="nurse_count">
+          <ion-option value="15"> < 15 </ion-option>
+          <ion-option value="30"> 15 - 30</ion-option>
+          <ion-option value="60"> 30 - 60</ion-option>
+          <ion-option value="61"> > 60 </ion-option>
+        </ion-select>
+
+      </ion-item>
+
+      <ion-item id="typical_workex">
+        <ion-label floating>Typical Work Experience</ion-label>
+        
+        <ion-select name="typical_workex" [(ngModel)]="hospital.typical_workex" 
+          [class.invalid]="!slideOneForm.controls.typical_workex.valid && (slideOneForm.controls.typical_workex.dirty || submitAttempt)"
+          formControlName="typical_workex">
+          <ion-option value="3"> < 3 </ion-option>
+          <ion-option value="7"> 3 - 7 </ion-option>
+          <ion-option value="8"> > 7 </ion-option>
+        </ion-select>
+
       </ion-item>
 
       <ion-item>
-        <ion-label floating>VAT Number</ion-label>
-        <ion-input name="vat_number" formControlName="vat_number" type="text" [(ngModel)]="hospital.vat_number" [class.invalid]="!slideOneForm.controls.vat_number.valid && (slideOneForm.controls.vat_number.dirty || submitAttempt)"></ion-input>
+        <ion-label floating>Owner Name</ion-label>
+        <ion-input name="owner_name" formControlName="owner_name" type="text" [(ngModel)]="hospital.owner_name" [class.invalid]="!slideOneForm.controls.owner_name.valid && (slideOneForm.controls.owner_name.dirty || submitAttempt)"></ion-input>
       </ion-item>
 
-      <ion-item *ngIf="!slideOneForm.controls.vat_number.valid  && (slideOneForm.controls.vat_number.dirty || submitAttempt)">
-        <p class="error-text">Please enter a valid VAT Number.</p>
+      <ion-item *ngIf="!slideOneForm.controls.owner_name.valid  && (slideOneForm.controls.owner_name.dirty || submitAttempt)">
+        <p>Please enter a valid name.</p>
       </ion-item>
 
       <ion-item>
