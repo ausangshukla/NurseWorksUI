@@ -9,7 +9,6 @@
 
 <ion-content padding>
 
-  <div *ngIf="hospital.qr_code == null">
     <ion-card *ngIf="shift.start_code == null">
       <ion-card-title class="center error-text">
         Enter Start Code
@@ -72,19 +71,4 @@
     
   </div>
 
-  <div *ngIf="hospital.qr_code != null">
-    <ion-card style="margin-top: 10px;">
-      <ion-card-title class="center success-text">
-        Scan QR Code
-      </ion-card-title>
-
-      <ion-card-content>
-        <p>
-          Please scan the QR code visible at {{shift.hospital.name}} to start / end the shift.         
-        </p>
-      </ion-card-content>
-    </ion-card>
-    <button ion-button full color="primary" (click)="scan()">Click To Scan QR Code</button>
-    <p class="center error-text">Ensure the QR code is comfortably inside the camera finder.</p>
-  </div>
 </ion-content>

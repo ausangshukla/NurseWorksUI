@@ -3,7 +3,6 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { IonicApp, IonicErrorHandler, IonicModule, NavController } from 'ionic-angular';
 
-import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -115,7 +114,6 @@ import { HelpPage } from '../pages/static/help';
     ReferralApi,
     ContactApi,
     ReferenceApi,
-    BarcodeScanner, 
     { provide: ErrorHandler, useClass: SentryErrorHandler }
   ]
 })

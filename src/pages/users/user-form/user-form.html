@@ -15,7 +15,7 @@
 
 <ion-content padding>
 
-  <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+  <p *ngIf="submitAttempt" style="color: #ea6153;text-align: center">Please fill out all details accurately.</p>
 
   <ion-list no-lines>
 
@@ -135,7 +135,10 @@
             </ion-select>
     
           </ion-item>
-
+          <ion-item *ngIf="!slideOneForm.controls.pref_shift_duration.valid  && (slideOneForm.controls.pref_shift_duration.dirty || submitAttempt)">
+            <p class="error-text">Please enter preferred shift duration.</p>
+          </ion-item>
+          
           <ion-item id="pref_shift_time">
             <ion-label floating>Shift Timings</ion-label>
             
@@ -148,7 +151,9 @@
             </ion-select>
     
           </ion-item>
-
+          <ion-item *ngIf="!slideOneForm.controls.pref_shift_time.valid  && (slideOneForm.controls.pref_shift_time.dirty || submitAttempt)">
+            <p class="error-text">Please enter preferred shift times.</p>
+          </ion-item>
           
 
           <ion-item id="exp_shift_rate">
@@ -164,7 +169,10 @@
             </ion-select>
     
           </ion-item>
-    
+          <ion-item *ngIf="!slideOneForm.controls.exp_shift_rate.valid  && (slideOneForm.controls.exp_shift_rate.dirty || submitAttempt)">
+            <p class="error-text">Please enter expected rate.</p>
+          </ion-item>
+            
           <ion-item id="pref_commute_distance">
             <ion-label floating>Commute Distance</ion-label>
             
@@ -200,6 +208,10 @@
               </ion-select>
       
             </ion-item>
+            <ion-item *ngIf="!slideOneForm.controls.conveyence.valid  && (slideOneForm.controls.conveyence.dirty || submitAttempt)">
+              <p class="error-text">Please enter conveyence.</p>
+            </ion-item>
+            
 
           <ion-item-divider>
             <ion-label>
@@ -271,6 +283,6 @@
 
   </ion-list>
 
-  <button ion-button full color="primary" (click)="save()" [disabled]="slideOneForm.invalid">Save</button>
+  <button ion-button full color="primary" (click)="save()" >Save</button>
 
 </ion-content>

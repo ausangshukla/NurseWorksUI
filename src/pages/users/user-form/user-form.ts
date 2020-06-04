@@ -1,6 +1,6 @@
 import { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Component, ViewChild, ElementRef, Renderer } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Keyboard } from '@ionic-native/keyboard/ngx';
 import { UserApi } from '../../../providers/user-api';
 import { ResponseUtility } from '../../../providers/response-utility';
@@ -37,7 +37,6 @@ export class UserForm {
     public loadingController: LoadingController,
     private tokenService: AngularTokenService,
     private elementRef: ElementRef,
-    private renderer: Renderer,
     private keyboard: Keyboard,
     private postCodeApi: PostCodeApi) {
 
@@ -54,9 +53,9 @@ export class UserForm {
       age: [''],
       years_of_exp: ['1'],
       months_of_exp: ['0'],
-      conveyence: [''],
+      conveyence: ['', Validators.compose([Validators.required])],
       locum: [false],
-      pref_shift_duration: ['8', Validators.compose([Validators.required])],
+      pref_shift_duration: ['', Validators.compose([Validators.required])],
       pref_shift_time: ['', Validators.compose([Validators.required])],
       exp_shift_rate: ['', Validators.compose([Validators.required])],
       accept_terms: [false, Validators.compose([CheckboxValidator.isChecked, Validators.required])],
@@ -102,6 +101,9 @@ export class UserForm {
     if (!$event.checked) {
       this.slideOneForm.patchValue({ accept_terms: null });
     }
+    let controls = this.slideOneForm.controls;
+    console.log(controls);      
+    
   }
 
   isMatching(group: FormGroup) {
@@ -140,12 +142,7 @@ export class UserForm {
   }
 
   onTitleChange(title) {
-    const element = this.elementRef.nativeElement.querySelector('title');
-    // we need to delay our call in order to work with ionic ...
-    setTimeout(() => {
-      this.renderer.invokeElementMethod(element, 'focus', []);
-      this.keyboard.show();
-    }, 0);
+    
   }
 
   ionViewDidLoad() {

@@ -32,13 +32,6 @@ export class HospitalApi {
     })
   }
 
-  generateQRCode() {
-    return this.http.get(`${this.base_url}/new_qr_code.json`).map(response=>{
-      this.hospital = response;
-      return this.hospital;
-    })
-  }
-
   createHospital(hospital) {
     return this.http.post(`${this.base_url}.json`, hospital).map(response=>{
       this.hospital = response;

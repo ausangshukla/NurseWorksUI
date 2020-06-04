@@ -1,7 +1,6 @@
 import { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, ViewChild } from '@angular/core';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import * as moment from 'moment';
 import { ShiftApi } from '../../../providers/shift-api';
 import { ResponseUtility } from '../../../providers/response-utility';
@@ -26,8 +25,7 @@ export class ShiftForm {
     public formBuilder: FormBuilder,
     public loadingController: LoadingController,
     public shiftApi: ShiftApi,
-    public respUtility: ResponseUtility,
-    private barcodeScanner: BarcodeScanner) {
+    public respUtility: ResponseUtility) {
 
     this.shift = this.navParams.data;
     this.hospital = this.shift["hospital"];
@@ -46,55 +44,6 @@ export class ShiftForm {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ShiftForm');
     this.respUtility.trackView("ShiftForm");
-  }
-
-  scan() {
-    console.log('Scan called');
-    this.barcodeScanner.scan().then(qr_code => {
-       console.log('qr_code', qr_code);
-
-      let loader = this.loadingController.create({
-        content: 'Saving ...'
-      });
-      loader.present();
-
-      this.shiftApi.startEndShift(this.shift["id"], qr_code.text).map(res => {
-        console.log(`Shift = ${res}`);
-        this.shift = res;
-      }).subscribe(
-        shift => {          
-          if (this.shift["end_code"] != null) {
-            this.respUtility.showSuccess('Code Accepted.Your shift has ended.');
-            this.navCtrl.pop();
-            this.navCtrl.pop();
-            this.rate_hospital(this.shift);
-          } else {
-            this.respUtility.showSuccess('Code Accepted.Your shift has started.');
-            this.navCtrl.pop();
-            this.navCtrl.pop();
-          }
-        },
-        error => {
-          if (error.status === 422) {
-            let error_response = error.error;
-            let msg = "";
-            for (var key in error_response) {
-              msg += error_response[key] + ". ";
-            }
-            this.respUtility.showWarning(msg);
-            loader.dismiss();
-          }
-          else {
-            this.respUtility.showFailure(error);
-            loader.dismiss();
-          }
-        },
-        () => { loader.dismiss(); }
-      );
-
-    }).catch(err => {
-      console.log('Error', err);
-    });
   }
 
   isAcceptedResponse() {

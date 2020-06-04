@@ -114,7 +114,6 @@
       </p>
   
   
-      <div *ngIf="hospital.qr_code == null">
 
         <ion-item>
           <ion-label floating>Start Code</ion-label>
@@ -129,8 +128,6 @@
           Select the start code your temp needs to enter upon arrival.
         </p>
 
-
-
         <ion-item>
           <ion-label floating>End Code</ion-label>
           <ion-input name="end_code" formControlName="end_code" type="number" [(ngModel)]="staffingRequest.end_code" [class.invalid]="!slideOneForm.controls.end_code.valid && (slideOneForm.controls.end_code.dirty || submitAttempt)"></ion-input>
@@ -144,7 +141,6 @@
           Select the end code your temp needs to enter upon completion of the shift.
         </p>
 
-      </div>
 
     </form>
 
