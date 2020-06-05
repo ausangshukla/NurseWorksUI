@@ -51,6 +51,8 @@ import { ContactApi } from '../providers/contact-api';
 import { ReferenceApi } from '../providers/reference-api';
 import { ContactPage } from '../pages/static/contact';
 import { HelpPage } from '../pages/static/help';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 
 
 @NgModule({
@@ -114,6 +116,8 @@ import { HelpPage } from '../pages/static/help';
     ReferralApi,
     ContactApi,
     ReferenceApi,
+    Geolocation,
+    NativeGeocoder,
     { provide: ErrorHandler, useClass: SentryErrorHandler }
   ]
 })

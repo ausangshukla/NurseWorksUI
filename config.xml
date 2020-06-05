@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="uk.co.connuct" version="5.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="in.co.nurseworks" version="5.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Connuct Care</name>
     <description>Connecting care homes to care givers and nurses</description>
-    <author email="admin@connuct.co.uk" href="http://blog.connuct.co.uk">Connuct Team</author>
+    <author email="admin@in.co.nurseworks" href="http://blog.in.co.nurseworks">Connuct Team</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="*" />
@@ -56,9 +56,19 @@
         <splash density="xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
         <splash density="xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
-        <preference name="CodePushDeploymentKey" value="GMEpa_YlgqaOk0KqyGItThhwKbSH4b2ed3e5-0af3-4cbb-a368-b2812d60ae9d" />
         <preference name="android-targetSdkVersion" value="29" />
         <preference name="android-minSdkVersion" value="19" />
+        <config-file parent="/manifest" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+        </config-file>
+        <access origin="*" />
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:usesCleartextTraffic="true" />
+        </edit-config>
+        <allow-navigation href="*" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -93,18 +103,15 @@
         <splash height="1024" src="resources/ios/splash/Default-Portrait~ipad.png" width="768" />
         <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
-        <preference name="CodePushDeploymentKey" value="EQ_RRc-p_aOR3TIWbZkM7O038HeQ4b2ed3e5-0af3-4cbb-a368-b2812d60ae9d" />
         <icon height="1024" src="resources/ios/icon/icon-1024.png" width="1024" />
         <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />
     </platform>
     <engine name="browser" spec="~5.0.4" />
-    <plugin name="phonegap-plugin-barcodescanner" spec="8.1.0" />
     <plugin name="cordova-plugin-file" spec="5.0.0" />
     <plugin name="cordova-plugin-device" spec="^2.0.2" />
     <plugin name="cordova-plugin-file-transfer" spec="^1.5.1" />
     <plugin name="cordova-plugin-filepath" spec="^1.5.1" />
     <plugin name="cordova-plugin-statusbar" spec="^2.2.1" />
-    <plugin name="cordova-plugin-whitelist" spec="^1.3.1" />
     <plugin name="cordova-plugin-camera" spec="^4.0.3">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="Use camera to upload images of documents required for verification" />
         <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="Use camera to upload images of documents required for verification" />

@@ -8,6 +8,9 @@ import { PostCodeApi } from '../../../providers/postcode-api';
 import { CheckboxValidator } from '../../../providers/checkbox-validator';
 import { PostCodeValidator } from '../postcode-validator';
 import { AngularTokenService } from 'angular-token';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
+
 
 @IonicPage()
 @Component({
@@ -38,7 +41,8 @@ export class UserForm {
     private tokenService: AngularTokenService,
     private elementRef: ElementRef,
     private keyboard: Keyboard,
-    private postCodeApi: PostCodeApi) {
+    private geolocation: Geolocation,
+    private nativeGeocoder: NativeGeocoder) {
 
     this.user = this.navParams.data;
 
@@ -51,7 +55,13 @@ export class UserForm {
       confirm_password: ['', Validators.compose([Validators.required])],
       title: [''],
       age: [''],
+      key_qualifications: ['', Validators.compose([Validators.required])],
+      address: ['', Validators.compose([Validators.required])],
+      city: ['', Validators.compose([Validators.required])],
+      specializations: ['', Validators.compose([Validators.required])],
       years_of_exp: ['1'],
+      nursing_school_name: [],
+      NUID: [],
       months_of_exp: ['0'],
       conveyence: ['', Validators.compose([Validators.required])],
       locum: [false],
@@ -80,6 +90,29 @@ export class UserForm {
       console.log("Disabled password", this.slideOneForm.controls.password.disabled);
     }
 
+    console.log('Trying to get location 1');
+    this.geolocation.getCurrentPosition().then((resp) => {
+
+      console.log('Trying to get location 2');
+
+      let lat = resp.coords.latitude
+      let lng = resp.coords.longitude
+      console.log("location 3 " + lat + " " + lng);
+
+      let options: NativeGeocoderOptions = {
+          useLocale: true,
+          maxResults: 5
+      };
+      
+      this.nativeGeocoder.reverseGeocode(lat, lng, options)
+        .then((result: NativeGeocoderResult[]) => console.log(JSON.stringify(result[0])))
+        .catch((error: any) => console.log("location 4", error));
+
+     }).catch((error) => {
+       console.log('Error getting location', error);
+     });
+
+     console.log('Trying to get location 5');
   }
 
   onLocumChanged($event) {
