@@ -70,14 +70,16 @@
 
       <ion-item id="specializations">
         <ion-label floating>Specializations</ion-label>
-        <ion-select name="specializations" [(ngModel)]="user.specializations" [class.invalid]="!slideOneForm.controls.specializations.valid && (slideOneForm.controls.specializations.dirty || submitAttempt)"
+        <ion-select multiple name="specializations" [(ngModel)]="user.specializations" [class.invalid]="!slideOneForm.controls.specializations.valid && (slideOneForm.controls.specializations.dirty || submitAttempt)"
           formControlName="specializations">
           
-          <ion-option value="Medical wards/other" checked="true">Medical wards/other</ion-option>
+          <ion-option value="Medical wards/Other" >Medical wards</ion-option>
+          <ion-option value="OT Nurse" >OT Nurse</ion-option>
           <ion-option value="Ortho / Surgical wards">Ortho / Surgical wards</ion-option>
-          <ion-option value="Higher end specialty (e.g. ICU / CCU / Onco care)">Higher end specialty (e.g. ICU / CCU / Onco care)</ion-option>
+          <ion-option value="Higher end specialty (ICU / CCU / Onco care)">Higher end specialty (e.g. ICU / CCU / Onco care)</ion-option>
           <ion-option value="Maternity and Pediatric wards">Maternity and Pediatric wards</ion-option>
           <ion-option value="Mental health / Psychiatric ward nurse">Mental health / Psychiatric ward nurse</ion-option>
+          <ion-option value="Other">Other</ion-option>
         </ion-select>
       </ion-item>
       <ion-item *ngIf="!slideOneForm.controls.specializations.valid  && (slideOneForm.controls.specializations.dirty || submitAttempt)">
@@ -198,7 +200,15 @@
         <div *ngIf="user.locum == 'true' || user.locum == true">
 
         
-
+          <ion-item>
+            <ion-label floating>Locum Shifts Per Month</ion-label>
+            <ion-input id= "locum_shifts_pm" name="locum_shifts_pm" [(ngModel)]="user.locum_shifts_pm" [class.invalid]="!slideOneForm.controls.locum_shifts_pm.valid && (slideOneForm.controls.locum_shifts_pm.dirty || submitAttempt)"
+              formControlName="locum_shifts_pm" type="text"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!slideOneForm.controls.locum_shifts_pm.valid && !slideOneForm.controls.locum_shifts_pm.pending && (slideOneForm.controls.locum_shifts_pm.dirty || submitAttempt)">
+            <p class="error-text">Please enter a valid number of shifts.</p>
+          </ion-item>
+  
           <ion-item id="pref_shift_duration">
             <ion-label floating>Shift Duration</ion-label>
             

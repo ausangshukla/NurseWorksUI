@@ -9,7 +9,7 @@
 
 <ion-content>
   <ion-card *ngIf="!currentUser">
-    <img src="assets/nurseworks.png" />
+    <img src="assets/splash.jpg" />
     <ion-card-content>
       <ion-card-title class="center">
         Please Login or Register
@@ -43,7 +43,7 @@
 
   <div class="home-page">
     <ion-card *ngIf="currentUser">
-      <img src="assets/nurseworks.png" />
+      <img src="assets/splash.jpg" />
       <div class="card-title">Welcome</div>
       <div class="card-subtitle">{{currentUser.first_name}} {{currentUser.last_name}}</div>
     </ion-card>

@@ -71,6 +71,8 @@ export class StaffingRequestForm {
 
       po_for_invoice: [''],
 
+      speciality: [''],
+
       preferred_carer_id: ['', Validators.compose([])],
 
     });

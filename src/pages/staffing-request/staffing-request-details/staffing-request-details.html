@@ -46,6 +46,16 @@
       </ion-row>
     </ion-item>
 
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Speciality:
+        </ion-col>
+        <ion-col text-wrap>
+          {{staffingRequest.speciality}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
 
     <ion-item *ngIf="staffingRequest.hospital_base">
       <ion-row>
@@ -53,7 +63,7 @@
           Estimated Price:
         </ion-col>
         <ion-col text-wrap>
-          {{staffingRequest.hospital_base | currency : "GBP": true }}
+          {{staffingRequest.hospital_base | currency : "INR": true }}
         </ion-col>
       </ion-row>
     </ion-item>
@@ -64,7 +74,7 @@
           VAT:
         </ion-col>
         <ion-col text-wrap>
-          {{staffingRequest.vat | currency : "GBP": true }}
+          {{staffingRequest.vat | currency : "INR": true }}
         </ion-col>
       </ion-row>
     </ion-item>
@@ -75,7 +85,7 @@
           Total:
         </ion-col>
         <ion-col text-wrap>
-          {{staffingRequest.hospital_total_amount | currency : "GBP": true }}
+          {{staffingRequest.hospital_total_amount | currency : "INR": true }}
         </ion-col>
       </ion-row>
     </ion-item>
@@ -204,28 +214,6 @@
         </ion-col>
       </ion-row>
     </ion-item>
-    <div *ngIf="current_user.id == staffingRequest.user_id">
-      <ion-item>
-        <ion-row>
-          <ion-col>
-            Start Code:
-          </ion-col>
-          <ion-col>
-            {{staffingRequest.start_code}}
-          </ion-col>
-        </ion-row>
-      </ion-item>
-
-      <ion-item>
-        <ion-row>
-          <ion-col>
-            End Code:
-          </ion-col>
-          <ion-col>
-            {{staffingRequest.end_code}}
-          </ion-col>
-        </ion-row>
-      </ion-item>
 
       <ion-item>
         <ion-row>
@@ -237,8 +225,6 @@
           </ion-col>
         </ion-row>
       </ion-item>
-
-    </div>
 
   </ion-list>
 

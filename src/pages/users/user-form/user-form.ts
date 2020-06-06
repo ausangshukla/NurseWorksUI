@@ -65,6 +65,7 @@ export class UserForm {
       months_of_exp: ['0'],
       conveyence: ['', Validators.compose([Validators.required])],
       locum: [false],
+      locum_shifts_pm: ['0'],
       pref_shift_duration: ['', Validators.compose([Validators.required])],
       pref_shift_time: ['', Validators.compose([Validators.required])],
       exp_shift_rate: ['', Validators.compose([Validators.required])],
