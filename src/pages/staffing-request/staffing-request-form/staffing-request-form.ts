@@ -53,11 +53,13 @@ export class StaffingRequestForm {
 
       hospital_id: ['', Validators.compose([])],
 
-      role: ['', Validators.compose([Validators.required])],
+      //role: ['Nurse', Validators.compose([Validators.required])],
 
       start_date: ['', Validators.compose([Validators.required])],
 
-      end_date: ['', Validators.compose([Validators.required])],
+      // end_date: ['', Validators.compose([Validators.required])],
+
+      shift_duration: ['', Validators.compose([Validators.required])],
 
       request_status: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*')])],
 
@@ -84,6 +86,12 @@ export class StaffingRequestForm {
 
     this.setPOValidators();
 
+  }
+
+  durationChanged(hours) {
+    let start_date = moment(this.staffingRequest["start_date"]);
+    this.staffingRequest["end_date"] = start_date.add(hours, 'hours').format();
+    console.log("Set end date to " + this.staffingRequest["end_date"] );
   }
 
   setPOValidators() {
@@ -134,6 +142,10 @@ export class StaffingRequestForm {
       this.staffingRequest["end_code"] = Math.floor(1000 + Math.random()*9000);
     }
 
+    if(this.staffingRequest["role"] == null) {
+      this.staffingRequest["role"] = "Nurse"
+    }
+
     if(this.current_user["sister_hospitals"] != null) {
       this.staffingRequest["hospital_id"] = this.current_user["hospital_id"]
     }
@@ -147,16 +159,7 @@ export class StaffingRequestForm {
   save() {
     this.respUtility.trackEvent("StaffingRequest", "Save", "click");
     this.submitAttempt = true;
-
-    if( moment(this.staffingRequest["start_date"]).add(4, 'hours') > moment(this.staffingRequest["end_date"]) ) {
-      console.log("start date > end date");
-      this.slideOneForm.controls["end_date"].setErrors({notValid:true});
-      return;
-    } else {
-      console.log("start date < end date");
-      this.slideOneForm.controls["end_date"].setErrors(null);      
-    }
-
+    
     //console.log(this.staffingRequest);
     let loader = this.loadingController.create({
       content: 'Saving ...'

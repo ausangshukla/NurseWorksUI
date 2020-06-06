@@ -34,22 +34,23 @@
           Select the start date & time for the temp staff.
         </p>
   
-  
-  
-        <ion-item>
-          <ion-label floating>End Date</ion-label>
-          <ion-datetime formControlName="end_date" displayFormat="DD/MM/YYYY  HH:mm" [min]="minEndDate" [max]="maxEndDate" [(ngModel)]="staffingRequest.end_date"
-            [class.invalid]="!slideOneForm.controls.end_date.valid && (slideOneForm.controls.end_date.dirty || submitAttempt)"></ion-datetime>
+        <ion-item id="shift_duration">
+          <ion-label floating>Shift Duration</ion-label>
+          <ion-select name="shift_duration" [(ngModel)]="staffingRequest.shift_duration"  (ionChange)="durationChanged($event)"
+                      [class.invalid]="!slideOneForm.controls.shift_duration.valid && (slideOneForm.controls.shift_duration.dirty || submitAttempt)"
+            formControlName="shift_duration">          
+            <ion-option value=4 >4 Hrs</ion-option>
+            <ion-option value=8 >8 Hrs</ion-option>
+            <ion-option value=12>12 Hrs</ion-option>
+          </ion-select>
         </ion-item>
-  
-        <ion-item *ngIf="!slideOneForm.controls.end_date.valid  && (slideOneForm.controls.end_date.dirty || submitAttempt)">
-          <p class="error-text">Should be at least 4 hours after Start.</p>
+        <ion-item *ngIf="!slideOneForm.controls.shift_duration.valid  && (slideOneForm.controls.shift_duration.dirty || submitAttempt)">
+          <p class="error-text">Please enter valid shift duration.</p>
         </ion-item>
         <p class="field-hint">
-          Select the end date & time for the temp staff.
+          Select the shift duration you need.
         </p>
-  
-  
+    
     
       <ion-item id="hospital_id" *ngIf="staffingRequest.sister_hospitals">
         <ion-label floating>Care Home</ion-label>
@@ -64,31 +65,17 @@
         Select the care home you are booking for
       </p>
 
-      <ion-item id="role">
-        <ion-label floating>Staff Type</ion-label>
-        <ion-select name="role" [(ngModel)]="staffingRequest.role" (ionChange)="getCarers()"
-                    [class.invalid]="!slideOneForm.controls.role.valid && (slideOneForm.controls.role.dirty || submitAttempt)"
-          formControlName="role">
-          <ion-option value="Care Giver" checked="true">Care Giver</ion-option>
-          <ion-option value="Nurse">Nurse</ion-option>
-        </ion-select>
-      </ion-item>
-      <p class="field-hint">
-        Select the type of temp staff you need.
-      </p>
 
       <ion-item id="speciality">
         <ion-label floating>Specializations</ion-label>
         <ion-select name="speciality" [(ngModel)]="staffingRequest.speciality" [class.invalid]="!slideOneForm.controls.speciality.valid && (slideOneForm.controls.speciality.dirty || submitAttempt)"
-          formControlName="speciality">
-          
-          <ion-option value="Medical wards/Other" >Medical wards</ion-option>
-          <ion-option value="OT Nurse" >OT Nurse</ion-option>
+          formControlName="speciality">          
+          <ion-option value="Medical wards/other" >Medical wards/other</ion-option>
+          <ion-option value="OT nurse" >OT nurse</ion-option>
           <ion-option value="Ortho / Surgical wards">Ortho / Surgical wards</ion-option>
-          <ion-option value="Higher end specialty (ICU / CCU / Onco care)">Higher end specialty (e.g. ICU / CCU / Onco care)</ion-option>
+          <ion-option value="Higher end specialty (ICU / CCU / Onco care)">Higher end specialty (ICU / CCU / Onco care)</ion-option>
           <ion-option value="Maternity and Pediatric wards">Maternity and Pediatric wards</ion-option>
-          <ion-option value="Mental health / Psychiatric ward nurse">Mental health / Psychiatric ward nurse</ion-option>
-          <ion-option value="Other">Other</ion-option>
+          <ion-option value="Mental health / Psychiatric ward">Mental health / Psychiatric ward nurse</ion-option>
         </ion-select>
       </ion-item>
       <ion-item *ngIf="!slideOneForm.controls.speciality.valid  && (slideOneForm.controls.speciality.dirty || submitAttempt)">

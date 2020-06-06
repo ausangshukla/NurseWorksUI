@@ -38,17 +38,6 @@
     <ion-item>
       <ion-row>
         <ion-col>
-          Required:
-        </ion-col>
-        <ion-col text-wrap>
-          {{staffingRequest.role}}
-        </ion-col>
-      </ion-row>
-    </ion-item>
-
-    <ion-item>
-      <ion-row>
-        <ion-col>
           Speciality:
         </ion-col>
         <ion-col text-wrap>
@@ -106,7 +95,7 @@
     <ion-item>
       <ion-row>
         <ion-col>
-          Created On:
+          Booked On:
         </ion-col>
         <ion-col>
           {{staffingRequest.created_at | utc_date | date: 'dd/MM/yyyy H:mm'}}
@@ -129,10 +118,10 @@
     <ion-item>
       <ion-row>
         <ion-col>
-          End Date:
+          Duration:
         </ion-col>
         <ion-col>
-          {{staffingRequest.end_date | utc_date | date: 'dd/MM/yyyy HH:mm'}}
+          {{staffingRequest.shift_duration}} Hrs
         </ion-col>
       </ion-row>
     </ion-item>
