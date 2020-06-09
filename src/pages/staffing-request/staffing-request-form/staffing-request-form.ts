@@ -15,8 +15,8 @@ export class StaffingRequestForm {
 
   minStartDate: any;
   maxStartDate: any;
-  minEndDate:any;
-  maxEndDate:any;
+  minEndDate: any;
+  maxEndDate: any;
   staffingRequest: {};
   current_user: {};
   hospital: {};
@@ -37,17 +37,17 @@ export class StaffingRequestForm {
     public staffingRequestApi: StaffingRequestApi,
     public respUtility: ResponseUtility) {
 
-    this.current_user = loginProvider.currentUser;  
+    this.current_user = loginProvider.currentUser;
     this.hospital = this.current_user["hospital"];
-      
+
     this.staffingRequest = this.navParams.data;
     this.staffingRequest["hospital_id"] = this.current_user["hospital_id"];
-       
+
     this.minStartDate = new Date().toISOString();
     this.maxStartDate = moment().add(1, 'year').toISOString();
     this.minEndDate = new Date().toISOString();
     this.maxEndDate = moment().add(1, 'year').toISOString();
-    
+
 
     this.slideOneForm = formBuilder.group({
 
@@ -85,19 +85,19 @@ export class StaffingRequestForm {
     });
 
     this.setPOValidators();
-
+    this.getCarers();
   }
 
   durationChanged(hours) {
     let start_date = moment(this.staffingRequest["start_date"]);
     this.staffingRequest["end_date"] = start_date.add(hours, 'hours').format();
-    console.log("Set end date to " + this.staffingRequest["end_date"] );
+    console.log("Set end date to " + this.staffingRequest["end_date"]);
   }
 
   setPOValidators() {
-  
+
     const po_for_invoideControl = this.slideOneForm.get('po_for_invoice');
-    
+
     if (this.hospital["po_req_for_invoice"]) {
       po_for_invoideControl.setValidators([Validators.required]);
     } else {
@@ -108,13 +108,11 @@ export class StaffingRequestForm {
 
   getCarers() {
     console.log("getCarers Called");
-    if(this.staffingRequest["role"]) {
-      this.staffingRequestApi.getCares(this.staffingRequest).subscribe(
-        carers => {
-          this.carers = carers;
-        }
-      )
-    }
+    this.staffingRequestApi.getCares(this.staffingRequest).subscribe(
+      carers => {
+        this.carers = carers;
+      }
+    )
   }
 
   ionViewDidLoad() {
@@ -134,19 +132,19 @@ export class StaffingRequestForm {
       console.log(`end date = ${end_date}`);
     }
 
-    if(this.staffingRequest["start_code"] == null) {
-      this.staffingRequest["start_code"] = Math.floor(1000 + Math.random()*9000);
+    if (this.staffingRequest["start_code"] == null) {
+      this.staffingRequest["start_code"] = Math.floor(1000 + Math.random() * 9000);
     }
 
-    if(this.staffingRequest["end_code"] == null) {
-      this.staffingRequest["end_code"] = Math.floor(1000 + Math.random()*9000);
+    if (this.staffingRequest["end_code"] == null) {
+      this.staffingRequest["end_code"] = Math.floor(1000 + Math.random() * 9000);
     }
 
-    if(this.staffingRequest["role"] == null) {
+    if (this.staffingRequest["role"] == null) {
       this.staffingRequest["role"] = "Nurse"
     }
 
-    if(this.current_user["sister_hospitals"] != null) {
+    if (this.current_user["sister_hospitals"] != null) {
       this.staffingRequest["hospital_id"] = this.current_user["hospital_id"]
     }
 
@@ -159,7 +157,7 @@ export class StaffingRequestForm {
   save() {
     this.respUtility.trackEvent("StaffingRequest", "Save", "click");
     this.submitAttempt = true;
-    
+
     //console.log(this.staffingRequest);
     let loader = this.loadingController.create({
       content: 'Saving ...'

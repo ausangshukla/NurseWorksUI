@@ -187,25 +187,25 @@
         </ion-item>
 
         
-        <ion-item id="locum">
-          <ion-label floating>Locum / Part Time</ion-label>
-          <ion-select name="locum" [(ngModel)]="user.locum" [class.invalid]="!slideOneForm.controls.locum.valid && (slideOneForm.controls.locum.dirty || submitAttempt)"
-            formControlName="locum">
+        <ion-item id="avail_part_time">
+          <ion-label floating>avail_part_time / Part Time</ion-label>
+          <ion-select name="avail_part_time" [(ngModel)]="user.avail_part_time" [class.invalid]="!slideOneForm.controls.avail_part_time.valid && (slideOneForm.controls.avail_part_time.dirty || submitAttempt)"
+            formControlName="avail_part_time">
             <ion-option value=false>No</ion-option>
             <ion-option value=true>Yes</ion-option>
           </ion-select>
         </ion-item>
 
         
-        <div *ngIf="user.locum == 'true' || user.locum == true">
+        <div *ngIf="user.avail_part_time == 'true' || user.avail_part_time == true">
 
         
           <ion-item>
-            <ion-label floating>Locum Shifts Per Month</ion-label>
-            <ion-input id= "locum_shifts_pm" name="locum_shifts_pm" [(ngModel)]="user.locum_shifts_pm" [class.invalid]="!slideOneForm.controls.locum_shifts_pm.valid && (slideOneForm.controls.locum_shifts_pm.dirty || submitAttempt)"
-              formControlName="locum_shifts_pm" type="text"></ion-input>
+            <ion-label floating>avail_part_time Shifts Per Month</ion-label>
+            <ion-input id= "shifts_per_month" name="shifts_per_month" [(ngModel)]="user.shifts_per_month" [class.invalid]="!slideOneForm.controls.shifts_per_month.valid && (slideOneForm.controls.shifts_per_month.dirty || submitAttempt)"
+              formControlName="shifts_per_month" type="text"></ion-input>
           </ion-item>
-          <ion-item *ngIf="!slideOneForm.controls.locum_shifts_pm.valid && !slideOneForm.controls.locum_shifts_pm.pending && (slideOneForm.controls.locum_shifts_pm.dirty || submitAttempt)">
+          <ion-item *ngIf="!slideOneForm.controls.shifts_per_month.valid && !slideOneForm.controls.shifts_per_month.pending && (slideOneForm.controls.shifts_per_month.dirty || submitAttempt)">
             <p class="error-text">Please enter a valid number of shifts.</p>
           </ion-item>
   
