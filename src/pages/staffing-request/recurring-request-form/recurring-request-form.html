@@ -60,7 +60,7 @@
           </p>
           
           <ion-item id="hospital_id" *ngIf="current_user.sister_hospitals">
-            <ion-label floating>Care Home</ion-label>
+            <ion-label floating>Hospital</ion-label>
             <ion-select text-wrap name="hospital_id" [(ngModel)]="recurringRequest.hospital_id" [class.invalid]="!slideOneForm.controls.hospital_id.valid && (slideOneForm.controls.hospital_id.dirty || submitAttempt)"
               formControlName="hospital_id" class="item-select-custom">
               <ion-option  text-wrap *ngFor="let hospital of current_user.sister_hospitals" value="{{hospital.id}}">

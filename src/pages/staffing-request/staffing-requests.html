@@ -11,7 +11,7 @@
 
   <ion-card *ngIf="hospital_registration_pending">
     <ion-card-title class="center error-text">
-      Care Home Registration Pending
+      Hospital Registration Pending
     </ion-card-title>
 
     <ion-card-content>
@@ -25,7 +25,7 @@
 
   <ion-card *ngIf="hospital_verification_pending">
     <ion-card-title class="center error-text">
-      Care Home Verification Pending
+      Hospital Verification Pending
     </ion-card-title>
 
     <ion-card-content>
@@ -59,7 +59,7 @@
     <button ion-item id="StaffingRequest-{{staffingRequest.id}}-item" *ngFor="let staffingRequest of staffingRequests" (click)=getStaffingRequestDetails(staffingRequest)>
        
       <p text-wrap>
-        Care Home: {{staffingRequest.hospital.name}}
+        Hospital: {{staffingRequest.hospital.name}}
       </p>
 
       <p>
@@ -69,7 +69,12 @@
       <p>
         End: {{staffingRequest.end_date | utc_date | date: 'dd/MM/yyyy HH:mm'}}
       </p>
-      <p>
+
+      <p text-wrap>
+        Staff Type: {{staffingRequest.staff_type}}
+      </p>
+
+      <p *ngIf="staffingRequest.staff_type == 'Temp'">
         <ion-badge>Estimated Amount: {{staffingRequest.hospital_total_amount | currency : "GBP": true}}</ion-badge> 
       </p>
       <p>

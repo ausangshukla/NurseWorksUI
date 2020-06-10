@@ -53,11 +53,9 @@ export class StaffingRequestForm {
 
       hospital_id: ['', Validators.compose([])],
 
-      //role: ['Nurse', Validators.compose([Validators.required])],
+      staff_type: ['', Validators.compose([Validators.required])],
 
       start_date: ['', Validators.compose([Validators.required])],
-
-      // end_date: ['', Validators.compose([Validators.required])],
 
       shift_duration: ['', Validators.compose([Validators.required])],
 
@@ -85,7 +83,7 @@ export class StaffingRequestForm {
     });
 
     this.setPOValidators();
-    this.getCarers();
+
   }
 
   durationChanged(hours) {
@@ -107,7 +105,8 @@ export class StaffingRequestForm {
   }
 
   getCarers() {
-    console.log("getCarers Called");
+    console.log("getCarers Called ");
+    console.log(this.staffingRequest);
     this.staffingRequestApi.getCares(this.staffingRequest).subscribe(
       carers => {
         this.carers = carers;

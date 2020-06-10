@@ -17,27 +17,36 @@
 
   <ion-list>
 
-            <button ion-item (click)="register('Care Giver')">
+            <button ion-item (click)="register({'role': 'Nurse', 'avail_full_time': true})">
               <ion-icon name="create" item-left color="primary"></ion-icon>
-              Healthcare Professional
-              <p>
-                Register as a Care Giver.
-              </p>
-            </button>
-
-            <button ion-item (click)="register('Nurse')">
-              <ion-icon name="create" item-left color="primary"></ion-icon>
-              Nurse
-              <p>
-                Register as a Nurse.
-              </p>
-            </button>
-
-            <button ion-item (click)="register('Admin')">
-              <ion-icon name="create" item-left color="primary"></ion-icon>
-              Hospital
+              Nurse - Full Time
               <p text-wrap>
-                Register as a Care Home administrator.
+                Register to find a full time nurse position.
+              </p>
+            </button>
+
+            <button ion-item (click)="register({'role': 'Nurse', 'avail_part_time': true})">
+              <ion-icon name="create" item-left color="primary"></ion-icon>
+              Nurse - Part Time
+              <p text-wrap>
+                Register to find a part time nurse position.
+              </p>
+            </button>
+
+
+            <button ion-item (click)="register({'role': 'Nurse'})">
+              <ion-icon name="create" item-left color="primary"></ion-icon>
+              Nurse - Already Employed
+              <p text-wrap>
+                Register to log shifts at your current hospital.
+              </p>
+            </button>
+
+            <button ion-item (click)="register({'role': 'Admin'})">
+              <ion-icon name="create" item-left color="primary"></ion-icon>
+              Hospital Admin / Head Nurse
+              <p text-wrap>
+                Register as a Hospital administrator.
               </p>
             </button>
 

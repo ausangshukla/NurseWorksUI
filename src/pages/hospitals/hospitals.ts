@@ -39,7 +39,7 @@ export class Hospitals {
 
   loadHospitals(searchTerm, page, infiniteScroll:InfiniteScroll) {
     let loader = this.loadingController.create({
-      content: 'Loading Care Homes...'
+      content: 'Loading Hospitals...'
     });
     loader.present();
 

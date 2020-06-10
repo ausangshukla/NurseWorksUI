@@ -52,56 +52,6 @@
         <p class="error-text">Please enter a valid name.</p>
       </ion-item>
 
-      <ion-item id="key_qualifications">
-        <ion-label floating>Qualifications</ion-label>
-        <ion-select name="key_qualifications" [(ngModel)]="user.key_qualifications" [class.invalid]="!slideOneForm.controls.key_qualifications.valid && (slideOneForm.controls.key_qualifications.dirty || submitAttempt)"
-          formControlName="key_qualifications">
-          
-          <ion-option value="A&M Nurse" checked="true">A&M Nurse</ion-option>
-          <ion-option value="G&M / Diploma Nurse">G&M / Diploma Nurse</ion-option>
-          <ion-option value="BSc Nursing">BSc Nursing</ion-option>
-          <ion-option value="MSc Nursing / PhD">MSc Nursing / PhD</ion-option>
-          <ion-option value="Student in Nursing">Student in Nursing</ion-option>
-        </ion-select>
-      </ion-item>
-      <ion-item *ngIf="!slideOneForm.controls.key_qualifications.valid  && (slideOneForm.controls.key_qualifications.dirty || submitAttempt)">
-        <p class="error-text">Please enter a valid qualification.</p>
-      </ion-item>
-
-      <ion-item id="specializations">
-        <ion-label floating>Specializations</ion-label>
-        <ion-select multiple name="specializations" [(ngModel)]="user.specializations" [class.invalid]="!slideOneForm.controls.specializations.valid && (slideOneForm.controls.specializations.dirty || submitAttempt)"
-          formControlName="specializations">
-          
-          <ion-option value="Medical wards/other" >Medical wards/other</ion-option>
-          <ion-option value="OT Nurse" >OT Nurse</ion-option>
-          <ion-option value="Ortho / Surgical wards">Ortho / Surgical wards</ion-option>
-          <ion-option value="Higher end specialty (ICU / CCU / Onco care)">Higher end specialty (ICU / CCU / Onco care)</ion-option>
-          <ion-option value="Maternity and Pediatric wards">Maternity and Pediatric wards</ion-option>
-          <ion-option value="Mental health / Psychiatric ward">Mental health / Psychiatric ward nurse</ion-option>
-          <ion-option value="Other">Other</ion-option>
-        </ion-select>
-      </ion-item>
-      <ion-item *ngIf="!slideOneForm.controls.specializations.valid  && (slideOneForm.controls.specializations.dirty || submitAttempt)">
-        <p class="error-text">Please enter a valid specializations.</p>
-      </ion-item>
-
-
-    <p class="field-hint">
-        Experience
-    </p>
-    <div class = "row">
-      <div class = "col"><ion-input id= "years_of_exp" name="years_of_exp" [(ngModel)]="user.years_of_exp" [class.invalid]="!slideOneForm.controls.years_of_exp.valid && (slideOneForm.controls.years_of_exp.dirty || submitAttempt)"
-        formControlName="years_of_exp" type="text"></ion-input>
-      </div>
-      <div class = "col"><ion-label>Years</ion-label></div>
-      <div class = "col"><ion-input id= "months_of_exp" name="months_of_exp" [(ngModel)]="user.months_of_exp" [class.invalid]="!slideOneForm.controls.months_of_exp.valid && (slideOneForm.controls.months_of_exp.dirty || submitAttempt)"
-        formControlName="months_of_exp" type="text"></ion-input>  
-      </div>
-      <div class = "col"><ion-label>Months</ion-label></div>
-    </div>        
-    
-
       <ion-item>
         <ion-label floating>Email</ion-label>
         <ion-input name="email" formControlName="email" type="email" [(ngModel)]="user.email" [class.invalid]="!slideOneForm.controls.email.valid && (slideOneForm.controls.email.dirty || submitAttempt)"></ion-input>
@@ -138,6 +88,54 @@
         <p class="error-text">Enter a valid 10 digit mobile phone number starting with.</p>
       </ion-item>
 
+
+      <ion-item id="key_qualifications">
+        <ion-label floating>Qualifications</ion-label>
+        <ion-select name="key_qualifications" [(ngModel)]="user.key_qualifications" [class.invalid]="!slideOneForm.controls.key_qualifications.valid && (slideOneForm.controls.key_qualifications.dirty || submitAttempt)"
+          formControlName="key_qualifications">
+          
+          <ion-option value="A&M Nurse" checked="true">A&M Nurse</ion-option>
+          <ion-option value="G&M / Diploma Nurse">G&M / Diploma Nurse</ion-option>
+          <ion-option value="BSc Nursing">BSc Nursing</ion-option>
+          <ion-option value="MSc Nursing / PhD">MSc Nursing / PhD</ion-option>
+          <ion-option value="Student in Nursing">Student in Nursing</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="!slideOneForm.controls.key_qualifications.valid  && (slideOneForm.controls.key_qualifications.dirty || submitAttempt)">
+        <p class="error-text">Please enter a valid qualification.</p>
+      </ion-item>
+
+      <ion-item id="specializations">
+        <ion-label floating>Specializations</ion-label>
+        <ion-select multiple name="specializations" [(ngModel)]="user.specializations" [class.invalid]="!slideOneForm.controls.specializations.valid && (slideOneForm.controls.specializations.dirty || submitAttempt)"
+          formControlName="specializations">
+          
+          <ion-option value="Medical wards/other" >Medical wards/other</ion-option>
+          <ion-option value="OT Nurse" >OT Nurse</ion-option>
+          <ion-option value="Ortho / Surgical wards">Ortho / Surgical wards</ion-option>
+          <ion-option value="Higher end specialty (ICU / CCU / Onco care)">Higher end specialty (ICU / CCU / Onco care)</ion-option>
+          <ion-option value="Maternity and Pediatric wards">Maternity and Pediatric wards</ion-option>
+          <ion-option value="Mental health / Psychiatric ward">Mental health / Psychiatric ward nurse</ion-option>
+          <ion-option value="Other">Other</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="!slideOneForm.controls.specializations.valid  && (slideOneForm.controls.specializations.dirty || submitAttempt)">
+        <p class="error-text">Please enter a valid specializations.</p>
+      </ion-item>
+
+
+    
+      <ion-item>
+        <ion-label floating>Years Of Experience</ion-label>
+        <ion-input name="years_of_exp" formControlName="years_of_exp" type="text" [(ngModel)]="user.years_of_exp" [class.invalid]="!slideOneForm.controls.years_of_exp.valid && (slideOneForm.controls.email.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="!slideOneForm.controls.years_of_exp.valid  && (slideOneForm.controls.years_of_exp.dirty || submitAttempt)">
+        <p class="error-text">Enter a valid school.</p>
+      </ion-item>      
+    
+
+      
       <ion-item>
         <ion-label floating>Address</ion-label>
         <ion-input name="address" formControlName="address" type="text" [(ngModel)]="user.address" [class.invalid]="!slideOneForm.controls.address.valid && (slideOneForm.controls.email.dirty || submitAttempt)"></ion-input>
@@ -188,7 +186,7 @@
 
         
         <ion-item id="avail_part_time">
-          <ion-label floating>avail_part_time / Part Time</ion-label>
+          <ion-label floating>Available for Part Time</ion-label>
           <ion-select name="avail_part_time" [(ngModel)]="user.avail_part_time" [class.invalid]="!slideOneForm.controls.avail_part_time.valid && (slideOneForm.controls.avail_part_time.dirty || submitAttempt)"
             formControlName="avail_part_time">
             <ion-option value=false>No</ion-option>

@@ -21,6 +21,19 @@
 
     <form [formGroup]="slideOneForm">
 
+      <ion-item id="staff_type">
+        <ion-label floating>Staff Type</ion-label>
+        <ion-select name="staff_type" [(ngModel)]="staffingRequest.staff_type"  (ionChange)="getCarers()"
+                    [class.invalid]="!slideOneForm.controls.staff_type.valid && (slideOneForm.controls.staff_type.dirty || submitAttempt)"
+          formControlName="staff_type">          
+          <ion-option value="Perm" >Permanent</ion-option>
+          <ion-option value="Temp" >Temp</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="!slideOneForm.controls.staff_type.valid  && (slideOneForm.controls.staff_type.dirty || submitAttempt)">
+        <p class="error-text">Please enter valid staff type.</p>
+      </ion-item>
+      
         <ion-item>
           <ion-label floating>Start Date</ion-label>
           <ion-datetime (change)="startDateChanged(date)" formControlName="start_date" displayFormat="DD/MM/YYYY  HH:mm" [min]="minStartDate" [max]="maxStartDate" [(ngModel)]="staffingRequest.start_date"
@@ -65,35 +78,37 @@
         Select the care home you are booking for
       </p>
 
+      <div *ngIf="staffingRequest.staff_type == 'Temp'">
+        <ion-item id="speciality">
+          <ion-label floating>Specializations</ion-label>
+          <ion-select name="speciality" [(ngModel)]="staffingRequest.speciality" [class.invalid]="!slideOneForm.controls.speciality.valid && (slideOneForm.controls.speciality.dirty || submitAttempt)"
+            formControlName="speciality">          
+            <ion-option value="Medical wards/other" >Medical wards/other</ion-option>
+            <ion-option value="OT nurse" >OT nurse</ion-option>
+            <ion-option value="Ortho / Surgical wards">Ortho / Surgical wards</ion-option>
+            <ion-option value="Higher end specialty (ICU / CCU / Onco care)">Higher end specialty (ICU / CCU / Onco care)</ion-option>
+            <ion-option value="Maternity and Pediatric wards">Maternity and Pediatric wards</ion-option>
+            <ion-option value="Mental health / Psychiatric ward">Mental health / Psychiatric ward nurse</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item *ngIf="!slideOneForm.controls.speciality.valid  && (slideOneForm.controls.speciality.dirty || submitAttempt)">
+          <p class="error-text">Please enter a valid speciality.</p>
+        </ion-item>
+        <p class="field-hint">
+          Select the type of speciality you need.
+        </p>
+      </div>
 
-      <ion-item id="speciality">
-        <ion-label floating>Specializations</ion-label>
-        <ion-select name="speciality" [(ngModel)]="staffingRequest.speciality" [class.invalid]="!slideOneForm.controls.speciality.valid && (slideOneForm.controls.speciality.dirty || submitAttempt)"
-          formControlName="speciality">          
-          <ion-option value="Medical wards/other" >Medical wards/other</ion-option>
-          <ion-option value="OT nurse" >OT nurse</ion-option>
-          <ion-option value="Ortho / Surgical wards">Ortho / Surgical wards</ion-option>
-          <ion-option value="Higher end specialty (ICU / CCU / Onco care)">Higher end specialty (ICU / CCU / Onco care)</ion-option>
-          <ion-option value="Maternity and Pediatric wards">Maternity and Pediatric wards</ion-option>
-          <ion-option value="Mental health / Psychiatric ward">Mental health / Psychiatric ward nurse</ion-option>
-        </ion-select>
-      </ion-item>
-      <ion-item *ngIf="!slideOneForm.controls.speciality.valid  && (slideOneForm.controls.speciality.dirty || submitAttempt)">
-        <p class="error-text">Please enter a valid speciality.</p>
-      </ion-item>
-      <p class="field-hint">
-        Select the type of speciality you need.
-      </p>
-
-      <ion-item id="preferred_carer_id">
-        <ion-label floating>Staff (Optional)</ion-label>
+      <ion-item id="preferred_carer_id" *ngIf="staffingRequest.staff_type">
+        <ion-label *ngIf="staffingRequest.staff_type == 'Temp'" floating>Staff (Optional)</ion-label>
+        <ion-label *ngIf="staffingRequest.staff_type == 'Perm'" floating>Staff</ion-label>
         <ion-select name="preferred_carer_id" [(ngModel)]="staffingRequest.preferred_carer_id" 
                     [class.invalid]="!slideOneForm.controls.preferred_carer_id.valid && (slideOneForm.controls.preferred_carer_id.dirty || submitAttempt)"
                     formControlName="preferred_carer_id">
           <ion-option *ngFor="let carer of carers" [value] = "carer.id">{{carer.first_name}} {{carer.last_name}}</ion-option> 
         </ion-select>
       </ion-item>
-      <p class="field-hint">
+      <p class="field-hint" *ngIf="staffingRequest.staff_type == 'Temp'">
         Leave this blank to get a carer selected by us specially for you or select the temp staff you prefer.
       </p>
 
@@ -122,7 +137,7 @@
       </p>
   
   
-
+<!-- 
         <ion-item>
           <ion-label floating>Start Code</ion-label>
           <ion-input name="start_code" formControlName="start_code" type="number" [(ngModel)]="staffingRequest.start_code" [class.invalid]="!slideOneForm.controls.start_code.valid && (slideOneForm.controls.start_code.dirty || submitAttempt)"></ion-input>
@@ -149,7 +164,7 @@
           Select the end code your temp needs to enter upon completion of the shift.
         </p>
 
-
+ -->
     </form>
 
   </ion-list>

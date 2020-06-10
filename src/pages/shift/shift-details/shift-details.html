@@ -47,7 +47,7 @@
       <ion-item>
         <ion-row>
           <ion-col>
-            Care Home:
+            Hospital:
           </ion-col>
           <ion-col text-wrap>
             {{shift.hospital.name}}
@@ -137,32 +137,7 @@
       </ion-row>
     </ion-item>
 
-    <ion-item *ngIf="shift.payment_status">
-      <ion-row>
-        <ion-col>
-          Payment Status:
-        </ion-col>
-        <ion-col *ngIf="shift.user_id == current_user.id">
-          {{shift.payment_status}}
-        </ion-col>
-        <ion-col *ngIf="shift.user_id != current_user.id">
-          {{shift.hospital_payment_status}}
-        </ion-col>
-      </ion-row>
-    </ion-item>
-
-    <ion-item *ngIf="shift.start_code">
-      <ion-row>
-        <ion-col>
-          Start Code:
-        </ion-col>
-        <ion-col>
-          {{shift.start_code}}
-        </ion-col>
-      </ion-row>
-    </ion-item>
-
-    <ion-item *ngIf="shift.start_code">
+    <ion-item *ngIf="shift.start_date">
       <ion-row>
         <ion-col>
           Start Time:
@@ -173,18 +148,7 @@
       </ion-row>
     </ion-item>
 
-    <ion-item *ngIf="shift.end_code">
-      <ion-row>
-        <ion-col>
-          End Code:
-        </ion-col>
-        <ion-col>
-          {{shift.end_code}}
-        </ion-col>
-      </ion-row>
-    </ion-item>
-
-    <ion-item *ngIf="shift.end_code">
+    <ion-item *ngIf="shift.end_date">
       <ion-row>
         <ion-col>
           End Time:
@@ -194,100 +158,6 @@
         </ion-col>
       </ion-row>
     </ion-item>
-
-    <ion-item *ngIf="shift.end_code">
-      <ion-row>
-        <ion-col>
-          Worked:
-        </ion-col>
-        <ion-col>
-          {{ (shift.minutes_worked / 60) | number:'.0-0' }} hrs {{(shift.minutes_worked % 60)}} mins
-        </ion-col>
-      </ion-row>
-    </ion-item>
-
-    <div *ngIf="shift.end_code && shift.can_manage == true">
-      <ion-item>
-        <ion-row>
-          <ion-col>
-            Amount:
-          </ion-col>
-          <ion-col>
-            {{shift.carer_base | currency : 'GBP' : true}}
-          </ion-col>
-        </ion-row>
-      </ion-item>
-    </div>
-
-    <div *ngIf="shift.end_code && shift.can_manage == false">
-      <ion-item>
-        <ion-row>
-          <ion-col>
-            Billing:
-          </ion-col>
-          <ion-col>
-            {{shift.hospital_base | currency : 'GBP' : true}}
-          </ion-col>
-        </ion-row>
-      </ion-item>
-
-      <ion-item>
-        <ion-row>
-          <ion-col>
-            Vat:
-          </ion-col>
-          <ion-col>
-            {{shift.vat | currency : 'GBP' : true}}
-          </ion-col>
-        </ion-row>
-      </ion-item>
-
-      <ion-item>
-        <ion-row>
-          <ion-col>
-            Amount:
-          </ion-col>
-          <ion-col>
-            {{shift.hospital_total_amount | currency : 'GBP' : true}}
-          </ion-col>
-        </ion-row>
-      </ion-item>
-
-    </div>
-
-
-    <div *ngIf="shift.can_manage == false">
-
-
-      <ion-item *ngIf="shift.start_code == nil">
-        <ion-row>
-          <ion-col>
-            Start Code:
-          </ion-col>
-          <ion-col *ngIf="show_start_code">
-            {{shift.staffing_request.start_code}}
-          </ion-col>
-          <ion-col *ngIf="!show_start_code">
-            <a (click)="show_start_code = true">Show Start Code</a>
-          </ion-col>
-        </ion-row>
-      </ion-item>
-
-      <ion-item *ngIf="shift.start_code != nil && shift.end_code == nil">
-        <ion-row>
-          <ion-col>
-            End Code:
-          </ion-col>
-          <ion-col *ngIf="show_end_code">
-            {{shift.staffing_request.end_code}}
-          </ion-col>
-          <ion-col *ngIf="!show_end_code">
-            <a (click)="set_end_code()">Show End Code</a>
-          </ion-col>
-        </ion-row>
-      </ion-item>
-    </div>
-
   </ion-list>
 
   <div *ngIf="shift.can_manage == true">
@@ -325,7 +195,7 @@
           <button ion-button full color="primary" (click)="viewPayment(shift)">View Payment</button>
         </ion-col>
         <ion-col *ngIf="shift.hospital_rated != true">
-          <button ion-button full color="primary" (click)="rate_hospital(shift)">Rate Care Home</button>
+          <button ion-button full color="primary" (click)="rate_hospital(shift)">Rate Hospital</button>
         </ion-col>
       </ion-row>
 

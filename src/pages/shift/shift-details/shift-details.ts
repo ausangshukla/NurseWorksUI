@@ -80,11 +80,11 @@ export class ShiftDetails {
 
     loader.present();
 
-    this.shiftApi.updateShift(shift).subscribe(
+    this.shiftApi.response(shift).subscribe(
       shift => {        
         this.navCtrl.popToRoot();
         setTimeout( () => {
-          this.respUtility.showSuccess('Shift Updated');
+          this.respUtility.showSuccess('Shift response sent. We will confirm with you in a some time.');
         }, 1000);
       },
       error => { this.respUtility.showFailure(error); loader.dismiss(); },
