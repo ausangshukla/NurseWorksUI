@@ -118,10 +118,10 @@
     <ion-item>
       <ion-row>
         <ion-col>
-          Break Time for Carers:
+          Break Time for Nurses:
         </ion-col>
         <ion-col>
-          {{shift.carer_break_mins}} mins
+          {{shift.nurse_break_mins}} mins
         </ion-col>
       </ion-row>
     </ion-item>
@@ -209,7 +209,7 @@
         <button ion-button full color="primary" (click)="viewPayment(shift)">View Payment</button>
       </ion-col>
       <ion-col *ngIf="shift.rated != true">
-        <button ion-button full color="primary" (click)="rate_care_giver(shift)">Rate Care Giver</button>
+        <button ion-button full color="primary" (click)="rate_care_giver(shift)">Rate Nurse</button>
       </ion-col>
     </ion-row>
   </div>

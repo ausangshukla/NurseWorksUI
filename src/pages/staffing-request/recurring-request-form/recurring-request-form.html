@@ -74,10 +74,10 @@
   
           <ion-item id="role">
             <ion-label floating>Staff Type</ion-label>
-            <ion-select name="role" [(ngModel)]="recurringRequest.role" (ionChange)="getCarers()"
+            <ion-select name="role" [(ngModel)]="recurringRequest.role" (ionChange)="getNurses()"
                         [class.invalid]="!slideOneForm.controls.role.valid && (slideOneForm.controls.role.dirty || submitAttempt)"
               formControlName="role">
-              <ion-option value="Care Giver" checked="true">Care Giver</ion-option>
+              <ion-option value="Nurse" checked="true">Nurse</ion-option>
               <ion-option value="Nurse">Nurse</ion-option>
             </ion-select>
           </ion-item>
@@ -90,12 +90,12 @@
             Select the type of temp staff you need.
           </p>
     
-          <ion-item id="preferred_carer_id">
+          <ion-item id="preferred_nurse_id">
             <ion-label floating>Staff (Optional)</ion-label>
-            <ion-select name="preferred_carer_id" [(ngModel)]="recurringRequest.preferred_carer_id" 
-                        [class.invalid]="!slideOneForm.controls.preferred_carer_id.valid && (slideOneForm.controls.preferred_carer_id.dirty || submitAttempt)"
-                        formControlName="preferred_carer_id">
-              <ion-option *ngFor="let carer of carers" [value] = "carer.id">{{carer.first_name}} {{carer.last_name}}</ion-option> 
+            <ion-select name="preferred_nurse_id" [(ngModel)]="recurringRequest.preferred_nurse_id" 
+                        [class.invalid]="!slideOneForm.controls.preferred_nurse_id.valid && (slideOneForm.controls.preferred_nurse_id.dirty || submitAttempt)"
+                        formControlName="preferred_nurse_id">
+              <ion-option *ngFor="let nurse of nurses" [value] = "nurse.id">{{nurse.first_name}} {{nurse.last_name}}</ion-option> 
             </ion-select>
           </ion-item>
           <p class="field-hint">
@@ -122,7 +122,7 @@
           </ion-item>
     
           <p class="field-hint">
-            Additional notes for the carer
+            Additional notes for the nurse
           </p>
       
         

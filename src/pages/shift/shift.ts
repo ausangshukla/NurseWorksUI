@@ -30,7 +30,7 @@ export class Shift {
     this.response_status = this.navParams.data["response_status"];
 
     this.current_user = loginProvider.currentUser;
-    if (this.current_user["role"] == "Care Giver" || this.current_user["role"] == "Nurse") {
+    if (this.current_user["role"] == "Nurse" || this.current_user["role"] == "Nurse") {
       this.verification_pending = !this.current_user["verified"];
       console.log(`Shift: verification_pending = ${this.verification_pending}`);
     }

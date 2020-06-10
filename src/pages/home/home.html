@@ -15,7 +15,7 @@
         Please Login or Register
       </ion-card-title>
       <p>
-        The most popular way to hire temporary Care Givers & Nurses across the UK
+        The most popular way to hire temporary Nurses & Nurses across the UK
       </p>
     </ion-card-content>
 
@@ -56,7 +56,7 @@
         <ion-list>
 
           <admin-menus [initData]="initData" *ngIf="currentUser.role=='Admin'"></admin-menus>
-          <temp-menus [initData]="initData" *ngIf="currentUser.role=='Care Giver' || currentUser.role=='Nurse'"></temp-menus>
+          <temp-menus [initData]="initData" *ngIf="currentUser.role=='Nurse' || currentUser.role=='Nurse'"></temp-menus>
         </ion-list>
 
       </ion-card-content>

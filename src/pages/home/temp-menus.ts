@@ -46,7 +46,7 @@ export class TempMenus extends DocLinks implements Menu {
         console.log("TempMenus", this.currentUser);
 
         if (this.currentUser &&
-            (this.currentUser.role == "Care Giver" || this.currentUser.role == "Nurse")) {
+            (this.currentUser.role == "Nurse" || this.currentUser.role == "Nurse")) {
             if (this.currentUser.verified !== true) {
                 // this.respUtility.showWarning("Please upload your documents for verification");
             } else if (this.currentUser.bank_account == null) {

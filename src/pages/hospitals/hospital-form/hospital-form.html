@@ -134,19 +134,19 @@
 
       
       
-      <ion-item id="carer_break_mins">
-        <ion-label floating>Break for Carers in Minutes</ion-label>
+      <ion-item id="nurse_break_mins">
+        <ion-label floating>Break for Nurses in Minutes</ion-label>
         
-        <ion-select name="carer_break_mins" [(ngModel)]="hospital.carer_break_mins" 
-          [class.invalid]="!slideOneForm.controls.carer_break_mins.valid && (slideOneForm.controls.carer_break_mins.dirty || submitAttempt)"
-          formControlName="carer_break_mins">
+        <ion-select name="nurse_break_mins" [(ngModel)]="hospital.nurse_break_mins" 
+          [class.invalid]="!slideOneForm.controls.nurse_break_mins.valid && (slideOneForm.controls.nurse_break_mins.dirty || submitAttempt)"
+          formControlName="nurse_break_mins">
           <ion-option value="30">30 mins</ion-option>
           <ion-option value="60">60 mins</ion-option>
         </ion-select>
 
       </ion-item>
       <p class="field-hint">
-        The number of minutes the carer can take as a break. 
+        The number of minutes the nurse can take as a break. 
       </p>
 
 
@@ -162,7 +162,7 @@
       </ion-item>
 
       <ion-item *ngIf="!slideOneForm.controls.paid_unpaid_breaks.valid  && (slideOneForm.controls.paid_unpaid_breaks.dirty || submitAttempt)">
-        <p class="error-text">Please enter valid break time in mins for carers.</p>
+        <p class="error-text">Please enter valid break time in mins for nurses.</p>
       </ion-item>
 
       <ion-item>

@@ -45,6 +45,15 @@ export class ShiftApi {
     })
   }
 
+  updateShift(shift) {
+    console.log(`ShiftApi: Updating shift`)
+    console.log(shift);
+    return this.http.put(`${this.base_url}/${shift.id}.json`, shift).map(response=>{
+      this.shift = response;
+      return this.shift;
+    })
+  }
+
   response(shift) {
     console.log(`ShiftApi: Response to shift`)
     console.log(shift);

@@ -23,7 +23,7 @@
       </ion-card-content>
     </ion-card>
   
-    <ion-fab id="new_staffing_request_btn" bottom right *ngIf="current_user.role!='Care Giver' && current_user.role!='Nurse' && current_user.hospital && current_user.hospital.verified ">
+    <ion-fab id="new_staffing_request_btn" bottom right *ngIf="current_user.role!='Nurse' && current_user.role!='Nurse' && current_user.hospital && current_user.hospital.verified ">
       <button ion-fab (click)="newRecurringRequest()"><ion-icon name="add"></ion-icon></button>
     </ion-fab>
   

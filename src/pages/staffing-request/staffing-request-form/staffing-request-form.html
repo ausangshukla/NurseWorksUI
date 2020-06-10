@@ -23,7 +23,7 @@
 
       <ion-item id="staff_type">
         <ion-label floating>Staff Type</ion-label>
-        <ion-select name="staff_type" [(ngModel)]="staffingRequest.staff_type"  (ionChange)="getCarers()"
+        <ion-select name="staff_type" [(ngModel)]="staffingRequest.staff_type"  (ionChange)="getNurses()"
                     [class.invalid]="!slideOneForm.controls.staff_type.valid && (slideOneForm.controls.staff_type.dirty || submitAttempt)"
           formControlName="staff_type">          
           <ion-option value="Perm" >Permanent</ion-option>
@@ -99,17 +99,17 @@
         </p>
       </div>
 
-      <ion-item id="preferred_carer_id" *ngIf="staffingRequest.staff_type">
+      <ion-item id="preferred_nurse_id" *ngIf="staffingRequest.staff_type">
         <ion-label *ngIf="staffingRequest.staff_type == 'Temp'" floating>Staff (Optional)</ion-label>
         <ion-label *ngIf="staffingRequest.staff_type == 'Perm'" floating>Staff</ion-label>
-        <ion-select name="preferred_carer_id" [(ngModel)]="staffingRequest.preferred_carer_id" 
-                    [class.invalid]="!slideOneForm.controls.preferred_carer_id.valid && (slideOneForm.controls.preferred_carer_id.dirty || submitAttempt)"
-                    formControlName="preferred_carer_id">
-          <ion-option *ngFor="let carer of carers" [value] = "carer.id">{{carer.first_name}} {{carer.last_name}}</ion-option> 
+        <ion-select name="preferred_nurse_id" [(ngModel)]="staffingRequest.preferred_nurse_id" 
+                    [class.invalid]="!slideOneForm.controls.preferred_nurse_id.valid && (slideOneForm.controls.preferred_nurse_id.dirty || submitAttempt)"
+                    formControlName="preferred_nurse_id">
+          <ion-option *ngFor="let nurse of nurses" [value] = "nurse.id">{{nurse.first_name}} {{nurse.last_name}}</ion-option> 
         </ion-select>
       </ion-item>
       <p class="field-hint" *ngIf="staffingRequest.staff_type == 'Temp'">
-        Leave this blank to get a carer selected by us specially for you or select the temp staff you prefer.
+        Leave this blank to get a nurse selected by us specially for you or select the temp staff you prefer.
       </p>
 
       <ion-item *ngIf="hospital.po_req_for_invoice">
@@ -133,7 +133,7 @@
       </ion-item>
 
       <p class="field-hint">
-        Additional notes for the carer
+        Additional notes for the nurse
       </p>
   
   

@@ -18,7 +18,7 @@
 
     <ion-item>
       {{user.title}} {{user.first_name}} {{user.last_name}}
-      <p *ngIf="user.role == 'Care Giver' || user.role == 'Nurse'">
+      <p *ngIf="user.role == 'Nurse' || user.role == 'Nurse'">
         <rating [(ngModel)]="user.rating" readOnly="true"></rating>
       </p>
       <p>
@@ -44,7 +44,7 @@
 
     </ion-item>
 
-    <div *ngIf="user.avail_part_time == true && (user.role == 'Care Giver' || user.role == 'Nurse')">
+    <div *ngIf="user.avail_part_time == true && (user.role == 'Nurse' || user.role == 'Nurse')">
 
       <ion-item>
         <p>
@@ -114,7 +114,7 @@
     <ion-card>
 
 
-      <ion-card-content *ngIf="user.role == 'Care Giver' || user.role == 'Nurse'">
+      <ion-card-content *ngIf="user.role == 'Nurse' || user.role == 'Nurse'">
 
         <ion-list>
 

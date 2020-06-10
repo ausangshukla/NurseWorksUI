@@ -20,7 +20,7 @@ export class StaffingRequestForm {
   staffingRequest: {};
   current_user: {};
   hospital: {};
-  carers: {};
+  nurses: {};
 
   @ViewChild('signupSlider') signupSlider: any;
 
@@ -73,7 +73,7 @@ export class StaffingRequestForm {
 
       speciality: [''],
 
-      preferred_carer_id: ['', Validators.compose([])],
+      preferred_nurse_id: ['', Validators.compose([])],
 
     });
 
@@ -104,12 +104,12 @@ export class StaffingRequestForm {
 
   }
 
-  getCarers() {
-    console.log("getCarers Called ");
+  getNurses() {
+    console.log("getNurses Called ");
     console.log(this.staffingRequest);
     this.staffingRequestApi.getCares(this.staffingRequest).subscribe(
-      carers => {
-        this.carers = carers;
+      nurses => {
+        this.nurses = nurses;
       }
     )
   }
@@ -184,7 +184,7 @@ export class StaffingRequestForm {
       } else {
         this.staffingRequestApi.createStaffingRequest(this.staffingRequest).subscribe(
           staffingRequest => {
-            this.respUtility.showSuccess('Request saved successfully. We will notify you when we fill the shift with a Care Giver/Nurse.');
+            this.respUtility.showSuccess('Request saved successfully. We will notify you when we fill the shift with a Nurse/Nurse.');
             this.navCtrl.pop();
           },
           error => {

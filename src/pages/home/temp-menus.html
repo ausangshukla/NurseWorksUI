@@ -1,4 +1,4 @@
-<div *ngIf="currentUser.role == 'Care Giver' || currentUser.role == 'Nurse'">
+<div *ngIf="currentUser.role == 'Nurse' || currentUser.role == 'Nurse'">
 
             <div *ngIf="currentUser.verified == false">
               <button ion-item *ngFor="let doc of currentUser.user_docs" (click)="viewDoc(doc)">

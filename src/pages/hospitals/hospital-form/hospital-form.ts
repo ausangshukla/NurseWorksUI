@@ -39,7 +39,7 @@ export class HospitalForm {
       owner_name: ['', Validators.compose([Validators.required])],       
       address: ['', Validators.compose([Validators.required])], 
       city: ['', Validators.compose([Validators.required])], 
-      carer_break_mins: [0], 
+      nurse_break_mins: [0], 
       num_of_beds: [20],
       nurse_count: [15],  
       typical_workex: [3],

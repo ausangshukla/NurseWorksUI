@@ -17,7 +17,7 @@ export class StaffingRequestApi {
   }
 
   getCares(staffingRequest) {
-    let endpoint = `${this.base_url}/get_carers.json`;
+    let endpoint = `${this.base_url}/get_nurses.json`;
     return this.http.post(endpoint, staffingRequest).map(response=>{
       return response;
     })

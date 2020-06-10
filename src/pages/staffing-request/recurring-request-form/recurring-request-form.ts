@@ -17,7 +17,7 @@ export class RecurringRequestForm {
   recurringRequest: {};
   current_user: {};
   hospital: {};
-  carers: {};
+  nurses: {};
   
   dateMulti: string[];
   type: 'string'; 
@@ -67,7 +67,7 @@ export class RecurringRequestForm {
 
       notes: ['', Validators.compose([])],
 
-      preferred_carer_id: [''],
+      preferred_nurse_id: [''],
 
       po_for_invoice: ['']
 
@@ -81,12 +81,12 @@ export class RecurringRequestForm {
   }
 
 
-  getCarers() {
-    console.log("getCarers Called");
+  getNurses() {
+    console.log("getNurses Called");
     if(this.recurringRequest["role"]) {
       this.recurringRequestApi.getCares(this.recurringRequest).subscribe(
-        carers => {
-          this.carers = carers;
+        nurses => {
+          this.nurses = nurses;
         }
       )
     }
@@ -152,7 +152,7 @@ export class RecurringRequestForm {
       } else {
         this.recurringRequestApi.createRecurringRequest(this.recurringRequest).subscribe(
           recurringRequest => {
-            this.respUtility.showSuccess('Request saved successfully. We will notify you when we fill the shift with a Care Giver/Nurse.');
+            this.respUtility.showSuccess('Request saved successfully. We will notify you when we fill the shift with a Nurse/Nurse.');
             this.navCtrl.pop();
           },
           error => {
