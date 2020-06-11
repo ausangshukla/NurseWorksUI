@@ -65,17 +65,17 @@
         </p>
     
     
-      <ion-item id="hospital_id" *ngIf="staffingRequest.sister_hospitals">
+      <ion-item id="hospital_id" *ngIf="current_user.sister_hospitals">
         <ion-label floating>Hospital</ion-label>
         <ion-select text-wrap name="hospital_id" [(ngModel)]="staffingRequest.hospital_id" [class.invalid]="!slideOneForm.controls.hospital_id.valid && (slideOneForm.controls.hospital_id.dirty || submitAttempt)"
           formControlName="hospital_id" class="item-select-custom">
-          <ion-option  text-wrap *ngFor="let hospital of staffingRequest.sister_hospitals" value="{{hospital.id}}">
+          <ion-option  text-wrap *ngFor="let hospital of current_user.sister_hospitals" value="{{hospital.id}}">
               {{hospital.name}}
           </ion-option>
         </ion-select>
       </ion-item>
       <p class="field-hint" *ngIf="staffingRequest.sister_hospitals">
-        Select the care home you are booking for
+        Select the ho you are spitalbooking for
       </p>
 
       <div *ngIf="staffingRequest.staff_type == 'Temp'">

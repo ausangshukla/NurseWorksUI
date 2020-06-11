@@ -38,6 +38,17 @@
     <ion-item>
       <ion-row>
         <ion-col>
+          Required:
+        </ion-col>
+        <ion-col text-wrap>
+          {{staffingRequest.role}} : {{staffingRequest.staff_type}} 
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
           Speciality:
         </ion-col>
         <ion-col text-wrap>
@@ -45,6 +56,30 @@
         </ion-col>
       </ion-row>
     </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Start On:
+        </ion-col>
+        <ion-col>
+          {{staffingRequest.start_date | utc_date | date: 'dd/MM/yyyy H:mm'}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          Duration:
+        </ion-col>
+        <ion-col>
+          {{staffingRequest.shift_duration}} Hrs
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
 
     <ion-item *ngIf="staffingRequest.hospital_base">
       <ion-row>
@@ -103,30 +138,6 @@
       </ion-row>
     </ion-item>
 
-    
-    <ion-item>
-      <ion-row>
-        <ion-col>
-          Start Date:
-        </ion-col>
-        <ion-col>
-          {{staffingRequest.start_date | utc_date | date: 'dd/MM/yyyy HH:mm'}}
-        </ion-col>
-      </ion-row>
-    </ion-item>
-
-    <ion-item>
-      <ion-row>
-        <ion-col>
-          Duration:
-        </ion-col>
-        <ion-col>
-          {{staffingRequest.shift_duration}} Hrs
-        </ion-col>
-      </ion-row>
-    </ion-item>
-
-
     <ion-item *ngIf="staffingRequest.po_for_invoice">
       <ion-row>
         <ion-col>
@@ -137,39 +148,6 @@
         </ion-col>
       </ion-row>
     </ion-item>
-
-    <div *ngIf="staffingRequest.can_manage == true">
-
-
-      <ion-item>
-        <ion-row>
-          <ion-col>
-            Start Code:
-          </ion-col>
-          <ion-col *ngIf="show_start_code">
-            {{staffingRequest.start_code}}
-          </ion-col>
-          <ion-col *ngIf="!show_start_code">
-            <a (click)="show_start_code = true">Show Start Code</a>
-          </ion-col>
-        </ion-row>
-      </ion-item>
-
-      <ion-item>
-        <ion-row>
-          <ion-col>
-            End Code:
-          </ion-col>
-          <ion-col *ngIf="show_end_code">
-            {{staffingRequest.end_code}}
-          </ion-col>
-          <ion-col *ngIf="!show_end_code">
-            <a (click)="show_end_code = true">Show End Code</a>
-          </ion-col>
-        </ion-row>
-      </ion-item>
-
-    </div>
 
     <ion-item *ngIf="staffingRequest.notes">
       <ion-row>
@@ -193,18 +171,7 @@
       </ion-row>
     </ion-item>
 
-    <ion-item>
-      <ion-row>
-        <ion-col>
-          Payment Status:
-        </ion-col>
-        <ion-col>
-          {{staffingRequest.payment_status}}
-        </ion-col>
-      </ion-row>
-    </ion-item>
-
-      <ion-item>
+      <ion-item *ngIf="staffingRequest.nurse_break_mins">
         <ion-row>
           <ion-col>
             Break Time for Nurses:

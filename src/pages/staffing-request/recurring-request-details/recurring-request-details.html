@@ -32,7 +32,7 @@
             Required:
           </ion-col>
           <ion-col text-wrap>
-            {{recurringRequest.role}}
+            {{recurringRequest.role}} : {{recurringRequest.spciality}} 
           </ion-col>
         </ion-row>
       </ion-item>
@@ -75,10 +75,10 @@
       <ion-item>
         <ion-row>
           <ion-col>
-            End Time:
+            Duration:
           </ion-col>
           <ion-col>
-            {{recurringRequest.end_date | utc_date | date: 'HH:mm'}}
+            {{recurringRequest.shift_duration}} Hrs
           </ion-col>
         </ion-row>
       </ion-item>
