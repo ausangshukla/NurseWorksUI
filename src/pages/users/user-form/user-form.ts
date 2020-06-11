@@ -123,6 +123,7 @@ export class UserForm {
     this.partTimeFields = this.additionalPartTimeFields.concat(this.fullTimeFields);
     let ptfLength = this.partTimeFields.length;
     let ftfLength = this.fullTimeFields.length;
+
     let cpsFields = ["years_of_exp", "address", "city", "specializations", "key_qualifications"]
     let cpsLength = cpsFields.length;
 
@@ -130,21 +131,23 @@ export class UserForm {
       this.slideOneForm.controls[this.partTimeFields[i]].disable();
     }
 
-    if (this.user["currently_permanent_staff"] == true) {
-      for (var i = 0; i < cpsLength; i++) {
-        this.slideOneForm.controls[cpsFields[i]].enable();
+    if(this.user["role"] == "Nurse") {
+      if (this.user["currently_permanent_staff"] == true) {
+        for (var i = 0; i < cpsLength; i++) {
+          this.slideOneForm.controls[cpsFields[i]].enable();
+        }
       }
-    }
 
-    if (this.user["avail_part_time"] == true) {
-      for (var i = 0; i < ptfLength; i++) {
-        this.slideOneForm.controls[this.partTimeFields[i]].enable();
-      }
-    } else if (this.user["avail_full_time"] == true) {
-      for (var i = 0; i < ftfLength; i++) {
-        this.slideOneForm.controls[this.fullTimeFields[i]].enable();
-      }
-    } 
+      if (this.user["avail_part_time"] == true) {
+        for (var i = 0; i < ptfLength; i++) {
+          this.slideOneForm.controls[this.partTimeFields[i]].enable();
+        }
+      } else if (this.user["avail_full_time"] == true) {
+        for (var i = 0; i < ftfLength; i++) {
+          this.slideOneForm.controls[this.fullTimeFields[i]].enable();
+        }
+      } 
+    }
 
   }
   
