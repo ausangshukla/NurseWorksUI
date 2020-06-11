@@ -64,6 +64,7 @@ export class UserForm {
       NUID: [],
       conveyence: ['', Validators.compose([Validators.required])],
       avail_part_time: [false],
+      avail_full_time: [false],
       shifts_per_month: ['0'],
       pref_shift_duration: ['', Validators.compose([Validators.required])],
       pref_shift_time: ['', Validators.compose([Validators.required])],
@@ -71,11 +72,11 @@ export class UserForm {
       accept_terms: [false, Validators.compose([CheckboxValidator.isChecked, Validators.required])],
       phone: ['', Validators.compose([Validators.minLength(10), Validators.maxLength(11), Validators.pattern('^\\d+$')])],
       pref_commute_distance: ['', Validators.compose([Validators.pattern('^\\d+$'), Validators.required])],
-      work_weekdays: [''],
-      work_weeknights: [''],
-      work_weekends: [''],
-      work_weekend_nights: [''],
-      pause_shifts: [''],
+      work_weekdays: [true],
+      work_weeknights: [true],
+      work_weekends: [true],
+      work_weekend_nights: [true],
+      pause_shifts: [false],
       medical_info: ['']
     }, { "validator": this.isMatching });
 

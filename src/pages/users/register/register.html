@@ -17,7 +17,7 @@
 
   <ion-list>
 
-            <button ion-item (click)="register({'role': 'Nurse', 'avail_full_time': true})">
+            <button ion-item (click)="register({'role': 'Nurse', 'avail_full_time': true, 'currently_permanent_staff': false})">
               <ion-icon name="create" item-left color="primary"></ion-icon>
               Nurse - Full Time
               <p text-wrap>
@@ -25,7 +25,7 @@
               </p>
             </button>
 
-            <button ion-item (click)="register({'role': 'Nurse', 'avail_part_time': true})">
+            <button ion-item (click)="register({'role': 'Nurse', 'avail_part_time': true, 'currently_permanent_staff': false})">
               <ion-icon name="create" item-left color="primary"></ion-icon>
               Nurse - Part Time
               <p text-wrap>
@@ -34,7 +34,7 @@
             </button>
 
 
-            <button ion-item (click)="register({'role': 'Nurse'})">
+            <button ion-item (click)="register({'role': 'Nurse', 'currently_permanent_staff': true})">
               <ion-icon name="create" item-left color="primary"></ion-icon>
               Nurse - Already Employed
               <p text-wrap>
