@@ -29,8 +29,9 @@ export class UserForm {
 
   submitAttempt: boolean = false;
   confirm_password;
-  careGiverFields = ["pref_commute_distance", "conveyence", "age", "pref_shift_duration", "pref_shift_time", "exp_shift_rate" ];
-    
+  fullTimeFields = ["specializations", "years_of_exp", "address", "city", "key_qualifications", "pref_commute_distance", "conveyence"];
+  additionalPartTimeFields = ["pref_shift_duration", "pref_shift_time", "exp_shift_rate", "part_time_work_days", "shifts_per_month" ];
+  partTimeFields;  
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -65,8 +66,8 @@ export class UserForm {
       conveyence: ['', Validators.compose([Validators.required])],
       avail_part_time: [false],
       avail_full_time: [false],
-      part_time_work_days: [],
-      shifts_per_month: ['0'],
+      part_time_work_days: ['', Validators.compose([Validators.required])],
+      shifts_per_month: ['', Validators.compose([Validators.required])],
       pref_shift_duration: ['', Validators.compose([Validators.required])],
       pref_shift_time: ['', Validators.compose([Validators.required])],
       exp_shift_rate: ['', Validators.compose([Validators.required])],
@@ -81,7 +82,7 @@ export class UserForm {
       medical_info: ['']
     }, { "validator": this.isMatching });
 
-    this.onRoleChange(this.user["role"]);
+    this.enable_diable_fields()
 
     // Password may not be visible, hence disable validations 
     if (this.user["id"]) {
@@ -117,21 +118,36 @@ export class UserForm {
      console.log('Trying to get location 5');
   }
 
-  onavail_part_timeChanged($event) {
-    
-    var arrayLength = this.careGiverFields.length;
+  enable_diable_fields() {
 
+    this.partTimeFields = this.additionalPartTimeFields.concat(this.fullTimeFields);
+    let ptfLength = this.partTimeFields.length;
+    let ftfLength = this.fullTimeFields.length;
+    let cpsFields = ["years_of_exp", "address", "city", "specializations", "key_qualifications"]
+    let cpsLength = cpsFields.length;
 
-    if (!$event.checked) {
-      for (var i = 0; i < arrayLength; i++) {
-        this.slideOneForm.controls[this.careGiverFields[i]].disable();
-      }
-    } else {
-      for (var i = 0; i < arrayLength; i++) {
-        this.slideOneForm.controls[this.careGiverFields[i]].enable();
+    for (var i = 0; i < ptfLength; i++) {
+      this.slideOneForm.controls[this.partTimeFields[i]].disable();
+    }
+
+    if (this.user["currently_permanent_staff"] == true) {
+      for (var i = 0; i < cpsLength; i++) {
+        this.slideOneForm.controls[cpsFields[i]].enable();
       }
     }
+
+    if (this.user["avail_part_time"] == true) {
+      for (var i = 0; i < ptfLength; i++) {
+        this.slideOneForm.controls[this.partTimeFields[i]].enable();
+      }
+    } else if (this.user["avail_full_time"] == true) {
+      for (var i = 0; i < ftfLength; i++) {
+        this.slideOneForm.controls[this.fullTimeFields[i]].enable();
+      }
+    } 
+
   }
+  
   onTermsChecked($event) {
     if (!$event.checked) {
       this.slideOneForm.patchValue({ accept_terms: null });
@@ -158,28 +174,7 @@ export class UserForm {
     }
 
   }
-  // Switch the madatory fields and validations based on the role
-  onRoleChange(role) {
-    console.log(`Role changed to ${role}`);
-
-    var arrayLength = this.careGiverFields.length;
-
-    if (role == "Admin") {
-      for (var i = 0; i < arrayLength; i++) {
-        this.slideOneForm.controls[this.careGiverFields[i]].disable();
-      }
-    } else {
-      for (var i = 0; i < arrayLength; i++) {
-        this.slideOneForm.controls[this.careGiverFields[i]].enable();
-      }
-    }
-
-  }
-
-  onTitleChange(title) {
-    
-  }
-
+ 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserForm');
     this.respUtility.trackView("UserForm");
