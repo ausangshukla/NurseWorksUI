@@ -65,6 +65,7 @@ export class UserForm {
       conveyence: ['', Validators.compose([Validators.required])],
       avail_part_time: [false],
       avail_full_time: [false],
+      part_time_work_days: [],
       shifts_per_month: ['0'],
       pref_shift_duration: ['', Validators.compose([Validators.required])],
       pref_shift_time: ['', Validators.compose([Validators.required])],
