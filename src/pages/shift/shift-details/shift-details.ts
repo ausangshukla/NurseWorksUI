@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, Events } from 'ionic-angular';
 
 import { LoginProvider } from '../../../providers/login-provider';
 import * as moment from 'moment';
@@ -22,7 +22,8 @@ export class ShiftDetails {
     private loginProvider: LoginProvider,
     public shiftApi: ShiftApi,
     public loadingController: LoadingController,
-    public respUtility: ResponseUtility) {
+    public respUtility: ResponseUtility,
+    public events: Events) {
 
     if(this.navParams.data["shiftId"] != null) {
       this.getShiftDetails(this.navParams.data["shiftId"]);
@@ -80,11 +81,12 @@ export class ShiftDetails {
 
     loader.present();
 
-    this.shiftApi.response(shift).subscribe(
+    this.shiftApi.update_response(shift).subscribe(
       shift => {        
         this.navCtrl.popToRoot();
         setTimeout( () => {
           this.respUtility.showSuccess('Shift response sent. We will confirm with you in a some time.');
+          this.events.publish('user:reloadInitialData');
         }, 1000);
       },
       error => { this.respUtility.showFailure(error); loader.dismiss(); },

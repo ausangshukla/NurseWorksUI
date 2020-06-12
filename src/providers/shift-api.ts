@@ -54,10 +54,11 @@ export class ShiftApi {
     })
   }
 
-  response(shift) {
+  update_response(shift) {
     console.log(`ShiftApi: Response to shift`)
     console.log(shift);
-    return this.http.post(`${this.base_url}/${shift.id}/response.json`, shift).map(response=>{
+    return this.http.post(`${this.base_url}/${shift.id}/update_response.json`, 
+                            {"response_status": shift.response_status}).map(response=>{
       this.shift = response;
       return this.shift;
     })

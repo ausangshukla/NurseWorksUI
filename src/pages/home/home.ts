@@ -20,7 +20,7 @@ export class HomePage implements Menu {
   currentUser: any;
   registerHospital = false;
   initData: any;
-  
+
   constructor(public navCtrl: NavController,
     public respUtility: ResponseUtility,
     public config: Config,
@@ -30,7 +30,7 @@ export class HomePage implements Menu {
     private loginProvider: LoginProvider) {
 
     this.homeEvents.registerMenu(this);
-    
+
   }
 
   displayMsgs() {
@@ -39,12 +39,18 @@ export class HomePage implements Menu {
 
   ionViewWillEnter() {
     console.log('ionViewWillEnter HomePage ');
+    
     this.events.subscribe('user:login:success', () => {
       console.log("AppComponent: user:login:success");
       this.currentUser = this.loginProvider.currentUser;
       this.getInitialData();
-    });    
-    
+    });
+
+    this.events.subscribe('user:reloadInitialData', () => {
+      console.log("AppComponent: user:reloadInitialData");
+      this.getInitialData();
+    });
+
   }
 
   show_payments() {
@@ -72,16 +78,16 @@ export class HomePage implements Menu {
 
   getInitialData() {
     this.userApi.getInitialData().subscribe(
-        response => {
-            console.log("Loaded initData: ");
-            this.initData = response;
-            console.log(this.initData);
-        },
-        error => {
-            this.respUtility.showFailure(error);
-        }
+      response => {
+        console.log("Loaded initData: ");
+        this.initData = response;
+        console.log(this.initData);
+      },
+      error => {
+        this.respUtility.showFailure(error);
+      }
     );
-}
+  }
 
 
 }
