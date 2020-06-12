@@ -74,13 +74,6 @@ export class HospitalSearch {
 
   newHospital(cqc) {
     let hospital = {};
-    if (cqc) {
-      hospital = {
-        name: cqc.name, postcode: cqc.postcode,
-        phone: cqc.phone, address: cqc.address,
-        cqc_location: cqc.cqc_location
-      };
-    }
     this.respUtility.trackEvent("Hospital", "New", "click");
     this.navCtrl.push('HospitalForm', hospital);
   }

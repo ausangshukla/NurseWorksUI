@@ -17,7 +17,6 @@
         </div>  
         <div>
           <ion-signaturepad [(ngModel)]="signature" [canvasWidth]="300" [canvasHeight]="300"></ion-signaturepad>
-          <p>{{signature}}</p>  
         </div>
       </ion-card-content>
     </ion-card>
@@ -31,7 +30,6 @@
     
         <div>
           <ion-signaturepad [(ngModel)]="signature" [canvasWidth]="300" [canvasHeight]="300"></ion-signaturepad>
-          <p>{{signature}}</p>  
         </div>      
       </ion-card-content>
     </ion-card>
@@ -41,7 +39,7 @@
 
     <ion-list no-lines>
 
-      <button ion-button full color="primary" (click)="startEndShift()">Submit</button>
+      <button ion-button full color="primary" (click)="confirmSaveSignature()">Submit</button>
 
     </ion-list>
     

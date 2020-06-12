@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, RouteReuseStrategy } from '@angular/router';
 import { IonicApp, IonicErrorHandler, IonicModule, NavController } from 'ionic-angular';
 
 import { Diagnostic } from '@ionic-native/diagnostic/ngx';

@@ -37,33 +37,10 @@
       </p>
 
       <p>
-        {{hospital.postcode}}
+        {{hospital.city}}
       </p>
     </button>
 
-    <!-- <ion-item-divider *ngIf="cqc_records">
-      <ion-label>
-        CQC Details
-      </ion-label>
-    </ion-item-divider> -->
-
-    <button ion-item *ngFor="let cqc of cqc_records" (click)=newHospital(cqc)>
-      <p>
-        {{cqc.name}}
-      </p>
-
-      <p>
-        {{cqc.address}}
-      </p>
-
-      <p>
-        {{cqc.phone}}
-      </p>
-
-      <p>
-        {{cqc.postcode}}
-      </p>
-    </button>
 
     <button *ngIf="searchTerm" ion-button full color="primary" (click)="newHospital(null)">
       Register New Hospital.

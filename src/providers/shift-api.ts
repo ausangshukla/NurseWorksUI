@@ -54,6 +54,15 @@ export class ShiftApi {
     })
   }
 
+  signShift(shift, sign) {
+    console.log(`ShiftApi: Signing shift`)
+    console.log(shift);
+    return this.http.post(`${this.base_url}/${shift.id}/sign.json`, sign).map(response=>{
+      this.shift = response;
+      return this.shift;
+    })
+  }
+
   update_response(shift) {
     console.log(`ShiftApi: Response to shift`)
     console.log(shift);

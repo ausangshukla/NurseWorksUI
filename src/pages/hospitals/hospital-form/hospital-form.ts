@@ -3,9 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, ViewChild } from '@angular/core';
 import { Events } from 'ionic-angular';
 import { HospitalApi } from '../../../providers/hospital-api';
-import { PostCodeApi } from '../../../providers/postcode-api';
 import { ResponseUtility } from '../../../providers/response-utility';
-import { PostCodeValidator } from '../../users/postcode-validator';
 
 @IonicPage()
 @Component({
@@ -28,7 +26,6 @@ export class HospitalForm {
     public formBuilder: FormBuilder,
     public loadingController: LoadingController,
     public hospitalApi: HospitalApi,
-    public postCodeApi: PostCodeApi,
     public respUtility: ResponseUtility) {
 
     this.hospital = this.navParams.data;

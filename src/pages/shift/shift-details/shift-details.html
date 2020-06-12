@@ -73,7 +73,7 @@
             Address:
           </ion-col>
           <ion-col text-wrap>
-            {{shift.hospital.address}}, {{shift.hospital.town}}, {{shift.hospital.postcode}}
+            {{shift.hospital.address}}, {{shift.hospital.city}}
           </ion-col>
         </ion-row>
       </ion-item>
@@ -172,16 +172,16 @@
     </ion-row>
 
     <div *ngIf="shift.response_status == 'Accepted'">
-      <ion-row *ngIf="shift.start_code == null || shift.end_code == null">
-        <ion-col *ngIf="shift.start_code == null">
+      <ion-row *ngIf="shift.start_signature_id == null || shift.end_signature_id == null">
+        <ion-col *ngIf="shift.start_signature_id == null">
           <button ion-button full color="primary" (click)="editShift(shift)">Start Shift</button>
         </ion-col>
-        <ion-col *ngIf="shift.start_code != null && shift.end_code == null">
+        <ion-col *ngIf="shift.start_signature_id != null && shift.end_signature_id == null">
           <button ion-button full color="primary" (click)="editShift(shift)">End Shift</button>
         </ion-col>
       </ion-row>
 
-      <ion-row *ngIf="shift.start_code == null">
+      <ion-row *ngIf="shift.start_signature_id == null">
         <ion-col>
           <button ion-button full color="danger" (click)="cancelShift(shift)">Cancel Shift</button>
         </ion-col>
@@ -190,10 +190,7 @@
 
     <div *ngIf="shift.response_status == 'Closed'">
 
-      <ion-row *ngIf="shift.end_code != null">
-        <ion-col *ngIf="shift.payment_status == 'Paid'">
-          <button ion-button full color="primary" (click)="viewPayment(shift)">View Payment</button>
-        </ion-col>
+      <ion-row *ngIf="shift.end_signature_id != null">
         <ion-col *ngIf="shift.hospital_rated != true">
           <button ion-button full color="primary" (click)="rate_hospital(shift)">Rate Hospital</button>
         </ion-col>
@@ -205,9 +202,6 @@
 
   <div *ngIf="shift.can_manage != true">
     <ion-row>
-      <ion-col *ngIf="shift.payment_status == 'Paid'">
-        <button ion-button full color="primary" (click)="viewPayment(shift)">View Payment</button>
-      </ion-col>
       <ion-col *ngIf="shift.rated != true">
         <button ion-button full color="primary" (click)="rate_care_giver(shift)">Rate Nurse</button>
       </ion-col>
