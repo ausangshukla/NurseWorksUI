@@ -84,9 +84,9 @@ export class ShiftDetails {
     this.shiftApi.update_response(shift).subscribe(
       shift => {        
         this.navCtrl.popToRoot();
+        this.events.publish('user:reloadInitialData');
         setTimeout( () => {
-          this.respUtility.showSuccess('Shift response sent. We will confirm with you in a some time.');
-          this.events.publish('user:reloadInitialData');
+          this.respUtility.showSuccess('Shift response sent. We will confirm with you in a some time.');          
         }, 1000);
       },
       error => { this.respUtility.showFailure(error); loader.dismiss(); },

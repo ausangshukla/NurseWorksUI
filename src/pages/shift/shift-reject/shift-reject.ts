@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, Select } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, Select, Events } from 'ionic-angular';
 import { LoginProvider } from '../../../providers/login-provider';
 import * as moment from 'moment';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -27,7 +27,8 @@ export class ShiftReject {
     public formBuilder: FormBuilder,
     public shiftApi: ShiftApi,
     public loadingController: LoadingController,
-    public respUtility: ResponseUtility) {
+    public respUtility: ResponseUtility,
+    public events: Events) {
 
     this.shift = this.navParams.data["shift"];
     this.cancel_or_reject = this.navParams.data["cancel_or_reject"];
@@ -68,14 +69,6 @@ export class ShiftReject {
     this.updateResponse(shift);
   }
   
-  rejectResponse(shift) {
-    this.respUtility.trackEvent("Shift", "Reject", "click");
-    shift.accepted = false;
-    shift.response_status = "Rejected"
-    this.updateResponse(shift);
-  }
-
-  
   updateResponse(shift) {
 
     let success = false;
@@ -85,11 +78,12 @@ export class ShiftReject {
 
     loader.present();
 
-    this.shiftApi.response(shift).subscribe(
+    this.shiftApi.update_response(shift).subscribe(
       shift => {        
         this.navCtrl.popToRoot();
+        this.events.publish('user:reloadInitialData');
         setTimeout( () => {
-          this.respUtility.showSuccess('Shift response sent.');
+          this.respUtility.showSuccess('Shift response sent.');          
         }, 1000);
       },
       error => { this.respUtility.showFailure(error); loader.dismiss(); },
