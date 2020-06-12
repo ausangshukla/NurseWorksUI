@@ -97,7 +97,7 @@ export class ShiftForm {
         type: file.type
       });
       const sign = new FormData();
-      sign.append('user_doc[name]', 'Shift-' + this.shift["id"] + "Signature");
+      sign.append('user_doc[name]', 'Shift-' + this.shift["id"] + "-Signature");
       sign.append('user_doc[doc_type]', 'Signature');
       sign.append('user_doc[user_id]', this.current_user.id);
       sign.append('user_doc[doc]', imgBlob, file.name);
@@ -121,7 +121,7 @@ export class ShiftForm {
           } else {
             this.respUtility.trackEvent("Shift", "Started", "click");
             this.respUtility.showSuccess('Your shift has started, have a good one.');
-            this.navCtrl.pop();
+            this.navCtrl.popToRoot();
           }
         },
         error => {
