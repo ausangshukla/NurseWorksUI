@@ -44,24 +44,27 @@
   <div class="home-page">
     <ion-card *ngIf="currentUser">
       <img src="assets/splash.jpg" />
-      <div class="card-title">Welcome</div>
-      <div class="card-subtitle">{{currentUser.first_name}} {{currentUser.last_name}}</div>
     </ion-card>
 
     <ion-card *ngIf="currentUser">
+        <ion-card-content>
+          <div class="card-title">Welcome</div>          
+          <div class="card-subtitle">{{currentUser.first_name}} {{currentUser.last_name}}</div>
+        </ion-card-content>    
+    </ion-card>
 
-
+    <ion-card *ngIf="currentUser">
       <ion-card-content>
-
         <ion-list>
-
           <admin-menus [initData]="initData" *ngIf="currentUser.role=='Admin'"></admin-menus>
           <temp-menus [initData]="initData" *ngIf="currentUser.role=='Nurse'"></temp-menus>
         </ion-list>
-
       </ion-card-content>
-
     </ion-card>
+
+
+    <ion-signaturepad [(ngModel)]="signature" [canvasWidth]="300" [canvasHeight]="300" [backgroundColor]="ffffff"></ion-signaturepad>
+    <p>{{signature}}</p>
 
   </div>
 

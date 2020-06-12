@@ -9,27 +9,30 @@
 
 <ion-content padding>
 
-    <ion-card *ngIf="shift.start_code == null">
-      <ion-card-title class="center error-text">
-        Enter Start Code
-      </ion-card-title>
-
+    <ion-card *ngIf="shift.start_signature_id == null">
       <ion-card-content>
-        <p>
-          Please request your care home to provide you with the start code at the start of your shift and enter it below.
-        </p>
+        <div text-center>
+          <div class="card-title">Start Shift</div>          
+          <div class="card-subtitle">Supervisor Signature Required</div>
+        </div>  
+        <div>
+          <ion-signaturepad [(ngModel)]="signature" [canvasWidth]="300" [canvasHeight]="300"></ion-signaturepad>
+          <p>{{signature}}</p>  
+        </div>
       </ion-card-content>
     </ion-card>
 
-    <ion-card *ngIf="start_code_present && shift.end_code == null">
-      <ion-card-title class="center">
-        Enter End Code
-      </ion-card-title>
-
+    <ion-card *ngIf="shift.start_signature_id != null && shift.end_signature_id == null">
       <ion-card-content>
-        <p>
-          Please request your care home to provide you with the end code at the end of your shift.
-        </p>
+        <div text-center>
+          <div class="card-title">End Shift</div>          
+          <div class="card-subtitle">Supervisor Signature Required</div>
+        </div>  
+    
+        <div>
+          <ion-signaturepad [(ngModel)]="signature" [canvasWidth]="300" [canvasHeight]="300"></ion-signaturepad>
+          <p>{{signature}}</p>  
+        </div>      
       </ion-card-content>
     </ion-card>
 
@@ -38,37 +41,9 @@
 
     <ion-list no-lines>
 
-      <form [formGroup]="slideOneForm">
-
-        <div *ngIf="!start_code_present">
-          <ion-item>
-            <ion-label floating>Enter Start Code</ion-label>
-            <ion-input name="start_code" formControlName="start_code" type="text" [(ngModel)]="shift.start_code" [class.invalid]="!slideOneForm.controls.start_code.valid && (slideOneForm.controls.start_code.dirty || submitAttempt)"></ion-input>
-          </ion-item>
-
-          <ion-item *ngIf="!slideOneForm.controls.start_code.valid  && (slideOneForm.controls.start_code.dirty || submitAttempt)">
-            <p>Please enter a valid Start Code.</p>
-          </ion-item>
-        </div>
-
-
-        <div *ngIf="start_code_present">
-          <ion-item>
-            <ion-label floating>Enter End Code</ion-label>
-            <ion-input name="end_code" formControlName="end_code" type="text" [(ngModel)]="shift.end_code" [class.invalid]="!slideOneForm.controls.end_code.valid && (slideOneForm.controls.end_code.dirty || submitAttempt)"></ion-input>
-          </ion-item>
-
-          <ion-item *ngIf="!slideOneForm.controls.end_code.valid  && (slideOneForm.controls.end_code.dirty || submitAttempt)">
-            <p>Please enter a valid End Code.</p>
-          </ion-item>
-        </div>
-
-      </form>
-
-      <button ion-button full color="primary" (click)="confirmSave()">Submit</button>
+      <button ion-button full color="primary" (click)="startEndShift()">Submit</button>
 
     </ion-list>
     
-  </div>
 
 </ion-content>

@@ -33,10 +33,6 @@ export class ShiftForm {
     this.start_code_present = this.shift["start_code"] != null
 
     this.slideOneForm = formBuilder.group({
-
-      start_code: ['', Validators.compose([Validators.maxLength(30)])],
-      end_code: ['', Validators.compose([Validators.maxLength(30)])]
-
     });
 
   }
@@ -52,16 +48,10 @@ export class ShiftForm {
 
   confirmSave() {
     let message = "";
-    if (this.shift["start_code"] && this.shift["end_code"] == null) {
+    if (this.shift["start_signature_id"] == null) {
       message = "This will start your shift and set the shift start time to now. Start shift now?";
     } else {
-      let duration = moment.duration(moment().diff(moment(this.shift["start_date"])));
-      if (duration.asHours() > 4) {
-        message = "This will end your shift and set the shift end time to now. End shift now? ";
-      } else {
-        message = "This will end your shift now but set the shift end time to 4 hours from the start time," +
-          "as the minumum shift duration is 4 hours. End shift now? ";
-      }
+      message = "This will end your shift and set the shift end time to now. End shift now? ";
     }
 
     this.respUtility.confirmAction(this.save.bind(this), null, message);
@@ -95,47 +85,21 @@ export class ShiftForm {
       this.submitAttempt = false;
       loader.present();
 
-      if (this.shift["id"]) {
         this.shiftApi.updateShift(this.shift).map(res => {
           console.log(`Shift = ${res}`);
           this.shift = res;
         }).subscribe(
           shift => {
-            if (this.shift["end_code"] != null) {
+            if (this.shift["end_signature_id"] != null) {
               this.respUtility.trackEvent("Shift", "Ended", "click");
-              this.respUtility.showSuccess('Code Accepted.Your shift has ended.');
+              this.respUtility.showSuccess('Thank you, your shift has ended.');
               this.navCtrl.pop();
               this.rate_hospital(this.shift);
             } else {
               this.respUtility.trackEvent("Shift", "Started", "click");
-              this.respUtility.showSuccess('Code Accepted.Your shift has started.');
+              this.respUtility.showSuccess('Your shift has started, have a good one.');
               this.navCtrl.pop();
             }
-
-
-          },
-          error => {
-            if (error.status === 422) {
-              let error_response = error.error;
-              let msg = "";
-              for (var key in error_response) {
-                msg += error_response[key] + ". ";
-              }
-              this.respUtility.showWarning(msg);
-              loader.dismiss();
-            }
-            else {
-              this.respUtility.showFailure(error);
-              loader.dismiss();
-            }
-          },
-          () => { loader.dismiss(); }
-        );
-      } else {
-        this.shiftApi.createShift(this.shift).subscribe(
-          shift => {
-            this.respUtility.showSuccess('Shift saved successfully.');
-            this.navCtrl.pop();
           },
           error => {
             this.respUtility.showFailure(error);
@@ -143,7 +107,7 @@ export class ShiftForm {
           },
           () => { loader.dismiss(); }
         );
-      }
+      
     }
   }
 

@@ -30,7 +30,6 @@ import { UserApi } from '../providers/user-api'
 import { UserDocApi } from '../providers/user-doc-api'
 import { Config } from '../providers/config'
 import { HospitalApi } from '../providers/hospital-api'
-import { CqcRecordApi } from '../providers/cqc-record-api'
 import { PaymentApi } from '../providers/payment-api'
 import { RatingApi } from '../providers/rating-api'
 import { StaffingRequestApi } from '../providers/staffing-request-api'
@@ -39,7 +38,6 @@ import { ReferralApi } from '../providers/referral-api'
 
 import { ResponseUtility } from '../providers/response-utility'
 import { LoginProvider } from '../providers/login-provider';
-import { PostCodeApi } from '../providers/postcode-api';
 import { HomeEvents } from '../providers/home-events';
 
 
@@ -53,6 +51,7 @@ import { ContactPage } from '../pages/static/contact';
 import { HelpPage } from '../pages/static/help';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
+import { IonicSignaturePadModule,IonicsignaturepadProvider } from 'ionicsignaturepad';
 
 
 @NgModule({
@@ -72,6 +71,7 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
     RouterModule,
     MomentModule,
     CommonModule,
+    IonicSignaturePadModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     AngularTokenModule.forRoot({
@@ -96,8 +96,6 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
     UserDocApi,
     RatingApi,
     HospitalApi,
-    CqcRecordApi,
-    PostCodeApi,
     StaffingRequestApi,
     RecurringRequestApi,
     ShiftApi,
@@ -118,6 +116,7 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
     ReferenceApi,
     Geolocation,
     NativeGeocoder,
+    IonicsignaturepadProvider,
     { provide: ErrorHandler, useClass: SentryErrorHandler }
   ]
 })
