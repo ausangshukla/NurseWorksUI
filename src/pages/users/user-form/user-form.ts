@@ -80,7 +80,7 @@ export class UserForm {
       medical_info: ['']
     }, { "validator": this.isMatching });
 
-    this.enable_diable_fields()
+    this.enable_disable_fields()
 
     // Password may not be visible, hence disable validations 
     if (this.user["id"]) {
@@ -91,33 +91,12 @@ export class UserForm {
       console.log("Disabled password", this.slideOneForm.controls.password.disabled);
     }
 
-    console.log('Trying to get location 1');
-    this.geolocation.getCurrentPosition().then((resp) => {
-
-      console.log('Trying to get location 2');
-
-      let lat = resp.coords.latitude
-      let lng = resp.coords.longitude
-      console.log("location 3 " + lat + " " + lng);
-
-      let options: NativeGeocoderOptions = {
-          useLocale: true,
-          maxResults: 5
-      };
-      
-      this.nativeGeocoder.reverseGeocode(lat, lng, options)
-        .then((result: NativeGeocoderResult[]) => console.log(JSON.stringify(result[0])))
-        .catch((error: any) => console.log("location 4", error));
-
-     }).catch((error) => {
-       console.log('Error getting location', error);
-     });
-
-     console.log('Trying to get location 5');
   }
 
-  enable_diable_fields() {
-
+  enable_disable_fields() {
+    
+    console.log(this.user);
+    
     this.partTimeFields = this.additionalPartTimeFields.concat(this.fullTimeFields);
     let ptfLength = this.partTimeFields.length;
     let ftfLength = this.fullTimeFields.length;
@@ -130,17 +109,17 @@ export class UserForm {
     }
 
     if(this.user["role"] == "Nurse") {
-      if (this.user["currently_permanent_staff"] == true) {
+      if (this.user["currently_permanent_staff"] == "true") {
         for (var i = 0; i < cpsLength; i++) {
           this.slideOneForm.controls[cpsFields[i]].enable();
         }
       }
 
-      if (this.user["avail_part_time"] == true) {
+      if (this.user["avail_part_time"] == "true") {
         for (var i = 0; i < ptfLength; i++) {
           this.slideOneForm.controls[this.partTimeFields[i]].enable();
         }
-      } else if (this.user["avail_full_time"] == true) {
+      } else if (this.user["avail_full_time"] == "true") {
         for (var i = 0; i < ftfLength; i++) {
           this.slideOneForm.controls[this.fullTimeFields[i]].enable();
         }
