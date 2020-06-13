@@ -65,9 +65,9 @@ export class UserPic {
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
       sourceType: sourceType,
-      saveToPhotoAlbum: true,
       correctOrientation: true
     }
+    
 
     // Get the data of an image
     this.camera.getPicture(options).then((imagePath) => {
@@ -88,7 +88,7 @@ export class UserPic {
       }
     }, (err) => {
       Raven.captureException(err);
-      console.log(JSON.stringify(err));
+      console.log(err);
       this.respUtility.showWarning('Error while selecting image.');
     });
   }

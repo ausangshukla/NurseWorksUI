@@ -63,6 +63,9 @@
             <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
             <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
             <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-feature android:name="android.hardware.camera" />
         </config-file>
         <access origin="*" />
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
@@ -111,10 +114,6 @@
     <plugin name="cordova-plugin-file-transfer" spec="^1.5.1" />
     <plugin name="cordova-plugin-filepath" spec="^1.5.1" />
     <plugin name="cordova-plugin-statusbar" spec="^2.2.1" />
-    <plugin name="cordova-plugin-camera" spec="^4.0.3">
-        <variable name="CAMERA_USAGE_DESCRIPTION" value="Use camera to upload images of documents required for verification" />
-        <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="Use camera to upload images of documents required for verification" />
-    </plugin>
     <plugin name="cordova-android-play-services-gradle-release" spec="^2.0.0">
         <variable name="PLAY_SERVICES_VERSION" value="15.+" />
     </plugin>
