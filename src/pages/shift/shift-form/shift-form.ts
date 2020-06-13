@@ -1,4 +1,4 @@
-import { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController, Events } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, ViewChild } from '@angular/core';
 import * as moment from 'moment';
@@ -33,7 +33,8 @@ export class ShiftForm {
     public loadingController: LoadingController,
     public shiftApi: ShiftApi,
     private loginProvider: LoginProvider,
-    public respUtility: ResponseUtility) {
+    public respUtility: ResponseUtility,
+    public events: Events) {
 
     this.shift = this.navParams.data;
     this.hospital = this.shift["hospital"];
@@ -91,7 +92,7 @@ export class ShiftForm {
 
   uploadSignature(file: any) {
     const reader = new FileReader();
-
+    console.log("uploadSignature called");
     reader.onloadend = () => {
       const imgBlob = new Blob([reader.result], {
         type: file.type
@@ -102,6 +103,8 @@ export class ShiftForm {
       sign.append('user_doc[user_id]', this.current_user.id);
       sign.append('user_doc[doc]', imgBlob, file.name);
 
+      console.log("Uploading signature to server");
+      console.log(sign);
       let loader = this.loadingController.create({
         content: 'Saving ...'
       });
@@ -121,6 +124,7 @@ export class ShiftForm {
           } else {
             this.respUtility.trackEvent("Shift", "Started", "click");
             this.respUtility.showSuccess('Your shift has started, have a good one.');
+            this.events.publish('user:reloadInitialData');
             this.navCtrl.popToRoot();
           }
         },
@@ -140,10 +144,12 @@ export class ShiftForm {
     const name = new Date().getTime() + '.jpeg';
     const path = this.file.dataDirectory;
     const options: IWriteOptions = { replace: true };
+    console.log("Saving Signature to file");
     this.file.writeFile(path, name, blob, options).then(res => {
       this.res = res;
       this.file.resolveLocalFilesystemUrl(res.nativeURL).then((entry: FileEntry) => {
         entry.file(file => {
+          console.log("Signature saved to file");
           console.log(file);
           this.uploadSignature(file);
         });
