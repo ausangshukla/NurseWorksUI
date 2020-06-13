@@ -4,6 +4,12 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>NurseWorks</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <!-- <ion-icon name="options"></ion-icon> -->
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -28,12 +34,6 @@
           <button ion-button clear small color="secondary" icon-left (click)="register()">
             <ion-icon name='create'></ion-icon>
             Register
-          </button>
-        </ion-col>
-        <ion-col text-right>
-          <button ion-button clear small color="danger" icon-left (click)="contact()">
-            <ion-icon name='call'></ion-icon>
-            Contact
           </button>
         </ion-col>
       </ion-row>

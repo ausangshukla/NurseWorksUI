@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="in.co.nurseworks" version="5.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Connuct Care</name>
+    <name>NurseWorks</name>
     <description>Connecting care homes to care givers and nurses</description>
     <author email="admin@in.co.nurseworks" href="http://blog.in.co.nurseworks">Connuct Team</author>
     <content src="index.html" />
