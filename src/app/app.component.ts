@@ -49,7 +49,7 @@ export class MyApp {
       { title: 'Privacy & Cookies', component: 'CookiesPage', params: {} },
       { title: 'Terms & Conditions', component: 'TermsPage', params: {} },
       { title: 'About Us', component: 'AboutPage', params: {} },
-      { title: 'Contact Us', component: ContactPage, params: {} },
+      { title: 'Contact Us', component: ContactPage, params: {} }
     ];
 
   }
@@ -91,7 +91,7 @@ export class MyApp {
           } else if (this.currentUser.role != "Admin" && this.currentUser.verified) {
             this.pages = [
               { title: 'Referrals', component: 'ReferralPage', params: {} },
-              { title: 'Learn & Improve', component: 'ReferencePage', params: {} },
+              { title: 'Learn & Improve', component: 'LearningPage', params: {} },
               { title: 'My Settings', component: 'UserTabs', params: {user: this.currentUser} }  ,
               { title: 'Reset Password', component: 'PasswordReset', params: {user: this.currentUser} }  
 
