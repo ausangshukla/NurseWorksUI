@@ -46,7 +46,18 @@
       </ion-row>
     </ion-item>
 
-    <ion-item>
+    <ion-item *ngIf="staffingRequest.preferred_nurse">
+      <ion-row>
+        <ion-col>
+          Preferred Nurse:
+        </ion-col>
+        <ion-col text-wrap>
+          {{staffingRequest.preferred_nurse.first_name}} : {{staffingRequest.preferred_nurse.last_name}} 
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item *ngIf="staffingRequest.speciality">
       <ion-row>
         <ion-col>
           Speciality:

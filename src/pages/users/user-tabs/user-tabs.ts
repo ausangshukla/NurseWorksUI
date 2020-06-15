@@ -31,7 +31,8 @@ export class UserTabs  {
     public loadingController: LoadingController,
     public respUtility: ResponseUtility) {
 
-    this.user = this.navParams.data;
+    this.user = this.navParams.data["user"];
+    
     if(this.user.role == "Admin") {
       this.tab2Root = 'HospitalBankingDetails';
       this.tab3Root = 'HospitalDetails';

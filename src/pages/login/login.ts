@@ -84,22 +84,8 @@ export class Login {
   forgotPassword() {
     this.respUtility.trackEvent("User", "ForgotPassword", "click");
     if (this.email != null) {
-      this.userApi.generateResetPasswordBySms(this.email).subscribe(
-        res => {
-          console.log(res);
-          if (res["reset"] == true) {
-            this.navCtrl.push('PasswordReset', {email: this.email})
-            this.respUtility.showSuccess("Sms with password reset secret sent. Please check your phone.");
-          } else {
-            if (res["user_not_found"] == true) {
-              this.respUtility.showWarning("Email specified above was not found in our system. Please register.");
-            } else {
-              this.respUtility.showWarning("Password reset failed. Please contact us.");
-            }
-          }
-        },
-        error => this.respUtility.showFailure(error)
-      );
+      let user = {"email": this.email};
+      this.navCtrl.push('PasswordReset', {"user": user});
     } else {
       this.respUtility.showWarning("Please enter a valid email above.");
     }

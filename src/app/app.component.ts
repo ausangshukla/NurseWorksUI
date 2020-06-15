@@ -27,6 +27,7 @@ export class MyApp {
   currentUser: any;
 
   pages: Array<{ title: string, component: any, params: any }> = [];
+  static_pages;
 
   constructor(
     public platform: Platform,
@@ -43,6 +44,13 @@ export class MyApp {
 
     this.initializeApp();
 
+    this.static_pages = [
+      { title: 'Divider', component: '', params: {} },
+      { title: 'Privacy & Cookies', component: 'CookiesPage', params: {} },
+      { title: 'Terms & Conditions', component: 'TermsPage', params: {} },
+      { title: 'About Us', component: 'AboutPage', params: {} },
+      { title: 'Contact Us', component: ContactPage, params: {} },
+    ];
 
   }
 
@@ -74,29 +82,20 @@ export class MyApp {
             this.currentUser.hospital != null &&
             this.currentUser.hospital.verified == true) {
 
-            this.pages = [
-              { title: 'Past Shifts', component: 'Shift', params: { response_status: "Closed" } },
-              { title: 'Payment Records', component: 'Payment', params: {} },
-              { title: 'About Us', component: 'AboutPage', params: {} },
-              { title: 'Terms & Conditions', component: 'TermsPage', params: {} },
-              { title: 'Privacy & Cookies', component: 'CookiesPage', params: {} },
-              { title: 'Contact Us', component: ContactPage, params: {} },
-              { title: 'Help', component: HelpPage, params: {} },
-
-            ];
+              this.pages = [
+                { title: 'My Settings', component: 'UserTabs', params: {user: this.currentUser} } ,
+                { title: 'Reset Password', component: 'PasswordReset', params: {user: this.currentUser} }     
+              ].concat(this.static_pages);
+  
 
           } else if (this.currentUser.role != "Admin" && this.currentUser.verified) {
             this.pages = [
-              { title: 'Emergency Contacts', component: 'Contact', params: {} },
-              { title: 'References', component: 'ReferencePage', params: {} },
-              { title: 'Past Shifts', component: 'Shift', params: { response_status: "Closed" } },
               { title: 'Referrals', component: 'ReferralPage', params: {} },
-              { title: 'About Us', component: 'AboutPage', params: {} },
-              { title: 'Terms & Conditions', component: 'TermsPage', params: {} },
-              { title: 'Privacy & Cookies', component: 'CookiesPage', params: {} },
-              { title: 'Contact Us', component: ContactPage, params: {} },
-              { title: 'Help', component: HelpPage, params: {} },
-            ];
+              { title: 'Learn & Improve', component: 'ReferencePage', params: {} },
+              { title: 'My Settings', component: 'UserTabs', params: {user: this.currentUser} }  ,
+              { title: 'Reset Password', component: 'PasswordReset', params: {user: this.currentUser} }  
+
+            ].concat(this.static_pages);
 
           }
 
@@ -112,7 +111,7 @@ export class MyApp {
           let diffTime = Math.abs(new Date().getTime() - password_reset_date.getTime());
           let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
           if(diffDays > 29) {
-            this.reset_password();
+            this.nav.push("PasswordReset");
           }
           else if(diffDays > 25) {
             this.respUtility.showWarning(`Please change your password as you have ${30 - diffDays + 1} days before it expires`);
@@ -124,23 +123,13 @@ export class MyApp {
           console.log("HomePage: user:logout:success");
           this.currentUser = null;
 
-          this.pages = [
-            { title: 'About Us', component: 'AboutPage', params: {} },
-            { title: 'Terms & Conditions', component: 'TermsPage', params: {} },
-            { title: 'Privacy & Cookies', component: 'CookiesPage', params: {} },
-            { title: 'Contact Us', component: ContactPage, params: {} },
-          ];
+          this.pages = [...this.static_pages];
 
         });
 
         if (this.currentUser == null) {
           this.loginProvider.auto_login(null);
-          this.pages = [
-            { title: 'About Us', component: 'AboutPage', params: {} },
-            { title: 'Terms & Conditions', component: 'TermsPage', params: {} },
-            { title: 'Privacy & Cookies', component: 'CookiesPage', params: {} },
-            { title: 'Contact Us', component: ContactPage, params: {} },
-          ];
+          this.pages = [...this.static_pages];
         }
 
       }
@@ -160,30 +149,7 @@ export class MyApp {
     this.nav.push('UserTabs', this.currentUser);
   }
 
-  reset_password() {
-      if (this.currentUser != null) {
-        this.userApi.generateResetPasswordBySms(this.currentUser.email).subscribe(
-          res => {
-            console.log(res);
-            if (res["reset"] == true) {
-              this.nav.push('PasswordReset', {email: this.currentUser.email})
-              this.respUtility.showSuccess("Sms with password reset secret sent. Please check your phone.");
-            } else {
-              if (res["user_not_found"] == true) {
-                this.respUtility.showWarning("Email specified above was not found in our system. Please register.");
-              } else {
-                this.respUtility.showWarning("Password reset failed. Please contact us.");
-              }
-            }
-          },
-          error => this.respUtility.showFailure(error)
-        );
-      } else {
-        this.respUtility.showWarning("Please enter a valid email above.");
-      }
-    
-  }
-
+  
   show_hospital() {
     this.nav.push('HospitalDetails', this.currentUser.hospital);
   }

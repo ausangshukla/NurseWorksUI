@@ -18,6 +18,7 @@ export class PasswordReset {
   password: any;
   confirm_password: any;
   headerInfo = {};
+  user: any;
   email: any;
 
   slideOneForm: FormGroup;
@@ -38,17 +39,42 @@ export class PasswordReset {
       confirm_password: ['', Validators.compose([Validators.required])],
     });
 
-    this.email = this.navParams.data["email"];
-    
+    this.user = this.navParams.data["user"];
+    this.email = this.user["email"];
+    this.reset_password();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Login');
   }
 
+  reset_password() {
+    if (this.user != null) {
+      this.userApi.generateResetPasswordBySms(this.user.email).subscribe(
+        res => {
+          console.log(res);
+          if (res["reset"] == true) {
+            this.respUtility.showSuccess("Sms with password reset secret sent. Please check your phone.");
+          } else {
+            if (res["user_not_found"] == true) {
+              this.respUtility.showWarning("Email specified above was not found in our system. Please register.");
+            } else {
+              this.respUtility.showWarning("Password reset failed. Please contact us.");
+            }
+          }
+        },
+        error => this.respUtility.showFailure(error)
+      );
+    } else {
+      this.navCtrl.popToRoot();
+      this.respUtility.showWarning("Please enter a valid email above.");
+    }
+  }
+
+
   reset() {
 
-    if(this.password != this.confirm_password) {
+    if (this.password != this.confirm_password) {
       this.respUtility.showWarning("Passwords dont match, please re-enter the password and confirm.")
     } else {
 
@@ -58,7 +84,7 @@ export class PasswordReset {
             console.log(res);
             if (res["reset"] == true) {
               this.respUtility.showSuccess("Password reset successfully, please login with the new password.")
-              this.navCtrl.pop();  
+              this.navCtrl.pop();
             } else {
               if (res["user_not_found"] == true) {
                 this.respUtility.showWarning("Email specified above was not found in our system. Please register.");
@@ -72,7 +98,7 @@ export class PasswordReset {
       } else {
         this.respUtility.showWarning("Please enter a valid email above.");
       }
-      
+
     }
   }
 

@@ -38,7 +38,7 @@ export class StaffingRequest {
 
     this.current_user = loginProvider.currentUser;
     this.filterRequests = "This Week";
-    this.filterChanged();
+    
 
     
     if (this.current_user["role"] == "Admin") {
@@ -73,19 +73,24 @@ export class StaffingRequest {
         // code block
         break;
       default:
-        // code block
+        this.filterStartDate = null;
+        this.filterEndDate = null;
     }
 
-    console.log(this.filterStartDate.format("YYYY-MM-DD"));
-    console.log(this.filterEndDate.format("YYYY-MM-DD"));
-    this.navParams.data["filterStartDate"] = this.filterStartDate.format("YYYY-MM-DD");
-    this.navParams.data["filterEndDate"] = this.filterEndDate.format("YYYY-MM-DD");
+    if(this.filterStartDate != null && this.filterEndDate != null) {
+      console.log(this.filterStartDate.format("YYYY-MM-DD"));
+      console.log(this.filterEndDate.format("YYYY-MM-DD"));
+      this.navParams.data["filterStartDate"] = this.filterStartDate.format("YYYY-MM-DD");
+      this.navParams.data["filterEndDate"] = this.filterEndDate.format("YYYY-MM-DD");
+    }
+
     this.loadRequests();
   }
 
   ionViewWillEnter() {
     console.log('ionViewWillEnter StaffingRequests');
     this.respUtility.trackView("StaffingRequests");
+    this.filterChanged();
   }
 
   loadRequests() {

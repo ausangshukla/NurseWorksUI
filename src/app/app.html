@@ -7,20 +7,23 @@
 
   <ion-content>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
-      <div *ngIf="currentUser != null">
-        <button menuClose ion-item (click)="show_settings()">
-          Settings
-        </button>
-        <button menuClose ion-item (click)="reset_password()">
-          Reset Password
-        </button>
-        <button menuClose ion-item (click)="logout()">
+      <span menuClose *ngFor="let p of pages" (click)="openPage(p)">
+        
+        <ion-item menuClose *ngIf="p.title != 'Divider'">
+            {{p.title}}
+        </ion-item>
+
+        <ion-item-divider color="secondary" *ngIf="p.title == 'Divider'">
+        </ion-item-divider>
+          
+      </span>
+
+
+      <span *ngIf="currentUser != null">
+        <ion-item menuClose ion-item (click)="logout()">
           Logout
-        </button>
-      </div>
+        </ion-item>
+      </span>
 
     </ion-list>
   </ion-content>
