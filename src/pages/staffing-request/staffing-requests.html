@@ -54,8 +54,21 @@
     <button ion-fab (click)="newRequest()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 
+  <ion-item id="filterRequests">
+    <ion-label floating>Staffing Requests For</ion-label>
+    <ion-select name="filterRequests" [(ngModel)]="filterRequests"  
+                (ionChange)="filterChanged()">          
+      <ion-option value="Today">Today</ion-option>
+      <ion-option value="Tomorrow">Tomorrow</ion-option>
+      <ion-option value="This Week">This Week</ion-option>
+      <ion-option value="Next Week">Next Week</ion-option>
+      <ion-option value="Between Dates">Between Dates</ion-option>
+    </ion-select>
+  </ion-item>
+  
 
   <ion-list>
+
     <button ion-item id="StaffingRequest-{{staffingRequest.id}}-item" *ngFor="let staffingRequest of staffingRequests" (click)=getStaffingRequestDetails(staffingRequest)>
        
       <p text-wrap>
@@ -67,7 +80,7 @@
       </p>
        
       <p>
-        Duration: {{staffingRequest.shift_duration}} Hrs
+        Duration: {{filterRequests}} Hrs
       </p>
 
       <p text-wrap>

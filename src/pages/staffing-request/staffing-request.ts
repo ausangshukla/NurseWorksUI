@@ -22,6 +22,10 @@ export class StaffingRequest {
   staffingRequests: any;
   staffingRequest: any;
   current_user: {};
+  filterRequests: any;
+  filterStartDate;
+  filterEndDate;
+
   hospital_registration_pending = false;
   hospital_verification_pending = false;
 
@@ -33,6 +37,9 @@ export class StaffingRequest {
     public respUtility: ResponseUtility) {
 
     this.current_user = loginProvider.currentUser;
+    this.filterRequests = "This Week";
+    this.filterChanged();
+
     
     if (this.current_user["role"] == "Admin") {
       if (this.current_user["hospital_id"] == null) {
@@ -44,11 +51,44 @@ export class StaffingRequest {
   }
 
 
+  filterChanged() {
+    switch (this.filterRequests) {
+      case "Today":
+        this.filterStartDate = moment().startOf('day');
+        this.filterEndDate = moment().startOf('day').add(1, 'days');
+        break;
+      case "Tomorrow":
+        this.filterStartDate = moment().startOf('day').add(1, 'days');
+        this.filterEndDate = moment().startOf('day').add(2, 'days');
+        break;
+      case "This Week":
+        this.filterStartDate = moment().startOf('week');
+        this.filterEndDate = moment().startOf('week').add(6, 'days');
+        break;
+      case "Next Week":
+        this.filterStartDate = moment().startOf('week').add(7, 'days');
+        this.filterEndDate = moment().startOf('week').add(13, 'days');
+        break;
+      case "Between Dates":
+        // code block
+        break;
+      default:
+        // code block
+    }
+
+    console.log(this.filterStartDate.format("YYYY-MM-DD"));
+    console.log(this.filterEndDate.format("YYYY-MM-DD"));
+    this.navParams.data["filterStartDate"] = this.filterStartDate.format("YYYY-MM-DD");
+    this.navParams.data["filterEndDate"] = this.filterEndDate.format("YYYY-MM-DD");
+    this.loadRequests();
+  }
 
   ionViewWillEnter() {
     console.log('ionViewWillEnter StaffingRequests');
     this.respUtility.trackView("StaffingRequests");
+  }
 
+  loadRequests() {
     let loader = this.loadingController.create({
       content: 'Loading Requests...'
     });
