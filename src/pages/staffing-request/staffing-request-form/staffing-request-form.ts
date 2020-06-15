@@ -126,17 +126,6 @@ export class StaffingRequestForm {
     else {
       let start_of_day = moment().add(1, 'day').hour(8).minute(0);
       this.staffingRequest["start_date"] = start_of_day.format();;
-      let end_date = start_of_day.add(8, 'hours').format();
-      this.staffingRequest["end_date"] = end_date;
-      console.log(`end date = ${end_date}`);
-    }
-
-    if (this.staffingRequest["start_code"] == null) {
-      this.staffingRequest["start_code"] = Math.floor(1000 + Math.random() * 9000);
-    }
-
-    if (this.staffingRequest["end_code"] == null) {
-      this.staffingRequest["end_code"] = Math.floor(1000 + Math.random() * 9000);
     }
 
     if (this.staffingRequest["role"] == null) {

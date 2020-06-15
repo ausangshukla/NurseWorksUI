@@ -32,6 +32,18 @@
   
       <form [formGroup]="slideOneForm">
         
+        <ion-item id="staff_type">
+          <ion-label floating>Staff Type</ion-label>
+          <ion-select name="staff_type" [(ngModel)]="recurringRequest.staff_type"  (ionChange)="getNurses()"
+                      [class.invalid]="!slideOneForm.controls.staff_type.valid && (slideOneForm.controls.staff_type.dirty || submitAttempt)"
+            formControlName="staff_type">          
+            <ion-option value="Perm" >Permanent</ion-option>
+            <ion-option value="Temp" >Temp</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item *ngIf="!slideOneForm.controls.staff_type.valid  && (slideOneForm.controls.staff_type.dirty || submitAttempt)">
+          <p class="error-text">Please enter valid staff type.</p>
+        </ion-item>
 
           <ion-item>
             <ion-label floating>Start Time</ion-label>
@@ -46,18 +58,23 @@
             Select the start time for the shift.
           </p>  
     
-          <ion-item>
-            <ion-label floating>End Time</ion-label>
-            <ion-datetime formControlName="end_date" displayFormat="HH:mm" [min]="minEndDate" [max]="maxEndDate" [(ngModel)]="recurringRequest.end_date"
-              [class.invalid]="!slideOneForm.controls.end_date.valid && (slideOneForm.controls.end_date.dirty || submitAttempt)"></ion-datetime>
+          <ion-item id="shift_duration">
+            <ion-label floating>Shift Duration</ion-label>
+            <ion-select name="shift_duration" [(ngModel)]="recurringRequest.shift_duration"  (ionChange)="durationChanged($event)"
+                        [class.invalid]="!slideOneForm.controls.shift_duration.valid && (slideOneForm.controls.shift_duration.dirty || submitAttempt)"
+              formControlName="shift_duration">          
+              <ion-option value=4 >4 Hrs</ion-option>
+              <ion-option value=8 >8 Hrs</ion-option>
+              <ion-option value=12>12 Hrs</ion-option>
+            </ion-select>
           </ion-item>
-    
-          <ion-item *ngIf="!slideOneForm.controls.end_date.valid  && (slideOneForm.controls.end_date.dirty || submitAttempt)">
-            <p class="error-text">Should be at least 4 hours after Start.</p>
+          <ion-item *ngIf="!slideOneForm.controls.shift_duration.valid  && (slideOneForm.controls.shift_duration.dirty || submitAttempt)">
+            <p class="error-text">Please enter valid shift duration.</p>
           </ion-item>
           <p class="field-hint">
-            Select the end time for the shift.
+            Select the shift duration you need.
           </p>
+      
           
           <ion-item id="hospital_id" *ngIf="current_user.sister_hospitals">
             <ion-label floating>Hospital</ion-label>
@@ -72,36 +89,41 @@
             Select the care home you are booking for
           </p>
   
-          <ion-item id="role">
-            <ion-label floating>Staff Type</ion-label>
-            <ion-select name="role" [(ngModel)]="recurringRequest.role" (ionChange)="getNurses()"
-                        [class.invalid]="!slideOneForm.controls.role.valid && (slideOneForm.controls.role.dirty || submitAttempt)"
-              formControlName="role">
-              <ion-option value="Nurse" checked="true">Nurse</ion-option>
-              <ion-option value="Nurse">Nurse</ion-option>
-            </ion-select>
-          </ion-item>
-
-          <ion-item *ngIf="!slideOneForm.controls.role.valid  && (slideOneForm.controls.role.dirty || submitAttempt)">
-            <p class="error-text">Please select the type of staff you need.</p>
-          </ion-item>
-
-          <p class="field-hint">
-            Select the type of temp staff you need.
-          </p>
+          <div *ngIf="recurringRequest.staff_type == 'Temp'">
+            <ion-item id="speciality">
+              <ion-label floating>Specializations</ion-label>
+              <ion-select name="speciality" [(ngModel)]="recurringRequest.speciality" [class.invalid]="!slideOneForm.controls.speciality.valid && (slideOneForm.controls.speciality.dirty || submitAttempt)"
+                formControlName="speciality">          
+                <ion-option value="Medical wards/other" >Medical wards/other</ion-option>
+                <ion-option value="OT nurse" >OT nurse</ion-option>
+                <ion-option value="Ortho / Surgical wards">Ortho / Surgical wards</ion-option>
+                <ion-option value="Higher end specialty (ICU / CCU / Onco care)">Higher end specialty (ICU / CCU / Onco care)</ion-option>
+                <ion-option value="Maternity and Pediatric wards">Maternity and Pediatric wards</ion-option>
+                <ion-option value="Mental health / Psychiatric ward">Mental health / Psychiatric ward nurse</ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item *ngIf="!slideOneForm.controls.speciality.valid  && (slideOneForm.controls.speciality.dirty || submitAttempt)">
+              <p class="error-text">Please enter a valid speciality.</p>
+            </ion-item>
+            <p class="field-hint">
+              Select the type of speciality you need.
+            </p>
+          </div>
     
-          <ion-item id="preferred_nurse_id">
-            <ion-label floating>Staff (Optional)</ion-label>
+    
+          <ion-item id="preferred_nurse_id" *ngIf="recurringRequest.staff_type">
+            <ion-label *ngIf="recurringRequest.staff_type == 'Temp'" floating>Staff (Optional)</ion-label>
+            <ion-label *ngIf="recurringRequest.staff_type == 'Perm'" floating>Staff</ion-label>
             <ion-select name="preferred_nurse_id" [(ngModel)]="recurringRequest.preferred_nurse_id" 
                         [class.invalid]="!slideOneForm.controls.preferred_nurse_id.valid && (slideOneForm.controls.preferred_nurse_id.dirty || submitAttempt)"
                         formControlName="preferred_nurse_id">
               <ion-option *ngFor="let nurse of nurses" [value] = "nurse.id">{{nurse.first_name}} {{nurse.last_name}}</ion-option> 
             </ion-select>
           </ion-item>
-          <p class="field-hint">
-            Select the temp staff you want for these shifts.
+          <p class="field-hint" *ngIf="recurringRequest.staff_type == 'Temp'">
+            Leave this blank to get a nurse selected by us specially for you or select the temp staff you prefer.
           </p>
-    
+
           <ion-item>
             <ion-label floating>PO for Invoice</ion-label>
             <ion-input name="po_for_invoice" formControlName="po_for_invoice" type="text" [(ngModel)]="recurringRequest.po_for_invoice" [class.invalid]="!slideOneForm.controls.po_for_invoice.valid && (slideOneForm.controls.po_for_invoice.dirty || submitAttempt)"></ion-input>

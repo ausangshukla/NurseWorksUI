@@ -5,6 +5,7 @@ import * as _ from 'lodash';
 import { DocLinks } from '../doc-links';
 import { UserApi } from '../../../providers/user-api';
 import { ResponseUtility } from '../../../providers/response-utility';
+import { LoginProvider } from '../../../providers/login-provider';
 
 @IonicPage()
 @Component({
@@ -21,10 +22,11 @@ export class UserDetails extends DocLinks {
     public alertController: AlertController,
     public toastController: ToastController,
     public loadingController: LoadingController,
-    public respUtility: ResponseUtility) {
+    public respUtility: ResponseUtility,
+    public loginProvider: LoginProvider) {
 
     super(navCtrl);
-    this.user = this.navParams.data;
+    this.user = this.loginProvider.currentUser;
 
   }
 

@@ -17,6 +17,7 @@ export class RecurringRequestApi {
   }
 
   getCares(recurringRequest) {
+    console.log("getCares Called");
     let endpoint = `${this.base_url}/get_nurses.json`;
     return this.http.post(endpoint, recurringRequest).map(response=>{
       return response;

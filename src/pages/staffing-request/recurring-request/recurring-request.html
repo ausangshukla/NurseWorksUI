@@ -30,24 +30,33 @@
   
     <ion-list>
       <button ion-item id="RecurringRequest-{{recurringRequest.id}}-item" *ngFor="let recurringRequest of recurringRequests" 
-      (click)=loadRequests(recurringRequest)>
-         
+      (click)=getRecurringRequestDetails(recurringRequest)>
+        
+      
         <p text-wrap>
-          Staff Type: {{recurringRequest.role}}
+          Role: {{recurringRequest.role}}
         </p>
-  
-        <p>
-          Start: {{recurringRequest.start_date | utc_date | date: 'HH:mm'}}
-        </p>
-         
-        <p>
-          End: {{recurringRequest.end_date | utc_date | date: 'HH:mm'}}
+        
+        <p text-wrap *ngIf="recurringRequest.preferred_nurse">
+          Nurse: {{recurringRequest.preferred_nurse.first_name}} {{recurringRequest.preferred_nurse.last_name}}
         </p>
 
-        <p *ngFor="let date of recurringRequest.dates">
-            {{date | date: "dd/MM/yyyy"}}
+        <p text-wrap>
+          Dates:
+          <span *ngFor="let date of recurringRequest.dates">
+              {{date | date: "dd/MM/yyyy"}},
+          </span>          
+        </p> 
+        
+        <p>
+          Start Time: {{recurringRequest.start_date | utc_date | date: 'HH:mm'}}
         </p>
-  
+         
+        <p>
+          End Time: {{recurringRequest.end_date | utc_date | date: 'HH:mm'}}
+        </p>
+
+        
       </button>
     </ion-list>
   

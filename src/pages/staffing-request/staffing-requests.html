@@ -75,7 +75,7 @@
       </p>
 
       <p *ngIf="staffingRequest.staff_type == 'Temp'">
-        <ion-badge>Estimated Amount: {{staffingRequest.hospital_total_amount | currency : "GBP": true}}</ion-badge> 
+        <ion-badge>Estimated Amount: {{staffingRequest.hospital_total_amount | currency : "INR": true}}</ion-badge> 
       </p>
       <p>
         <ion-badge color="secondary" *ngIf="staffingRequest.request_status == 'Open'">

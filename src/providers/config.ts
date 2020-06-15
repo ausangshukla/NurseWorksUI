@@ -18,8 +18,8 @@ export class Config {
   };
 
   private staging = {
-    API_URL: "http://dev.nurseworks.co.in",
-    ENV: "prod",
+    API_URL: "http://3.6.169.175",
+    ENV: "staging",
     GA_ID: 'UA-103042137-1'
   };
 

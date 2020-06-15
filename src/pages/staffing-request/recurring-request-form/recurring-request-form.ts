@@ -51,11 +51,11 @@ export class RecurringRequestForm {
 
       hospital_id: ['', Validators.compose([])],
 
-      role: ['', Validators.compose([Validators.required])],
+      staff_type: ['', Validators.compose([Validators.required])],
 
       start_date: ['', Validators.compose([Validators.required])],
 
-      end_date: ['', Validators.compose([Validators.required])],
+      shift_duration: ['', Validators.compose([Validators.required])],
 
       request_status: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*')])],
 
@@ -66,6 +66,8 @@ export class RecurringRequestForm {
       end_code: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('^\\d+$')])],
 
       notes: ['', Validators.compose([])],
+
+      speciality: [''],
 
       preferred_nurse_id: [''],
 
@@ -83,13 +85,17 @@ export class RecurringRequestForm {
 
   getNurses() {
     console.log("getNurses Called");
-    if(this.recurringRequest["role"]) {
-      this.recurringRequestApi.getCares(this.recurringRequest).subscribe(
-        nurses => {
-          this.nurses = nurses;
-        }
-      )
-    }
+    this.recurringRequestApi.getCares(this.recurringRequest).subscribe(
+      nurses => {
+        this.nurses = nurses;
+      }
+    )
+  }
+
+  durationChanged(hours) {
+    let start_date = moment(this.recurringRequest["start_date"]);
+    this.recurringRequest["end_date"] = start_date.add(hours, 'hours').format();
+    console.log("Set end date to " + this.recurringRequest["end_date"]);
   }
 
   ionViewDidLoad() {
@@ -104,9 +110,10 @@ export class RecurringRequestForm {
     else {
       let start_of_day = moment().add(1, 'day').hour(8).minute(0);
       this.recurringRequest["start_date"] = start_of_day.format();;
-      let end_date = start_of_day.add(8, 'hours').format();
-      this.recurringRequest["end_date"] = end_date;
-      console.log(`end date = ${end_date}`);
+    }
+
+    if (this.recurringRequest["role"] == null) {
+      this.recurringRequest["role"] = "Nurse"
     }
 
     if(this.current_user["sister_hospitals"] != null) {
