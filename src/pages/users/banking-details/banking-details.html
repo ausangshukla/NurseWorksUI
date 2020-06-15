@@ -15,32 +15,50 @@
 
 <ion-content padding>
 
-  <ion-list>
 
-    <form [formGroup]="slideOneForm">
+  <form [formGroup]="slideOneForm">
+    
+    <ion-list>
+
+      <ion-item id="payment_option">
+        <ion-label floating>Payment Option</ion-label>
+        <ion-select name="payment_option" [(ngModel)]="user.payment_option"
+          [class.invalid]="!slideOneForm.controls.payment_option.valid && (slideOneForm.controls.payment_option.dirty || submitAttempt)"
+          formControlName="payment_option">
+          <ion-option value="BHIM">BHIM</ion-option>
+          <ion-option value="G Pay">G Pay</ion-option>
+          <ion-option value="PayTM">PayTM</ion-option>
+        </ion-select>
+      </ion-item>
+
 
       <ion-item>
         <ion-label floating>Bank Account Number</ion-label>
-        <ion-input name="bank_account" formControlName="bank_account" type="bank_account" [(ngModel)]="user.bank_account" [class.invalid]="!slideOneForm.controls.bank_account.valid && (slideOneForm.controls.bank_account.dirty || submitAttempt)"></ion-input>
+        <ion-input name="bank_account" formControlName="bank_account" [(ngModel)]="user.bank_account"
+          [class.invalid]="!slideOneForm.controls.bank_account.valid && (slideOneForm.controls.bank_account.dirty || submitAttempt)">
+        </ion-input>
       </ion-item>
 
-      <ion-item *ngIf="!slideOneForm.controls.bank_account.valid  && (slideOneForm.controls.bank_account.dirty || submitAttempt)">
-        <p class="error-text">Please enter 8 digit bank account.</p>
+      <ion-item
+        *ngIf="!slideOneForm.controls.bank_account.valid  && (slideOneForm.controls.bank_account.dirty || submitAttempt)">
+        <p class="error-text">Please enter your bank account.</p>
       </ion-item>
 
       <ion-item>
-        <ion-label floating>Sort Code</ion-label>
-        <ion-input name="sort_code" formControlName="sort_code" type="sort_code" [(ngModel)]="user.sort_code" [class.invalid]="!slideOneForm.controls.sort_code.valid && (slideOneForm.controls.sort_code.dirty || submitAttempt)"></ion-input>
+        <ion-label floating>UPI</ion-label>
+        <ion-input name="upi" formControlName="upi" [(ngModel)]="user.upi"
+          [class.invalid]="!slideOneForm.controls.upi.valid && (slideOneForm.controls.upi.dirty || submitAttempt)">
+        </ion-input>
       </ion-item>
 
-      <ion-item *ngIf="!slideOneForm.controls.sort_code.valid  && (slideOneForm.controls.sort_code.dirty || submitAttempt)">
-        <p class="error-text">Please enter 6 digit sort code.</p>
+      <ion-item *ngIf="!slideOneForm.controls.upi.valid  && (slideOneForm.controls.upi.dirty || submitAttempt)">
+        <p class="error-text">Please enter UPI.</p>
       </ion-item>
 
-    </form>
+    </ion-list>
 
-  </ion-list>
+    <button ion-button full color="primary" (click)="save()" [disabled]="slideOneForm.invalid">Save</button>
 
-  <button ion-button full color="primary" (click)="save()" [disabled]="slideOneForm.invalid">Save</button>
+  </form>
 
 </ion-content>
