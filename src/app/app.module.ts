@@ -52,6 +52,7 @@ import { HelpPage } from '../pages/static/help';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 import { IonicSignaturePadModule,IonicsignaturepadProvider } from 'ionicsignaturepad';
+import { LessonApi } from '../providers/lesson-api';
 
 
 @NgModule({
@@ -92,6 +93,7 @@ import { IonicSignaturePadModule,IonicsignaturepadProvider } from 'ionicsignatur
   providers: [
     Config,
     LoginProvider,
+    LessonApi,
     UserApi,
     UserDocApi,
     RatingApi,

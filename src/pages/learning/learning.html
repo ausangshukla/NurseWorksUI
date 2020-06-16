@@ -1,0 +1,28 @@
+<!--
+  Generated template for the LearningPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Learning</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content fullscreen class="ion-padding" scroll-y="false">
+  <ion-slides pager="true">
+
+    <ion-slide *ngFor="let video of lessons">
+      <div class="slide">
+        <iframe width="100%" height="315" [src]="video.trustedVideoUrl" frameborder="0" allowfullscreen></iframe>
+        <h2>{{video.title}}</h2>
+        <p>{{video.description}}</p>
+      </div>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>
