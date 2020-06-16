@@ -50,7 +50,9 @@ export class LearningPage {
           this.lessons = lessons;
 
           for (let i of this.lessons) {
-            i["trustedVideoUrl"] = this.domSanitizer.bypassSecurityTrustResourceUrl(i["youtube_link"]);
+            if(i["link_type"] == "Video") {
+              i["trustedVideoUrl"] = this.domSanitizer.bypassSecurityTrustResourceUrl(i["link"]);
+            }
           }
 
           console.log("Loaded lessons");
