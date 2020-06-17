@@ -15,6 +15,7 @@ import { LoginProvider } from '../../../providers/login-provider';
 export class UserDetails extends DocLinks {
 
   user: any;
+  current_user;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -26,7 +27,14 @@ export class UserDetails extends DocLinks {
     public loginProvider: LoginProvider) {
 
     super(navCtrl);
-    this.user = this.loginProvider.currentUser;
+    
+    this.current_user = this.loginProvider.currentUser;
+
+    if(this.navParams.data != null) {
+      this.user = this.navParams.data;
+    } else {
+      this.user = this.current_user;
+    }
 
   }
 

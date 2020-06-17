@@ -33,10 +33,11 @@ export class Users {
 
     loader.present();
 
-    this.userApi.getUsers().subscribe(
+    this.userApi.getUsers({}).subscribe(
       users => {
         this.users = users;
         console.log("Loaded users");
+        console.log(this.users);
       },
       error => { this.respUtility.showFailure(error); loader.dismiss(); },
       () => { loader.dismiss(); }

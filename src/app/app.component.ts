@@ -83,6 +83,7 @@ export class MyApp {
             this.currentUser.hospital.verified == true) {
 
               this.pages = [
+                { title: 'Nurses', component: 'Users', params: {} },
                 { title: 'My Settings', component: 'UserTabs', params: {user: this.currentUser} } ,
                 { title: 'Reset Password', component: 'PasswordReset', params: {user: this.currentUser} }     
               ].concat(this.static_pages);

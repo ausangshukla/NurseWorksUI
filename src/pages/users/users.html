@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>Users</ion-title>
+    <ion-title>Nurses</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,31 +15,35 @@
 
 <ion-content padding>
   <ion-list>
-      
+
     <button ion-item *ngFor="let user of users" (click)=getUserDetails(user)>
       <ion-thumbnail item-left>
-        <img [src]="user.image">
-      </ion-thumbnail> 
-      
-      {{user.first_name}} {{user.last_name}} 
-      <p>
-        {{user.phone}}
+        <img *ngIf="user.profile_pic == null" src="http://www.iconshock.com/img_vista/IPHONE/jobs/jpg/nurse_icon.jpg">
+        <img *ngIf="user.profile_pic != null" [src]="user.profile_pic.secure_doc_url">
+      </ion-thumbnail>
+
+      {{user.first_name}} {{user.last_name}}
+      <p text-wrap>
+        Qualifications: {{user.key_qualifications}}
       </p>
       <p>
-        {{user.email}}
+        Years of Experience: {{user.years_of_exp}}
       </p>
-       <p> 
-        {{user.role}}
+      <p  text-wrap>
+        Specialization: {{user.specializations}}
       </p>
-      
 
       <p>
-        <ion-badge
-          *ngIf="(user.role == 'Nurse'|| user.role == 'Nurse') && user.verified != true" 
-          item-right [color]="danger">
+        City: {{user.city}}
+      </p>
+
+
+      <p>
+        <ion-badge *ngIf="(user.role == 'Nurse'|| user.role == 'Nurse') && user.verified != true" item-right
+          [color]="danger">
           Pending Verification
-        </ion-badge> 
-      
+        </ion-badge>
+
       </p>
 
     </button>

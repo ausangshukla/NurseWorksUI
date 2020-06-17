@@ -12,7 +12,7 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="user-details">
 
   <div>
 
@@ -22,16 +22,16 @@
         <rating [(ngModel)]="user.rating" readOnly="true"></rating>
       </p>
       <p>
-        Experience: {{user.years_of_exp}} Years, {{user.months_of_exp}} Months 
+        Experience: {{user.years_of_exp}} Years
       </p>
       <p>
         Age: {{user.age}}
       </p>
       
-      <p>
+      <p *ngIf="user.id == current_user.id">
         Phone: {{user.phone}}
       </p>
-      <p>
+      <p *ngIf="user.id == current_user.id">
         Email: {{user.email}}
       </p>
       <p>
@@ -40,11 +40,24 @@
       <p text-wrap>
         Specializations: {{user.specializations}}
       </p>
-
-
     </ion-item>
 
-    <div *ngIf="user.avail_part_time == true && (user.role == 'Nurse' || user.role == 'Nurse')">
+    <ion-item>
+      <ion-label>Public Profile</ion-label>
+      <ion-checkbox disabled [(ngModel)]="user.public_profile"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Available Full Time</ion-label>
+      <ion-checkbox disabled [(ngModel)]="user.avail_full_time"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Available Part Time</ion-label>
+      <ion-checkbox disabled [(ngModel)]="user.avail_part_time"></ion-checkbox>
+    </ion-item>
+
+    <div *ngIf="user.avail_part_time == true">
 
       <ion-item>
         <p>
@@ -63,7 +76,7 @@
           Expected Shift Rate: {{user.exp_shift_rate}} 
         </p>
         
-        <p>
+        <p *ngIf="user.id == current_user.id">
           Bank Account: {{user.bank_account}}
         </p>
         
@@ -114,7 +127,7 @@
     <ion-card>
 
 
-      <ion-card-content *ngIf="user.role == 'Nurse' || user.role == 'Nurse'">
+      <ion-card-content *ngIf="user.role == 'Nurse' && user.id == current_user.id">
 
         <ion-list>
 

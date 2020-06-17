@@ -23,9 +23,8 @@ export class UserApi {
       return response;      
     })
   }
-  getUsers() {
-    
-    return this.http.get(`${this.base_url}.json`).map(response=>{
+  getUsers(params) {  
+    return this.http.get(`${this.base_url}.json`, {params}).map(response=>{
       this.users = response;
       return this.users;      
     })
@@ -86,12 +85,6 @@ export class UserApi {
 
   deleteUser(user) {
     return this.http.delete(`${this.base_url}/${user.id}.json`).map(response=>{
-      return response;
-    })
-  }
-
-  impersonateUser(user_id) {
-    return this.http.post(`${this.base_url}/${user_id}/impersonate.json`, {}).map(response=>{
       return response;
     })
   }
