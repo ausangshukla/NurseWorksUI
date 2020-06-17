@@ -112,7 +112,7 @@
     </div>
 
 
-    <ion-row>
+    <ion-row *ngIf="user.id == current_user.id">
 
       <ion-col>
         <button ion-button full color="secondary" (click)="editUser(user)">Edit Details</button>
@@ -124,15 +124,11 @@
 
     </ion-row>
     
-    <ion-card>
-
-
-      <ion-card-content *ngIf="user.role == 'Nurse' && user.id == current_user.id">
-
+    <ion-card  *ngIf="user.role == 'Nurse' && user.id == current_user.id">
+      <ion-card-content>
         <ion-list>
 
           <button ion-item *ngFor="let doc of user.user_docs" (click)="viewDoc(doc)">
-
             <ion-icon name="document" item-right [color]="doc.verified == true ? 'secondary' : 'danger'"></ion-icon>
             <p>{{doc.doc_type}}</p>
             <p>Uploaded: {{doc.created_at | date : 'dd/MM/yyyy' }}</p>
@@ -140,9 +136,7 @@
             <ion-badge [color]='getDocColorAndText(doc)[0]'>
               {{getDocColorAndText(doc)[1]}}
             </ion-badge>
-
           </button>
-
 
           <button ion-item *ngFor="let doc of pendingDocs(user)" (click)="uploadNow(doc)">
             <ion-icon name="cloud-upload" item-right color="primary"></ion-icon>
@@ -161,9 +155,7 @@
           </button>
 
         </ion-list>
-
       </ion-card-content>
-
     </ion-card>
 
   </div>
