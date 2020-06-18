@@ -18,7 +18,7 @@ export class Config {
   };
 
   private staging = {
-    API_URL: "http://3.6.169.175",
+    API_URL: "http://dev.lcnurseworks.com/",
     ENV: "staging",
     GA_ID: 'UA-103042137-1'
   };

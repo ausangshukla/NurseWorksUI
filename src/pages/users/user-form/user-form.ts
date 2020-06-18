@@ -28,8 +28,9 @@ export class UserForm {
   submitAttempt: boolean = false;
   confirm_password;
   fullTimeFields = ["specializations", "years_of_exp", "address", "city", "key_qualifications", "pref_commute_distance", "conveyence"];
-  additionalPartTimeFields = ["pref_shift_duration", "pref_shift_time", "exp_shift_rate", "part_time_work_days", "shifts_per_month" ];
-  partTimeFields;  
+  additionalPartTimeFields = ["pref_shift_duration", "pref_shift_time", "exp_shift_rate", "part_time_work_days", "shifts_per_month"];
+  partTimeFields;
+  cpsFields = ["years_of_exp", "address", "city", "specializations", "key_qualifications"];
 
   specializations = ["Medical Wards", "Operation Theater", "Medical Ward", "Maternity and Pediatric", "Orthopedics", "Surgical Wards", "ICU and Critical Care", "Oncology Ward", "Respiratory Ward"];
 
@@ -52,7 +53,7 @@ export class UserForm {
       first_name: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z0-9_.\\- ]*'), Validators.required])],
       last_name: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z0-9_.\\- ]*'), Validators.required])],
       email: ['', Validators.compose([Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'), Validators.required])],
-      password: ['', Validators.compose([Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,70}$'), Validators.minLength(8), Validators.required])],
+      password: ['', Validators.compose([Validators.minLength(8), Validators.required])],
       confirm_password: ['', Validators.compose([Validators.required])],
       title: [''],
       age: [''],
@@ -82,38 +83,29 @@ export class UserForm {
       medical_info: ['']
     }, { "validator": this.isMatching });
 
-    this.enable_disable_fields()
 
-    // Password may not be visible, hence disable validations 
-    if (this.user["id"]) {
-      this.slideOneForm.controls["password"].disable();
-      this.slideOneForm.controls["password"].clearValidators();
-      this.slideOneForm.controls["confirm_password"].disable();
-      this.slideOneForm.controls["confirm_password"].clearValidators();
-      console.log("Disabled password", this.slideOneForm.controls.password.disabled);
-    }
+    this.enable_disable_fields();
 
   }
 
   enable_disable_fields() {
     console.log("enable_disable_fields called");
     console.log(this.user);
-    
+
     this.partTimeFields = this.additionalPartTimeFields.concat(this.fullTimeFields);
     let ptfLength = this.partTimeFields.length;
     let ftfLength = this.fullTimeFields.length;
-
-    let cpsFields = ["years_of_exp", "address", "city", "specializations", "key_qualifications"]
-    let cpsLength = cpsFields.length;
+    let cpsLength = this.cpsFields.length;
 
     for (var i = 0; i < ptfLength; i++) {
       this.slideOneForm.controls[this.partTimeFields[i]].disable();
     }
 
-    if(this.user["role"] == "Nurse") {
+    if (this.user["role"] == "Nurse") {
+
       if (this.user["currently_permanent_staff"] == "true" || this.user["currently_permanent_staff"] == true) {
         for (var i = 0; i < cpsLength; i++) {
-          this.slideOneForm.controls[cpsFields[i]].enable();
+          this.slideOneForm.controls[this.cpsFields[i]].enable();
         }
       }
 
@@ -121,58 +113,73 @@ export class UserForm {
         for (var i = 0; i < ptfLength; i++) {
           this.slideOneForm.controls[this.partTimeFields[i]].enable();
         }
-      } else if (this.user["avail_full_time"] == "true" || this.user["avail_full_time"] == true) {
+      }
+
+      if (this.user["avail_full_time"] == "true" || this.user["avail_full_time"] == true) {
         for (var i = 0; i < ftfLength; i++) {
           this.slideOneForm.controls[this.fullTimeFields[i]].enable();
         }
-      } 
+      }
     }
 
+    // Password may not be visible, hence disable validations 
+    if (this.user["id"] != null) {
+      this.slideOneForm.controls["password"].disable();
+      this.slideOneForm.controls["password"].clearValidators();
+      this.slideOneForm.controls["password"].updateValueAndValidity();
+      this.slideOneForm.controls["confirm_password"].disable();
+      this.slideOneForm.controls["confirm_password"].clearValidators();
+      this.slideOneForm.controls["confirm_password"].updateValueAndValidity();
+      console.log("Disabled password", this.slideOneForm.controls.password.disabled);
+    }
+
+    console.log(this.slideOneForm.controls);
+
   }
-  
+
   onTermsChecked($event) {
     if (!$event.checked) {
       this.slideOneForm.patchValue({ accept_terms: null });
     }
     let controls = this.slideOneForm.controls;
-    console.log(controls);      
-    
+    console.log(controls);
+
   }
 
   isMatching(group: FormGroup) {
 
+    if (group.controls['password'].enabled) {
+      let firstPassword = group.controls['password'].value;
+      let secondPassword = group.controls['confirm_password'].value;
+      //console.log(`password check ${firstPassword}, ${secondPassword}`);
 
-    let firstPassword = group.controls['password'].value;
-    let secondPassword = group.controls['confirm_password'].value;
-    //console.log(`password check ${firstPassword}, ${secondPassword}`);
 
-
-    if ((firstPassword && secondPassword) && (firstPassword != secondPassword)) {
-      console.log("passwords mismatch");
-      group.controls['confirm_password'].setErrors({ "pw_mismatch": true });
-      return { "pw_mismatch": true };
+      if ((firstPassword && secondPassword) && (firstPassword != secondPassword)) {
+        console.log("passwords mismatch");
+        group.controls['confirm_password'].setErrors({ "pw_mismatch": true });
+        return { "pw_mismatch": true };
+      } else {
+        return null;
+      }
     } else {
       return null;
     }
 
   }
- 
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserForm');
-    this.respUtility.trackView("UserForm");
   }
 
 
   save() {
     this.respUtility.trackEvent("User", "Save", "click");
     this.submitAttempt = true;
-    //console.log(this.user);
     let loader = this.loadingController.create({
       content: 'Saving ...'
     });
 
     if (this.slideOneForm.invalid) {
-      //this.signupSlider.slideTo(0);
       console.log("Invalid form ", this.slideOneForm.errors);
     }
     else {

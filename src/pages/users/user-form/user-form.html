@@ -77,9 +77,8 @@
         </ion-input>
       </ion-item>
       <ion-item
-        *ngIf="!slideOneForm.controls.password.valid && (slideOneForm.controls.password.dirty || submitAttempt)">
-        <p text-wrap class="text-wrap error-text">Length should be 8-70 characters and include: 1 uppercase, 1
-          lowercase, 1 digit and 1 special character.</p>
+        *ngIf="!slideOneForm.controls.password.valid && (slideOneForm.controls.password.dirty)">
+        <p text-wrap class="text-wrap error-text">Length should be 8-70 characters.</p>
       </ion-item>
 
 
@@ -221,7 +220,7 @@
           <p class="error-text">Invalid age, please enter a valid one.</p>
         </ion-item>
 
-        <div *ngIf="user.currently_permanent_staff == 'false'">
+        <div *ngIf="user.currently_permanent_staff == 'false' || user.currently_permanent_staff == false">
           <ion-item id="avail_full_time">
             <ion-label floating>Available Full Time</ion-label>
             <ion-select name="avail_full_time" [(ngModel)]="user.avail_full_time" (ionChange)="enable_disable_fields()"
@@ -243,7 +242,7 @@
           </ion-item>
         </div>
 
-        <div *ngIf="user.avail_part_time == 'true' || user.avail_full_time == 'true'">
+        <div *ngIf="user.avail_part_time == 'true' || user.avail_part_time == true || user.avail_full_time == 'true' || user.avail_full_time == true">
 
           <ion-item id="pref_commute_distance">
             <ion-label floating>Commute Distance</ion-label>
@@ -289,7 +288,7 @@
 
         </div>
 
-        <div *ngIf="user.avail_part_time == 'true'">
+        <div *ngIf="user.avail_part_time == 'true' || user.avail_part_time == true">
 
           <ion-item id="part_time_work_days">
             <ion-label floating>Available On</ion-label>
