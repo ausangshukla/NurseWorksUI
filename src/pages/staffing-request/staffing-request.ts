@@ -52,6 +52,11 @@ export class StaffingRequest {
 
 
   filterChanged() {
+    console.log("filterRequests = " + this.filterRequests);
+
+    this.navParams.data["filterStartDate"] = "";
+    this.navParams.data["filterEndDate"] = "";
+
     switch (this.filterRequests) {
       case "Today":
         this.filterStartDate = moment().startOf('day');
@@ -74,7 +79,7 @@ export class StaffingRequest {
         break;
       default:
         this.filterStartDate = null;
-        this.filterEndDate = null;
+        this.filterEndDate = null;  
     }
 
     if(this.filterStartDate != null && this.filterEndDate != null) {

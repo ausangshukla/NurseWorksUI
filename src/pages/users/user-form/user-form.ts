@@ -31,6 +31,8 @@ export class UserForm {
   additionalPartTimeFields = ["pref_shift_duration", "pref_shift_time", "exp_shift_rate", "part_time_work_days", "shifts_per_month" ];
   partTimeFields;  
 
+  specializations = ["Medical Wards", "Operation Theater", "Medical Ward", "Maternity and Pediatric", "Orthopedics", "Surgical Wards", "ICU and Critical Care", "Oncology Ward", "Respiratory Ward"];
+
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public formBuilder: FormBuilder,
@@ -94,7 +96,7 @@ export class UserForm {
   }
 
   enable_disable_fields() {
-    
+    console.log("enable_disable_fields called");
     console.log(this.user);
     
     this.partTimeFields = this.additionalPartTimeFields.concat(this.fullTimeFields);
@@ -109,17 +111,17 @@ export class UserForm {
     }
 
     if(this.user["role"] == "Nurse") {
-      if (this.user["currently_permanent_staff"] == "true") {
+      if (this.user["currently_permanent_staff"] == "true" || this.user["currently_permanent_staff"] == true) {
         for (var i = 0; i < cpsLength; i++) {
           this.slideOneForm.controls[cpsFields[i]].enable();
         }
       }
 
-      if (this.user["avail_part_time"] == "true") {
+      if (this.user["avail_part_time"] == "true" || this.user["avail_part_time"] == true) {
         for (var i = 0; i < ptfLength; i++) {
           this.slideOneForm.controls[this.partTimeFields[i]].enable();
         }
-      } else if (this.user["avail_full_time"] == "true") {
+      } else if (this.user["avail_full_time"] == "true" || this.user["avail_full_time"] == true) {
         for (var i = 0; i < ftfLength; i++) {
           this.slideOneForm.controls[this.fullTimeFields[i]].enable();
         }

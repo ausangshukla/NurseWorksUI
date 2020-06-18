@@ -22,6 +22,8 @@ export class StaffingRequestForm {
   hospital: {};
   nurses: {};
 
+  specializations = ["Medical Wards", "Operation Theater", "Medical Ward", "Maternity and Pediatric", "Orthopedics", "Surgical Wards", "ICU and Critical Care", "Oncology Ward", "Respiratory Ward"];
+
   @ViewChild('signupSlider') signupSlider: any;
 
   slideOneForm: FormGroup;

@@ -18,6 +18,7 @@ export class RecurringRequestForm {
   current_user: {};
   hospital: {};
   nurses: {};
+  specializations = ["Medical Wards", "Operation Theater", "Medical Ward", "Maternity and Pediatric", "Orthopedics", "Surgical Wards", "ICU and Critical Care", "Oncology Ward", "Respiratory Ward"];
   
   dateMulti: string[];
   type: 'string'; 
