@@ -76,6 +76,6 @@ export class Users {
   }
   getUserDetails(user) {
     this.respUtility.trackEvent("User", "Details", "click");
-    this.navCtrl.push('UserDetails', user);
+    this.navCtrl.push('UserDetails', {"user": user});
   }
 }
