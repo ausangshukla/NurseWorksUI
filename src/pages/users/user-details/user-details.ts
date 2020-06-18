@@ -30,8 +30,8 @@ export class UserDetails extends DocLinks {
     
     this.current_user = this.loginProvider.currentUser;
 
-    if(this.navParams.data != null) {
-      this.user = this.navParams.data;
+    if(this.navParams.data != null && this.navParams.data["user"] != null) {
+      this.user = this.navParams.data["user"];
     } else {
       this.user = this.current_user;
     }

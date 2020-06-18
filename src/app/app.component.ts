@@ -84,7 +84,7 @@ export class MyApp {
 
               this.pages = [
                 { title: 'Nurses', component: 'Users', params: {} },
-                { title: 'My Settings', component: 'UserTabs', params: {user: this.currentUser} } ,
+                { title: 'My Settings', component: 'UserTabs', params: {} } ,
                 { title: 'Reset Password', component: 'PasswordReset', params: {user: this.currentUser} }     
               ].concat(this.static_pages);
   
@@ -93,7 +93,7 @@ export class MyApp {
             this.pages = [
               { title: 'Referrals', component: 'ReferralPage', params: {} },
               { title: 'Learn & Improve', component: 'LearningPage', params: {} },
-              { title: 'My Settings', component: 'UserTabs', params: {user: this.currentUser} }  ,
+              { title: 'My Settings', component: 'UserTabs', params: {} }  ,
               { title: 'Reset Password', component: 'PasswordReset', params: {user: this.currentUser} }  
 
             ].concat(this.static_pages);

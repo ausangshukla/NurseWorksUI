@@ -5,6 +5,7 @@ import { IonicPage, NavController, NavParams, AlertController, ToastController, 
 import * as _ from 'lodash';
 import { UserApi } from '../../../providers/user-api';
 import { ResponseUtility } from '../../../providers/response-utility';
+import { LoginProvider } from '../../../providers/login-provider';
 
 @IonicPage()
 @Component({
@@ -14,6 +15,7 @@ import { ResponseUtility } from '../../../providers/response-utility';
 export class UserTabs  {
 
   user: any;
+  current_user;
   // this tells the tabs component which Pages
   // should be each tab's root Page
   tab1Root = 'UserDetails';
@@ -29,9 +31,19 @@ export class UserTabs  {
     public alertController: AlertController,
     public toastController: ToastController,
     public loadingController: LoadingController,
-    public respUtility: ResponseUtility) {
+    public respUtility: ResponseUtility,
+    public loginProvider: LoginProvider) {
 
-    this.user = this.navParams.data["user"];
+
+    this.current_user = this.loginProvider.currentUser;
+
+    if(this.navParams.data != null && this.navParams.data["user"] != null) {
+      this.user = this.navParams.data["user"];
+    } else {
+      this.user = this.current_user;
+    }
+  
+    //this.user = this.navParams.data["user"];
     
     if(this.user.role == "Admin") {
       this.tab2Root = 'HospitalBankingDetails';

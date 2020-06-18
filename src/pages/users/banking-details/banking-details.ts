@@ -73,9 +73,7 @@ export class BankingDetailsPage {
         user => {
           this.respUtility.showSuccess('Saved successfully.');
           this.events.publish("current_user:reload");
-          if (!this.insideSettingsTab) {
-            this.navCtrl.popToRoot();
-          }
+          this.navCtrl.popToRoot();
         },
         error => {
           this.respUtility.showFailure(error);

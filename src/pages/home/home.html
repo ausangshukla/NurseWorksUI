@@ -13,7 +13,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content >
+<ion-content>
   <div class="home-page" *ngIf="!currentUser">
     <ion-card>
       <img src="assets/nurse.jpg" />
@@ -22,7 +22,7 @@
           Please Login or Register
         </ion-card-title>
       </ion-card-content>
-      
+
       <ion-row no-padding>
         <ion-col>
           <button ion-button clear small color="primary" icon-left (click)="login()">
@@ -40,11 +40,11 @@
     </ion-card>
 
     <ion-card>
-        <img src="assets/nurseworks.png" class="logo"/>
-        <ion-card-content>
-          <div class="card-title">Learn, Earn, Grow</div>          
-          <div class="card-subtitle">A digital platform for nursing</div>
-        </ion-card-content>    
+      <img src="assets/nurseworks.png" class="logo" />
+      <ion-card-content>
+        <div class="card-title">Learn, Earn, Grow</div>
+        <div class="card-subtitle">A digital platform for nursing</div>
+      </ion-card-content>
     </ion-card>
   </div>
 
@@ -55,19 +55,19 @@
     </ion-card>
 
     <ion-card>
-        <ion-card-content>
-          <div class="card-title">Welcome</div>          
-          <div class="card-subtitle">{{currentUser.first_name}} {{currentUser.last_name}}</div>
-        </ion-card-content>    
+      <ion-card-content>
+        <div class="card-title">Welcome</div>
+        <div class="card-subtitle">{{currentUser.first_name}} {{currentUser.last_name}}</div>
+      </ion-card-content>
     </ion-card>
 
     <ion-card>
-        <img src="assets/nurseworks.png" class="logo"/>
-       
-        <ion-card-content *ngIf="currentUser.role != 'Admin'">
-          <div class="card-title">Learn, Earn, Grow</div>          
-          <div class="card-subtitle">A digital platform for nursing</div>
-        </ion-card-content>    
+      <img src="assets/nurseworks.png" class="logo" />
+
+      <ion-card-content *ngIf="currentUser.role != 'Admin'">
+        <div class="card-title">Learn, Earn, Grow</div>
+        <div class="card-subtitle">A digital platform for nursing</div>
+      </ion-card-content>
     </ion-card>
 
     <ion-card>

@@ -17,19 +17,34 @@
 
 
   <form [formGroup]="slideOneForm">
-    
+
     <ion-list>
 
-      <ion-item id="payment_option">
-        <ion-label floating>Payment Option</ion-label>
-        <ion-select name="payment_option" [(ngModel)]="user.payment_option"
-          [class.invalid]="!slideOneForm.controls.payment_option.valid && (slideOneForm.controls.payment_option.dirty || submitAttempt)"
-          formControlName="payment_option">
-          <ion-option value="BHIM">BHIM</ion-option>
-          <ion-option value="G Pay">G Pay</ion-option>
-          <ion-option value="PayTM">PayTM</ion-option>
-        </ion-select>
-      </ion-item>
+      <ion-list name="payment_option" formControlName="payment_option" 
+                radio-group [(ngModel)]="user.payment_option">
+
+        <ion-item>
+          <ion-thumbnail item-left>
+            <img src="assets/gpay.png">
+          </ion-thumbnail>
+          <ion-radio value="GPay" item-right></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-thumbnail item-left>
+            <img src="assets/paytm.png">
+          </ion-thumbnail>
+          <ion-radio value="payTM" item-right></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-thumbnail item-left>
+            <img src="assets/bhim.png">
+          </ion-thumbnail>
+          <ion-radio value="BHIM" item-right></ion-radio>
+        </ion-item>
+
+      </ion-list>
 
 
       <ion-item>
