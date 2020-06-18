@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController, Tabs } from 'ionic-angular';
 
 
 import * as _ from 'lodash';
@@ -14,6 +14,8 @@ import { LoginProvider } from '../../../providers/login-provider';
 })
 export class UserTabs  {
 
+  @ViewChild("settingsTab") settingsTab: Tabs;
+  
   user: any;
   current_user;
   // this tells the tabs component which Pages
@@ -58,6 +60,7 @@ export class UserTabs  {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserTabs');
+    this.settingsTab.select(0);
   }
 
   tabClick(event:MouseEvent) {

@@ -12,7 +12,7 @@
 
 <ion-content>
 
-  <ion-tabs preloadTabs="false" has-header=false  
+  <ion-tabs #settingsTab preloadTabs="false" has-header=false  
     (click)="tabClick($event)" color="primary" tabsPlacement="bottom" [selectedIndex]="tabIndex">
     <ion-tab tabIcon="person" [rootParams]="user" [root]="tab1Root" tabTitle="Profile" disabled="true"></ion-tab>
     <ion-tab tabIcon="cash" [rootParams]="{insideSettingsTab:true}" [root]="tab2Root" tabTitle="Bank Details"></ion-tab>

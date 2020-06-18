@@ -42,20 +42,22 @@
       </p>
     </ion-item>
 
-    <ion-item>
-      <ion-label>Public Profile</ion-label>
-      <ion-checkbox disabled [(ngModel)]="user.public_profile"></ion-checkbox>
-    </ion-item>
+    <div *ngIf="user.role == 'Nurse' && user.hspital_id == null">
+      <ion-item>
+        <ion-label>Public Profile</ion-label>
+        <ion-checkbox disabled [(ngModel)]="user.public_profile"></ion-checkbox>
+      </ion-item>
 
-    <ion-item>
-      <ion-label>Available Full Time</ion-label>
-      <ion-checkbox disabled [(ngModel)]="user.avail_full_time"></ion-checkbox>
-    </ion-item>
+      <ion-item>
+        <ion-label>Available Full Time</ion-label>
+        <ion-checkbox disabled [(ngModel)]="user.avail_full_time"></ion-checkbox>
+      </ion-item>
 
-    <ion-item>
-      <ion-label>Available Part Time</ion-label>
-      <ion-checkbox disabled [(ngModel)]="user.avail_part_time"></ion-checkbox>
-    </ion-item>
+      <ion-item>
+        <ion-label>Available Part Time</ion-label>
+        <ion-checkbox disabled [(ngModel)]="user.avail_part_time"></ion-checkbox>
+      </ion-item>
+    </div>
 
     <div *ngIf="user.avail_part_time == true">
 
