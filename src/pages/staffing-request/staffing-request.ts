@@ -68,11 +68,11 @@ export class StaffingRequest {
         break;
       case "This Week":
         this.filterStartDate = moment().startOf('week');
-        this.filterEndDate = moment().startOf('week').add(6, 'days');
+        this.filterEndDate = moment().startOf('week').add(7, 'days');
         break;
       case "Next Week":
         this.filterStartDate = moment().startOf('week').add(7, 'days');
-        this.filterEndDate = moment().startOf('week').add(13, 'days');
+        this.filterEndDate = moment().startOf('week').add(14, 'days');
         break;
       case "Between Dates":
         // code block
