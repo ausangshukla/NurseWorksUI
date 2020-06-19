@@ -8,6 +8,7 @@ import { CheckboxValidator } from '../../../providers/checkbox-validator';
 import { AngularTokenService } from 'angular-token';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
+import { AppConstants } from '../../../providers/app.contants';
 
 
 @IonicPage()
@@ -32,9 +33,10 @@ export class UserForm {
   partTimeFields;
   cpsFields = ["years_of_exp", "address", "city", "specializations", "key_qualifications"];
 
-  specializations = ["Medical Wards", "Operation Theater", "Medical Ward", "Maternity and Pediatric", "Orthopedics", "Surgical Wards", "ICU and Critical Care", "Oncology Ward", "Respiratory Ward"];
+  specializations;
 
   constructor(public navCtrl: NavController,
+    private constants: AppConstants,
     public navParams: NavParams,
     public formBuilder: FormBuilder,
     public userApi: UserApi,
@@ -47,7 +49,7 @@ export class UserForm {
     private nativeGeocoder: NativeGeocoder) {
 
     this.user = this.navParams.data;
-
+    this.specializations = constants.SPECIALIZATIONS;
 
     this.slideOneForm = formBuilder.group({
       first_name: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z0-9_.\\- ]*'), Validators.required])],

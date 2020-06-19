@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ApplicationInitStatus } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { UserApi } from '../../providers/user-api';
 import { ResponseUtility } from '../../providers/response-utility';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { filterQueryId } from '@angular/core/src/view/util';
+import { AppConstants } from '../../providers/app.contants';
 
 /**
  * Generated class for the Users page.
@@ -23,12 +23,17 @@ export class Users {
   filter: {} 
   slideOneForm: FormGroup;
   showFilter;
-  cities = ["Rajahmundry", "Hyderabad", "Thiruvananthapuram", "Chennai", "Bangalore", "Pune", "Delhi", "Mumbai", "Ahmedabad", "Bengaluru"];
-  specializations = ["Medical Wards", "Operation Theater", "Medical Ward", "Maternity and Pediatric", "Orthopedics", "Surgical Wards", "ICU and Critical Care", "Oncology Ward", "Respiratory Ward"];
+  cities;
+  specializations;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public loadingController: LoadingController, public formBuilder: FormBuilder,
+    private constants: AppConstants,
     public userApi: UserApi, public respUtility: ResponseUtility) {
+
+      this.cities = constants.CITIES;
+      this.specializations = constants.SPECIALIZATIONS;
+
 
       this.slideOneForm = formBuilder.group({
         key_qualifications: [''],

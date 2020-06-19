@@ -5,6 +5,7 @@ import * as moment from 'moment';
 import { LoginProvider } from '../../../providers/login-provider';
 import { StaffingRequestApi } from '../../../providers/staffing-request-api';
 import { ResponseUtility } from '../../../providers/response-utility';
+import { AppConstants } from '../../../providers/app.contants';
 
 @IonicPage()
 @Component({
@@ -22,7 +23,7 @@ export class StaffingRequestForm {
   hospital: {};
   nurses: {};
 
-  specializations = ["Medical Wards", "Operation Theater", "Medical Ward", "Maternity and Pediatric", "Orthopedics", "Surgical Wards", "ICU and Critical Care", "Oncology Ward", "Respiratory Ward"];
+  specializations;
 
   @ViewChild('signupSlider') signupSlider: any;
 
@@ -32,12 +33,15 @@ export class StaffingRequestForm {
   submitAttempt: boolean = false;
 
   constructor(public navCtrl: NavController,
+    private constants: AppConstants,
     private loginProvider: LoginProvider,
     public navParams: NavParams,
     public formBuilder: FormBuilder,
     public loadingController: LoadingController,
     public staffingRequestApi: StaffingRequestApi,
     public respUtility: ResponseUtility) {
+
+    this.specializations = constants.SPECIALIZATIONS;
 
     this.current_user = loginProvider.currentUser;
     this.hospital = this.current_user["hospital"];
