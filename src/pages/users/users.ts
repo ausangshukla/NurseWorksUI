@@ -23,6 +23,8 @@ export class Users {
   filter: {} 
   slideOneForm: FormGroup;
   showFilter;
+  cities = ["Rajahmundry", "Hyderabad", "Thiruvananthapuram", "Chennai", "Bangalore", "Pune", "Delhi", "Mumbai", "Ahmedabad", "Bengaluru"];
+  specializations = ["Medical Wards", "Operation Theater", "Medical Ward", "Maternity and Pediatric", "Orthopedics", "Surgical Wards", "ICU and Critical Care", "Oncology Ward", "Respiratory Ward"];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public loadingController: LoadingController, public formBuilder: FormBuilder,
@@ -33,6 +35,7 @@ export class Users {
         specializations: [''],
         experience: [''],
         availability: [''],
+        city: ['']
       });
 
       this.filter = {"specializations": "", "key_qualifications": "", "experience": "", "availability": ""};

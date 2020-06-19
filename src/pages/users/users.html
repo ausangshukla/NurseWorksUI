@@ -9,7 +9,7 @@
   <ion-navbar color="primary">
     <ion-title>Nurses</ion-title>
     <ion-buttons end>
-      <button (click)="openFilter()" ion-button >
+      <button (click)="openFilter()" ion-button>
         <ion-icon name="search"></ion-icon>
       </button>
     </ion-buttons>
@@ -24,12 +24,22 @@
   <ion-list>
 
     <form [formGroup]="slideOneForm" *ngIf="showFilter">
+
+      <ion-item id="city">
+        <ion-label floating>City</ion-label>
+        <ion-select name="city" [(ngModel)]="filter.city"
+          formControlName="city">
+          <ion-option *ngFor="let city of cities" value="{{city}}">{{city}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+
       <ion-item id="key_qualifications">
         <ion-label floating>Qualifications</ion-label>
         <ion-select name="key_qualifications" [(ngModel)]="filter.key_qualifications"
           formControlName="key_qualifications">
 
-          <ion-option value="A&M Nurse"availabilty>A&M Nurse</ion-option>
+          <ion-option value="A&M Nurse" availabilty>A&M Nurse</ion-option>
           <ion-option value="G&M / Diploma Nurse">G&M / Diploma Nurse</ion-option>
           <ion-option value="BSc Nursing">BSc Nursing</ion-option>
           <ion-option value="MSc Nursing / PhD">MSc Nursing / PhD</ion-option>
@@ -41,33 +51,24 @@
         <ion-label floating>Experience</ion-label>
         <ion-select name="experience" [(ngModel)]="filter.experience" formControlName="experience">
 
-          <ion-option value="0..3"> < 3 Years</ion-option>
-          <ion-option value="3..7">3 - 7 Years </ion-option>
+          <ion-option value="0..3">
+            < 3 Years</ion-option> <ion-option value="3..7">3 - 7 Years
+          </ion-option>
           <ion-option value="7..100"> > 7 Years</ion-option>
         </ion-select>
       </ion-item>
 
       <ion-item id="specializations">
         <ion-label floating>Specializations</ion-label>
-        <ion-select name="specializations" [(ngModel)]="filter.specializations"
-          formControlName="specializations">
-
-          <ion-option value="Medical wards/other">Medical wards/other</ion-option>
-          <ion-option value="OT nurse">OT nurse</ion-option>
-          <ion-option value="Ortho / Surgical wards">Ortho / Surgical wards</ion-option>
-          <ion-option value="Higher end specialty (ICU / CCU / Onco care)">Higher end specialty (ICU / CCU / Onco
-            care)
-          </ion-option>
-          <ion-option value="Maternity and Pediatric wards">Maternity and Pediatric wards</ion-option>
-          <ion-option value="Mental health / Psychiatric ward">Mental health / Psychiatric ward nurse</ion-option>
-          <ion-option value="Other">Other</ion-option>
+        <ion-select name="specializations" [(ngModel)]="filter.specializations" formControlName="specializations">
+            <ion-option *ngFor="let spz of specializations" value="{{spz}}">{{spz}}</ion-option>
         </ion-select>
       </ion-item>
 
       <ion-item id="availability">
         <ion-label floating>Availability</ion-label>
         <ion-select name="availability" [(ngModel)]="filter.availability" formControlName="availability">
-          <ion-option value="Full Time"availabilty>Full Time </ion-option>
+          <ion-option value="Full Time" availabilty>Full Time </ion-option>
           <ion-option value="Part Time">Part Time</ion-option>
           <ion-option value="All">All</ion-option>
         </ion-select>
