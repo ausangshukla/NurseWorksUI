@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>Nurses</ion-title>
+    <ion-title *ngIf="users">Nurses: {{users.length}} found</ion-title>
     <ion-buttons end>
       <button (click)="openFilter()" ion-button>
         <ion-icon name="search"></ion-icon>
