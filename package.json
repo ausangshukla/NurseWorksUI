@@ -74,7 +74,7 @@
     "raven-js": "^3.27.2",
     "rxjs": "6.5.5",
     "rxjs-compat": "6.5.5",
-    "shelljs": "^0.5.3",
+    "shelljs": "^0.8.5",
     "sw-toolbox": "3.6.0",
     "zone.js": "^0.8.26"
   },
